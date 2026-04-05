@@ -1,0 +1,1756 @@
+
+ <!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>اختبار المستوى - جروب المشتركين</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css">
+ 
+  </head>
+
+<body>
+    <!-- Maintenance Overlay ✅ FIXED -->
+    <div id="maintenance-overlay" class="maintenance-hidden" style="display: none !important;">
+      <div class="maintenance-content">
+
+        <p>الموقع مؤقتًا تحت الصيانة، يمكنك العودة وفتحه مرة أخرى لاحقًا لتجربة أفضل.
+ 🙏</p>
+        <div class="maintenance-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <header>
+<div class="header-content">
+          <img class="logo" src="لوجو قناة اسئلة الجهاز المركزي.jpg" alt="قناة أسئلة الجهاز المركزي">
+          <div class="title-group">
+            <h1>قناة أسئلة الجهاز المركزي</h1>
+                 </div>
+          <button id="channels-btn" class="channels-btn" title="للوصول لقنواتنا">📢</button>
+          <a
+            href="admin.html"
+            class="back-btn1"
+            id="admin-btn"
+            style="position: absolute; left: 10px; top: 10px; text-decoration: none;"
+            >⚙️</a
+          >
+        </div>
+
+        <div class="top-controls">
+          <div class="coin-container" id="header-coins" style="display: none;">
+            <img src="جنيه.jpg" id="egypounds" />
+            <span>كسبت:</span>
+            <span id="coin-count">جنيه </span>
+          </div>
+          <button id="leaderboard-btn" style="display: none" class="back-btn">
+            <img class="awardimg" src="trophy (1).png"> المتصدرين
+          </button>
+        </div>
+      </header>
+
+      <section id="login-section" class="show">
+        <div class="login-content">
+          <div class="input-row">
+            <input id="username" placeholder="اكتب اسمك ثلاثي" type="text" />
+            <input id="password" placeholder="اكتبت 4 ارقام واحفظهم" type="password" />
+            <button id="login-btn">دخول / إنشاء حساب</button>
+          </div>
+        </div>
+        <div class="coin-container" id="login-coins" style="display: none; margin-top: 15px; justify-content: center;">
+          <img src="جنيه.jpg" id="egypounds-login" />
+          <span>حوشت كام:</span>
+          <span id="coin-count-login">جنيه </span>
+        </div>
+      </section>
+
+      <section id="levels"></section>
+      <button id="logout-from-levels" class="back-btn fixed-bottom-btn" style="display: none;">🚪 خروج</button>
+      
+      <!-- جديد: شاشة المجموعات داخل المستوى -->
+      <section id="groups-section" style="display: none;">
+        <div class="groups-header">
+          <h2>المستوى <span id="groups-level-title">1</span> - المجموعات</h2>
+        </div>
+<section id="groups-container" class="groups-grid"></section>
+        <button id="back-to-levels" class="back-btn fixed-bottom-btn">⬅️ رجوع للمستويات</button>
+        <div id="group-modal" class="level-modal" style="display: none;">
+          <button id="close-group-modal" class="close-modal">×</button>
+          <h3 id="group-modal-title">المجموعة 1</h3>
+          <p id="group-modal-info"></p>
+          <div class="modal-buttons">
+            <button id="group-start-btn">ابدأ</button>
+          </div>
+        </div>
+      </section>
+
+      </div>
+
+      <section id="question-box">
+<div id="question-info" style="margin-bottom: 15px;"></div>        <div id="question-text" style="font-size: 20px; padding: 20px; background: #f0f8ff; border-radius: 12px; text-align: center; font-weight: bold; border: 2px solid #1cb0f6;"></div>
+
+<div id="quiz-container">
+
+
+
+          
+          <div id="answers"></div>
+
+          <div class="next-btn-container">
+            <button id="next-q-btn" class="back-btn">السؤال التالي ⬅️</button>
+          </div>
+
+        </div>
+        
+        <!-- CSS for loader -->
+        <style>
+        .question-loader {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(255,255,255,0.95);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          z-index: 100;
+          border-radius: inherit;
+          backdrop-filter: blur(2px);
+        }
+        .loader-spinner {
+          width: 40px;
+          height: 40px;
+          border: 4px solid #f3f3f3;
+          border-top: 4px solid #1cb0f6;
+          border-radius: 50%;
+          animation: spin 1s linear infinite;
+          margin-bottom: 15px;
+        }
+        @keyframes spin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(360deg); }
+        }
+        </style>
+
+        <div id="tip"></div>
+      </section>
+<div id="leaderboard" class="leaderboard-modal" style="display: none;"> 
+        <div class="leaderboard-header">
+          <h2>لوحة المتصدرين</h2>
+        </div>
+        <div id="leaderboard-list">جارٍ التحميل...</div>
+        <button id="close-leaderboard-btn" class="back-btn leaderboard-close-btn">⬅️ رجوع</button>
+      </div>
+
+      <!-- Channels Modal -->
+      <div id="channels-modal" class="channels-modal">
+        <div class="modal-header">
+          <h2>قنواتنا 📢</h2>
+          <button id="close-channels-modal" class="close-modal">×</button>
+        </div>
+        <div id="channels-content" class="channels-content">
+          <div class="channel-item">
+            <span>📌 قناة التليجرام:</span><br>
+            <a href="https://t.me/questions7000" target="_blank">https://t.me/questions7000 </a>
+          </div>
+          <div class="channel-item">
+            <span>📌 قناة اليوتيوب:</span><br>
+            <a href="https://youtube.com/channel/UC1Z3sb2Yt6e19z5Ic8SznZQ?si=MzspkbcHCgRVd1xA" target="_blank">https://youtube.com/channel/UC1Z3sb2Yt6e19z5Ic8SznZQ?si=MzspkbcHCgRVd1xA </a>
+          </div>
+          <div class="channel-item">
+            <span>📌 قناة الفيس:</span><br>
+            <a href="https://www.facebook.com/profile.php?id=61574570998452" target="_blank">https://www.facebook.com/profile.php?id=61574570998452 </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coins Modal - صفحة كسبت الجنيه -->
+          <div id="coins-modal" class="coins-modal"> 
+<div class="modal-header">
+  <h2>كسبت جنيه! <img src="جنيه.jpg" class="modal-coin-img" alt="جنيه"></h2>
+  <button id="close-coins-modal" class="close-modal">×</button>
+</div>
+<div id="coins-content" class="coins-content">
+  <h3 class="content-title">🤩 إيه فايدة الفلوس اللي بكسبها من المستويات؟</h3>
+  
+  <p class="content-para">
+    كل مستوى بتعديه بيضيف مكافأة مالية في رصيدك داخل التطبيق 💰<br>
+    الرصيد ده تقدر تجمعه، ولما يوصل لمبلغ كويس تقدر تستخدمه في خصم 
+من سعر اشتراك 
+<br>
+<span class="titlegroup">جروب المشتركين</span>   </p>
+
+<div class="simple-section">
+  <h4>شكل الجروب  👇</h4>
+   <img src="جروب المشتركين.jpg" alt="جروب المشتركين" class="imggroup">
+  </div>
+
+  <p class="slogan-para">
+لو جرّبت مش هتندم <br> بس لو طلع فعلاً كويس <br>وانت مجربتش؟ هتندم كتير!  </p>
+
+  <a href="http://t.me/NaglaFG" target="_blank" class="cta-para">
+    📩 عشان تشترك معانا وللمذيد من التفاصيل كلمنا
+    ودوس هنا
+  </a>
+</div>
+      </div>
+
+<div id="level-modal" class="level-modal" style="display: none;">
+
+        <button id="close-modal" class="close-modal">×</button>
+        <h3>المستوى <span id="modal-level-number"></span></h3>
+        <p id="modal-pass-rate"></p>
+        <p id="modal-questions-count"></p>
+        <p id="modal-encouragement">معانا هتذاكر وتكسب كمان! 🔥✨</p>
+        <p id="modal-price" style="display: none; font-weight: 700; font-size: 18px; color: var(--duo-orange);"></p>
+        <div class="modal-buttons">
+          <button id="modal-start-btn">ابدأ</button>
+          <button id="modal-buy-btn" style="display: none;">شراء</button>
+        </div>
+      </div>
+
+      <!-- Password Modal for Level 11 -->
+      <div id="password-modal" class="password-modal">
+        <div class="password-content">
+
+          <div class="success-msg">
+            <h3>🎉 مبروك! </h3>
+              <p>
+فعلاً أثبت إنك عندك القدرة للاجتياز  
+يلا بينا نكمل الرحلة ونخش على الجد  
+
+ادخل كلمة المرور من جروب المشتركين هنا  
+وافتح باقي المستويات
+</p>          
+          </div>
+
+          <div class="input-group">
+            <input type="password" id="password-input" placeholder="اكتب كلمة المرور هنا">
+          </div>
+          <button id="password-submit-btn">دخول</button>
+          <div class="subscribe-section">
+
+<p class="subscribe-text">
+مش مشترك لسه؟ 💰 <br>
+ اشترك وخد خصم اللي حوشته من المستويات السابقة🤩
+</p>            <a href="http://t.me/NaglaFG" target="_blank" class="subscribe-btn-hero"> دوس هنا واشترك</a>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading Spinner -->
+      <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+        <p>جاري التحميل...</p>
+      </div>
+
+      <div id="toast" class="toast">
+        <strong id="toast-title"></strong>
+        <span id="toast-msg"></span>
+      </div>
+
+      <audio id="correct-sound">
+        <source
+          src="data:audio/mpeg;base64,//uQZAAAAAAAAAAAAAAAAAAAA..."
+          type="audio/mpeg"
+        />
+      </audio>
+      <audio id="wrong-sound">
+        <source
+          src="data:audio/mpeg;base64,//uQZAAAAAAAAAAAAAAAAAAAA..."
+          type="audio/mpeg"
+        />
+      </audio>
+    </div>
+    <div
+      id="result-section"
+      class="hidden"
+      style="display: none; padding: 20px; direction: rtl"
+    >
+      <div id="result-header" style="text-align: center; margin-bottom: 20px">
+        <h2 id="result-title">نتيجة الاختبار</h2>
+        <p id="result-stats" style="font-size: 20px; font-weight: bold"></p>
+        <p id="result-feedback" style="font-size: 18px; color: #007bff"></p>
+      </div>
+      <div id="answers-review"></div>
+      <button id="back-btn-result">
+  🏠 العودة لصفحة المستويات
+</button>
+
+
+    </div>
+    <!-- Firebase و كود التطبيق (سكربت واحد فقط) -->
+<script type="module">
+// ✅ Maintenance Mode Toggle - FIXED & DEBUG
+const maintenanceMode = false; // false = off, true = on - غيّر هنا للاختبار
+console.log('🔧 Maintenance mode:', maintenanceMode ? 'ON (visible)' : 'OFF (hidden)');
+
+if (maintenanceMode) {
+  const overlay = document.getElementById('maintenance-overlay');
+  if (overlay) {
+    overlay.classList.remove('maintenance-hidden');
+    overlay.style.display = 'flex'; // Force show
+    console.log('✅ Maintenance ON - overlay visible');
+  }
+} else {
+  const overlay = document.getElementById('maintenance-overlay');
+  if (overlay) {
+    overlay.classList.add('maintenance-hidden');
+    overlay.style.display = 'none'; // Force hide fallback
+    console.log('✅ Maintenance OFF - overlay hidden');
+  }
+}
+
+// Auto-disable on admin access
+document.addEventListener('DOMContentLoaded', function() {
+  const adminBtn = document.getElementById('admin-btn');
+  if (adminBtn) {
+    const originalClick = adminBtn.onclick;
+    adminBtn.onclick = function(e) {
+      document.getElementById('maintenance-overlay')?.classList.add('maintenance-hidden');
+      if (originalClick) originalClick.call(this, e);
+    };
+  }
+});
+
+// Anti-copy protection
+document.addEventListener('DOMContentLoaded', function() {
+    // closest() Polyfill for older browsers
+    function closestPolyfill(el, selector) {
+      if (!el || el.nodeType !== 1) return null;
+      for (; el && el.nodeType === 1; el = el.parentNode) {
+        if (typeof el.matches === 'function' ? el.matches(selector) : el.msMatchesSelector(selector)) {
+          return el;
+        }
+      }
+      return null;
+    }
+
+    const protectedElements = document.querySelectorAll('#question-text, #answers, #question-info, .level-card, .review-item');
+    
+    // CSS protection
+    protectedElements.forEach(el => {
+      el.style.userSelect = 'none';
+      el.style.webkitUserSelect = 'none';
+      el.style.msUserSelect = 'none';
+      el.style.mozUserSelect = 'none';
+    });
+    
+    // Event protections - FIXED closest()
+    document.addEventListener('contextmenu', e => {
+      const targetContainer = closestPolyfill(e.target, '#question-box, #result-section, #levels');
+      if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    
+    document.addEventListener('selectstart', e => {
+      const targetContainer = e.target.closest('#question-box, #result-section, #levels');
+      if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
+        e.preventDefault();
+        return false;
+      }
+    });
+    
+    document.addEventListener('dragstart', e => e.preventDefault());
+    document.addEventListener('copy', e => {
+      const activeEl = document.activeElement;
+      const targetContainer = activeEl.closest('#question-box, #result-section, #levels');
+      if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
+        e.preventDefault();
+        showToast('🚫', 'نسخ المحتوى غير مسموح', 'warn');
+        return false;
+      }
+    });
+    
+    document.addEventListener('keydown', e => {
+      if (e.ctrlKey && (e.key === 'c' || e.key === 'a' || e.key === 'u' || e.key === 's')) {
+        const activeEl = document.activeElement;
+        const targetContainer = activeEl.closest('#question-box, #result-section, #levels');
+        if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
+          e.preventDefault();
+          showToast('🚫', 'نسخ/عرض المصدر غير مسموح', 'warn');
+          return false;
+        }
+      }
+      if (e.key === 'F12') {
+        e.preventDefault();
+        showToast('🚫', 'DevTools غير مسموح', 'warn');
+      }
+    });
+    
+    // Disable text selection visually - FIXED Node-safe
+    document.addEventListener('selectionchange', () => {
+      const selection = window.getSelection();
+      if (selection.rangeCount > 0) {
+        const selContainer = selection.getRangeAt(0).commonAncestorContainer;
+        if (selContainer.nodeType === 1) { // Element only
+          const targetContainer = closestPolyfill(selContainer, '#question-box, #result-section, #levels');
+          if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
+            selection.removeAllRanges();
+          }
+        }
+      }
+    });
+  });
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+      import {
+        getDatabase,
+        ref,
+        get,
+        set,
+        update,
+        onValue,
+      } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
+      
+import { allLevelsQuestions, loadQuestions, GROUP_NAMES, GROUP_TITLES, levelsGroupsConfig, loadGroupQuestions } from './questions.js';
+
+      // إعدادات Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyDrPR-5-IaSD7-ij1oj3Y4M9ARQBMK66eo",
+        authDomain: "levels-409ba.firebaseapp.com",
+        databaseURL: "https://levels-409ba-default-rtdb.firebaseio.com",
+        projectId: "levels-409ba",
+        storageBucket: "levels-409ba.firebasestorage.app",
+        messagingSenderId: "54945336454",
+        appId: "1:54945336454:web:51e6f513c1d2a91e23d507",
+        measurementId: "G-ZWME5X472Z",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase(app);
+
+      // --- عناصر الواجهة (DOM) ---
+      const loginSection = document.getElementById("login-section");
+      const levelsDiv = document.getElementById("levels");
+      const questionBox = document.getElementById("question-box");
+      const answersDiv = document.getElementById("answers");
+      const resultSection = document.getElementById("result-section");
+      const leaderboardCard = document.getElementById("leaderboard");
+      const lbList = document.getElementById("leaderboard-list");
+      const leaderboardBtn = document.getElementById("leaderboard-btn");
+      const logoutBtn = document.getElementById("logout-btn");
+      const closeLeaderboardBtn = document.getElementById(
+        "close-leaderboard-btn",
+      );
+      const coinCountEl = document.getElementById("coin-count");
+      const coinCountLoginEl = document.getElementById("coin-count-login");
+      const loginBtn = document.getElementById("login-btn");
+      const headerCoins = document.getElementById("header-coins");
+      const loginCoins = document.getElementById("login-coins");
+      const coinsModal = document.getElementById("coins-modal");
+      const closeCoinsModal = document.getElementById("close-coins-modal");
+      const channelsBtn = document.getElementById("channels-btn");
+      const channelsModal = document.getElementById("channels-modal");
+      const closeChannelsModal = document.getElementById("close-channels-modal");
+      const loadingSpinner = document.getElementById("loading-spinner");
+const adminBtn = document.getElementById("admin-btn");
+
+      // --- حدث زر الأدمن ---
+      if (adminBtn) {
+        adminBtn.addEventListener("click", async (e) => {
+          e.preventDefault();
+          showLoading();
+          await loadAdminConfig();
+          hideLoading();
+          
+          if (!adminPasswordHash) {
+            showToast("⚠️", "خطأ في تحميل إعدادات الأدمن", "err");
+            return;
+          }
+          
+          const password = prompt("أدخل كلمة المرور:");
+          if (!password) return;
+          
+          const inputHash = simpleHash(password);
+          console.log('User input:', password, 'Hash:', inputHash, 'Expected:', adminPasswordHash);
+          
+          // Secure check: base64 obfuscated password
+          if (inputHash === adminPasswordHash) { 
+            window.location.href = "admin.html";
+          } else {
+            showToast("⚠️", "كلمة المرور غير صحيحة", "err");
+          }
+        });
+      }
+
+      // التوست
+      const toastEl = document.getElementById("toast"),
+        toastTitle = document.getElementById("toast-title"),
+        toastMsg = document.getElementById("toast-msg");
+
+      // Load admin password from Firebase
+      // Simple MD5 hash function (for client-side obfuscation)
+      function simpleHash(str) {
+        let hash = 0;
+        for (let i = 0; i < str.length; i++) {
+          const char = str.charCodeAt(i);
+          hash = ((hash << 5) - hash) + char;
+          hash = hash & hash; // Convert to 32-bit integer
+        }
+        return Math.abs(hash).toString(16).padStart(8, '0');
+      }
+
+      let adminPasswordHash = null;
+
+      async function loadAdminConfig() {
+        try {
+          const configRef = ref(db, 'config/adminPasswordHash');
+          const snapshot = await get(configRef);
+          if (snapshot.exists()) {
+            const loadedHash = snapshot.val();
+            if (loadedHash !== "58a01f09") {
+              console.log('⚠️ Old hash found:', loadedHash, 'updating to 58a01f09');
+              await set(configRef, "58a01f09");
+            }
+            adminPasswordHash = "58a01f09";
+            console.log('✅ Admin hash:', adminPasswordHash);
+          } else {
+            await set(configRef, "58a01f09"); 
+            adminPasswordHash = "58a01f09";
+            console.log('✅ Set admin hash to 58a01f09');
+          }
+        } catch (e) {
+          console.error('Error loading admin config:', e);
+        }
+      }
+
+      // --- حالة التطبيق ---
+      let currentUser = null;
+      let currentLevel = 1;
+      let currentQuestionIndex = 0;
+      let currentQuestions = [];
+      let correctAnswers = 0;
+      let userCoins = 0;
+      let userAnswers = [];
+      let levelTimer = null;
+      let timeLeft = 0;
+let selectedOptionIndex = null;
+let isNewLogin = false;
+let leaderboardUnsubscribe = null;
+      let levelsScrollPos = 0;
+
+
+const levelsData = {
+        1: {  passRate: 0.6, time: 1200},
+        2: {  passRate: 0.65, time: 1020 },
+        3: {  passRate: 0.7, time: 840 },
+        4: {  passRate: 0.75, time: 720 },
+        5: {  passRate: 0.8, time: 600 },
+        6: {  passRate: 0.85, time: 600 },
+        7: {  passRate: 0.9, time: 600 },
+        8: {  passRate: 0.9, time: 600 },
+        9: {  passRate: 0.9, time: 600 },
+        10: {  passRate: 0.9, time: 600 },
+        11: {  passRate: 0.9, time: 2600, passwordHash: "0019d5c0" },
+        12: {  passRate: 0.9, time: 600 },    
+        13: {  passRate: 0.9, time: 600 },
+        14: {  passRate: 0.9, time: 600 },
+        15: {  passRate: 0.9, time: 900, passwordHash: "001ac640" },
+    16: {  passRate: 0.9, time: 600},    
+    17: {  passRate: 0.9, time: 600},
+    18: {  passRate: 0.9, time: 600},
+    19: {  passRate: 0.9, time: 600},    
+    20: {  passRate: 0.9, time: 600, passwordHash: "0000ba4f"},
+        21: {  passRate: 0.9, time: 600},
+    22: {  passRate: 0.9, time: 600},
+    23: {  passRate: 0.9, time: 600},
+    24: {  passRate: 0.9, time: 600},
+    25: {  passRate: 0.9, time: 600, passwordHash: "0000ba4f"}
+
+
+
+
+
+
+      };
+
+      const defaultPrizes = {
+        1: 10, 2: 25, 3: 50, 4: 100, 5: 200, 6: 350, 7: 500, 8: 750, 9: 1000, 10: 1500, 11: 2500
+      };
+
+
+      let levelPrizes = {...defaultPrizes};
+
+      // دالة تحويل الثواني إلى دقائق:ثواني
+      function formatTime(seconds) {
+        const mins = Math.floor(seconds / 60);
+        const secs = seconds % 60;
+        return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+      }
+
+      // --- وظائف المساعدة والوقت ---
+function updateTimerDisplay() {
+        const questionInfoEl = document.getElementById("question-info");
+        const totalTime = levelsData[currentLevel].time;
+
+        questionInfoEl.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; margin-top: 10px; padding: 10px; background: #fff3cd; border-radius: 8px;">
+        <span style="font-weight: bold;">السؤال ${currentQuestionIndex + 1} من ${currentQuestions.length}</span>
+        <div id="timer" style="color: ${timeLeft < 60 ? "red" : "#1cb0f6"}; font-weight: bold;">
+          ⏳ ${formatTime(timeLeft)}
+        </div>
+      </div>
+    `;
+      }
+
+
+      function updateTimer() {
+        timeLeft--;
+        if (timeLeft <= 0) {
+          clearInterval(levelTimer);
+          showToast("⏰", "انتهى الوقت!", "err");
+          endLevel();
+        } else {
+          updateTimerDisplay();
+        }
+      }
+
+      // --- نظام الأسئلة ---
+async function loadQuestionsFromDB(level) {
+  // 🔥 PURE LOCAL - no Firebase/DB خالص ✅
+  return await loadQuestions(level);
+}
+
+      async function loadPrizesFromDB() {
+        try {
+          const prizesRef = ref(db, 'prizes');
+          const snapshot = await get(prizesRef);
+          if (snapshot.exists()) {
+            levelPrizes = { ...defaultPrizes, ...snapshot.val() };
+          }
+        } catch (e) {
+          console.log('Using default prizes');
+        }
+      }
+
+// جديد: حالة المجموعات
+let currentGroup = 0;
+let currentGroupName = '';
+let completedLevels = {}; // {level: {groups: {arabic: bool, ...}, complete: bool}}
+
+// Migrate old passedLevels
+function migrateProgress() {
+  if (currentUser.passedLevels) {
+    currentUser.passedLevels.forEach(lvl => {
+      if (!completedLevels[lvl]) {
+        completedLevels[lvl] = {
+          groups: GROUP_NAMES.reduce((acc, g) => ({...acc, [g]: true}), {}),
+          complete: true
+        };
+      }
+    });
+  }
+}
+
+// NEW: Load/Save user progress from Firebase
+async function loadUserProgress() {
+  try {
+    const userRef = ref(db, `users/${sanitizeFirebaseKey(currentUser.username)}`);
+    const snapshot = await get(userRef);
+    if (snapshot.exists()) {
+      const data = snapshot.val();
+      completedLevels = data.completedLevels || {};
+    }
+  } catch (e) {
+    console.error('Error loading progress:', e);
+  }
+}
+
+async function saveUserProgress() {
+  try {
+    const userRef = ref(db, `users/${sanitizeFirebaseKey(currentUser.username)}`);
+    await update(userRef, { completedLevels });
+  } catch (e) {
+    console.error('Error saving progress:', e);
+  }
+}
+
+let levelStyles = {}; // New: default 'normal'
+      
+async function loadLevelStylesFromDB() {
+  try {
+    const stylesRef = ref(db, 'levelStyle');
+    const snapshot = await get(stylesRef);
+    if (snapshot.exists()) {
+      Object.entries(snapshot.val()).forEach(([level, style]) => {
+        if (style.displayMode) {
+          levelStyles[level] = style.displayMode;
+        }
+      });
+    }
+  } catch (e) {
+    console.log('Using default styles (normal)');
+  }
+}
+
+// NEW: Show groups screen for level
+async function showLevelGroups(level) {
+  currentLevel = level;
+  document.getElementById('groups-level-title').textContent = level;
+  
+  // Hide levels, show groups
+  levelsDiv.style.display = 'none';
+  document.getElementById('groups-section').style.display = 'block';
+  document.getElementById('logout-from-levels').style.display = 'none';
+  
+  // Load progress if not loaded
+  if (Object.keys(completedLevels).length === 0) {
+    await loadUserProgress();
+    migrateProgress();
+  }
+  
+  const levelProgress = completedLevels[level] || { groups: {}, complete: false };
+  renderGroupCards(levelProgress);
+}
+
+// NEW: Render 5 group cards with status
+function renderGroupCards(levelProgress) {
+  const container = document.getElementById('groups-container');
+  container.innerHTML = '';
+  
+  GROUP_NAMES.forEach((groupName, index) => {
+    const completed = levelProgress.groups[groupName] || false;
+    const groupTitle = GROUP_TITLES[groupName];
+    const isOpen = index === 0 || (index > 0 && GROUP_NAMES.slice(0, index).every(g => levelProgress.groups[g]));
+    
+    const card = document.createElement('div');
+    card.className = `group-card ${completed ? 'passed' : isOpen ? 'open' : 'locked'}`;
+    card.innerHTML = `
+      <div class="group-title">
+        ${groupTitle} ${completed ? '✅' : isOpen ? '🔓' : '🔒'}
+      </div>
+    `;
+    
+    if (isOpen) {
+      card.onclick = () => showGroupModal(index, groupName, groupTitle);
+    }
+    
+    container.appendChild(card);
+  });
+}
+
+// NEW: Show group info modal
+function showGroupModal(groupIndex, groupName, groupTitle) {
+  document.getElementById('group-modal-title').textContent = `المجموعة ${groupIndex + 1} - ${groupTitle}`;
+  document.getElementById('group-modal-info').textContent = `ابدأ المجموعة ${groupTitle} من المستوى ${currentLevel}`;
+  document.getElementById('group-modal').style.display = 'block';
+  currentGroupName = groupName;
+}
+
+// NEW: Start group quiz (like startLevel)
+async function startGroupQuiz() {
+  document.getElementById('group-modal').style.display = 'none';
+  
+  currentQuestions = await loadGroupQuestions(currentLevel, currentGroupName);
+  if (currentQuestions.length === 0) {
+    showToast('⚠️', `لا أسئلة في ${GROUP_TITLES[currentGroupName]} - أضيفي level${currentLevel}Groups.js`, 'warn');
+    return;
+  }
+  
+  currentQuestionIndex = 0;
+  correctAnswers = 0;
+  userAnswers = [];
+  document.getElementById('groups-section').style.display = 'none';
+  questionBox.style.display = 'block';
+  
+  timeLeft = levelsData[currentLevel]?.time || 600; // Use level time
+  levelTimer = setInterval(updateTimer, 1000);
+  renderQuestion();
+}
+
+// NEW: End group quiz
+async function endGroupQuiz() {
+  clearInterval(levelTimer);
+  questionBox.style.display = 'none';
+  resultSection.style.display = 'block';
+  
+  const total = currentQuestions.length;
+  const passRate = correctAnswers / total;
+  const groupPassRate = levelsData[currentLevel]?.passRate || 0.8;
+  const passed = passRate >= groupPassRate;
+  
+  if (passed) {
+    if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
+    completedLevels[currentLevel].groups[currentGroupName] = true;
+    
+    // Check if all mandatory groups complete → level complete
+    const allMandatoryComplete = GROUP_NAMES.every(g => {
+      const config = levelsGroupsConfig[currentLevel]?.groups?.[g] || {mandatory: true};
+      return config.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
+    });
+    
+    if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
+      completedLevels[currentLevel].complete = true;
+      // Award prize like old system
+      const prize = levelPrizes[currentLevel] || 10;
+      userCoins += prize;
+      coinCountEl.textContent = userCoins + " جنيه";
+      showToast('🎉', `مبروك! أكملت المستوى ${currentLevel} وكسبت ${prize} جنيه`, 'success');
+    }
+    
+    await saveUserProgress();
+    showToast('✅', `مبروك! أكملت مجموعة ${GROUP_TITLES[currentGroupName]}`, 'success');
+  }
+  
+  // Results review (reuse existing endLevel logic)
+  document.getElementById("result-title").textContent = "نتيجة المجموعة";
+  document.getElementById("result-stats").textContent = `النتيجة: ${correctAnswers} من ${total}`;
+  document.getElementById("result-feedback").textContent = passed ? "✅ مبروك! نجحت في المجموعة" : "⚠️ حاول مرة أخرى";
+  
+  // Call existing results review
+  const answersReview = document.getElementById('answers-review');
+  answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px;">مراجعة الإجابات:</h3>';
+  currentQuestions.forEach((q, i) => {
+    const uAns = userAnswers.find(a => a.questionIndex === i) || {correct: false};
+    const isCorrect = uAns.correct;
+    const safeOptions = Array.isArray(q.options) ? q.options : [];
+    const correctIdx = typeof q.answer === 'number' ? q.answer : 0;
+    const userIdx = uAns.userChoice || -1;
+    const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
+    const safeUserText = safeOptions[userIdx] || 'لم تجب';
+    
+    const itemDiv = document.createElement('div');
+    itemDiv.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
+    itemDiv.innerHTML = `
+      <div style="font-weight: bold;">س${i+1}: ${q.question || 'غير محدد'}</div>
+      <div style="color: ${isCorrect ? '#28a745' : '#dc3545'}; font-weight: 700;">إجابتك: ${safeUserText}</div>
+      <div style="color: #28a745; margin-top: 8px;">✅ الصحيح: ${safeCorrectText}</div>
+    `;
+    answersReview.appendChild(itemDiv);
+  });
+}
+
+function renderQuestion() {
+  // FALLBACK: Check for empty questions or invalid index - FIXED HEADER ISSUE
+  if (!currentQuestions.length || currentQuestionIndex >= currentQuestions.length) {
+    const questionInfoEl = document.getElementById("question-info");
+    questionInfoEl.innerHTML = `
+      <div style="font-size: 18px; padding: 20px; background: #ffebee; border-radius: 10px; margin-bottom: 20px; text-align: center; color: #c62828; border: 2px solid #f44336;">
+        <strong>⚠️ لا توجد أسئلة في المستوى ${currentLevel}</strong><br>
+        <small>تحقق من questions-level${currentLevel}.js أو أضف أسئلة</small>
+      </div>
+    `;
+    if (nextBtn) nextBtn.style.display = 'none';
+    showToast("⚠️", `المستوى ${currentLevel}: لا أسئلة متاحة`, "warn");
+    console.error(`❌ Level ${currentLevel}: No questions (index ${currentQuestionIndex}/${currentQuestions.length})`);
+    return;
+  }
+  console.log('🔍 Raw question:', currentQuestions[currentQuestionIndex]);
+  
+  let q = currentQuestions[currentQuestionIndex];
+  
+  // Flexible FULL normalization - supports 2-6+ options
+  const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
+  const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
+  const safeAnswerIndex = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
+  
+  const normQ = {
+    question: q.question || q.q || 'سؤال غير محدد',
+    options: safeOptions,
+    answer: safeAnswerIndex,
+    explanation: q.explanation || q.tip || ''
+  };
+  
+  console.log(`✅ Level ${currentLevel}: ${normQ.options.length} options, answer index: ${safeAnswerIndex}`);
+  
+  console.log('✅ Normalized:', normQ);
+  
+  // Display
+  const questionTextEl = document.getElementById("question-text");
+  const questionInfoEl = document.getElementById("question-info");
+  
+  questionTextEl.innerHTML = `<strong>${normQ.question}</strong>`;
+  console.log(`✅ Rendering question ${currentQuestionIndex + 1}:`, normQ.question);
+  
+  // Options
+
+  const fragment = document.createDocumentFragment();
+  normQ.options.forEach((opt, i) => {
+    const label = document.createElement("label");
+    label.style.cssText = 'display: block; padding: 12px; margin: 8px 0; background: white; border: 2px solid #ddd; border-radius: 8px; cursor: pointer; transition: all .3s;';
+    label.innerHTML = `
+      <input type="radio" name="quiz-opt" value="${i}" style="margin-left: 10px;">
+      <span>${opt}</span>
+    `;
+    fragment.appendChild(label);
+  });
+  
+  answersDiv.innerHTML = '';
+  answersDiv.appendChild(fragment);
+  updateTimerDisplay();
+  
+  console.log(`✅ Question rendered fully. Total questions: ${currentQuestions.length}, current: ${currentQuestionIndex}`);
+  
+  // Click handler
+  answersDiv.onclick = (e) => {
+
+    const label = e.target.closest('label');
+    if (label) {
+      document.querySelectorAll('input[name="quiz-opt"]').forEach(r => r.checked = false);
+      label.querySelector('input').checked = true;
+    }
+  };
+}
+
+let isProcessing = false;
+let nextDebounceTimer = null;
+let totalSkips = 0; // Global skip counter for error recovery
+
+// 🔘 زر السؤال التالي - FIXED VERSION v2.0
+const nextBtn = document.getElementById("next-q-btn");
+const questionLoaderEl = document.getElementById("question-loader");
+
+function showLoader() {
+  if (questionLoaderEl) questionLoaderEl.style.display = 'flex';
+}
+function hideLoader() {
+  if (questionLoaderEl) questionLoaderEl.style.display = 'none';
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log('🔘 Next button clicked');
+    
+  // ✅ الأول نتأكد إن فيه إجابة
+const checkedRadio = document.querySelector('input[name="quiz-opt"]:checked');
+
+if (!checkedRadio) {
+  showToast("⚠️", "يرجى اختيار إجابة أولاً", "warn");
+  return;
+}
+
+// ✅ بعد التأكد فقط نبدأ القفل
+if (nextDebounceTimer) return;
+if (isProcessing) return;
+
+isProcessing = true;
+nextDebounceTimer = setTimeout(() => { nextDebounceTimer = null; }, 500);
+
+nextBtn.disabled = true;
+nextBtn.textContent = '⏳ جاري الانتقال...';
+showLoader();
+
+
+    console.log('✅ Processing started + Loader ON');
+    
+    // MINIMUM 3s disable
+    setTimeout(() => {
+      if (isProcessing) {
+        console.log('🔒 Min disable timeout');
+      }
+    }, 3000);
+    
+    try {
+      const checkedRadio = document.querySelector('input[name="quiz-opt"]:checked');
+      if (!checkedRadio) {
+  showToast("⚠️", "يرجى اختيار إجابة أولاً", "warn");
+  isProcessing = false;              // ✅ مهم جدًا
+  nextBtn.disabled = false;          // ✅ فك القفل
+  nextBtn.textContent = 'السؤال التالي ⬅️';
+  hideLoader();                     // ✅ إخفاء اللودر
+  return;                           // ✅ بدل throw
+}
+      
+      const selectedIndex = parseInt(checkedRadio.value);
+      const rawQ = currentQuestions[currentQuestionIndex];
+      
+      // Re-normalize for consistency
+      const safeOptions = Array.isArray(rawQ.options) && rawQ.options.length >= 2 ? rawQ.options : ['خيار 1', 'خيار 2'];
+      const answerIndex = typeof rawQ.answer === 'number' ? rawQ.answer : safeOptions.findIndex(opt => opt.trim() === String(rawQ.answer).trim());
+      const safeAnswerIndex = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
+      
+      const isCorrect = selectedIndex === safeAnswerIndex;
+      
+      userAnswers.push({
+        questionIndex: currentQuestionIndex,
+        userChoice: selectedIndex,
+        correct: isCorrect,
+      });
+      if (isCorrect) {
+        correctAnswers++;
+      }
+      
+      currentQuestionIndex++;
+      console.log(`✅ Answer processed. Next index: ${currentQuestionIndex}/${currentQuestions.length}`);
+      
+      if (currentQuestionIndex < currentQuestions.length) {
+        renderQuestion();
+        console.log('✅ renderQuestion() called');
+      } else {
+        // NEW: Check if group or level quiz
+        endLevel(); // Always show results like before
+        console.log('🏁 End of quiz');
+      }
+    }
+    
+ catch (error) {
+  console.error('❌ Next handler error:', error);
+
+  // ✅ فك القفل فورًا لو حصل خطأ
+  isProcessing = false;
+  nextBtn.disabled = false;
+  nextBtn.textContent = 'السؤال التالي ⬅️';
+  hideLoader();
+}
+    
+    finally {
+      // DELAYED RESET (after render settles)
+      setTimeout(() => {
+        isProcessing = false;
+        nextBtn.disabled = false;
+        nextBtn.textContent = 'السؤال التالي ⬅️';
+        hideLoader();
+
+
+        console.log('🔄 Next handler FULL reset + Loader OFF');
+    }, 500);// 2.5s delay for render + DOM settle
+    }
+  });
+}
+
+      // --- تسجيل الدخول ---
+      loginBtn.addEventListener("click", async () => {
+        const username = document
+          .getElementById("username")
+          .value.trim()
+          .toLowerCase();
+        const password = document.getElementById("password").value.trim();
+        if (!username || !password) {
+          showToast("تنبيه", "يرجى إدخال اسم المستخدم وكلمة المرور", "warn");
+          return;
+        }
+
+      
+
+        showLoading();
+        loginBtn.disabled = true;
+        loginBtn.textContent = "جاري التحميل...";
+
+        try {
+          const userRef = ref(db, "users/" + sanitizeFirebaseKey(username));
+          const snapshot = await get(userRef);
+          if (snapshot.exists()) {
+            const data = snapshot.val();
+            if (data.password === password) {
+              currentUser = {
+                username,
+                passedLevels: data.passedLevels || [],
+                coins: data.coins || 0,
+              };
+              userCoins = data.coins || 0;
+              coinCountEl.textContent = userCoins + " جنيه";
+              isNewLogin = true;
+              
+              // NEW: Load progress + migrate
+              await loadUserProgress();
+              migrateProgress();
+              await saveUserProgress();
+              
+              showLevels();
+            } else {
+              showToast("خطأ", "كلمة المرور غير صحيحة", "err");
+            }
+          } else {
+            await set(userRef, { password, passedLevels: [], coins: 0, completedLevels: {} });
+            currentUser = { username, passedLevels: [], coins: 0 };
+            userCoins = 0;
+            coinCountEl.textContent = "0 جنيه";
+            isNewLogin = true;
+            completedLevels = {};
+            showLevels();
+          }
+        } catch (e) {
+          showToast("خطأ", "حدث خطأ في قاعدة البيانات", "err");
+        } finally {
+          hideLoading();
+          loginBtn.disabled = false;
+          loginBtn.textContent = "دخول / إنشاء حساب";
+        }
+      });
+document.getElementById("back-btn-result").addEventListener("click", () => {
+  backToLevelsFromResults();
+});
+      // --- كلمات تشجيعية لكل مستوى ---
+     const encouragementMessages = {
+  1: "🚀 أصعب خطوة هي البداية، وبمجرد أن تبدأ.. فقد قطعت نصف الطريق.",
+  2: "💸 انتي بتتعبي دلوقتي عشان بكره تشتري اللي نفسك فيه من غير ما تبصي على السعر",
+  3: "🔥 الاستمرارية تتغلب على الموهبة؛ ابقَ مستيقظاً.",
+  4: "🛡️ محدش هيقدر يكسر بنت ناجحة ومعاها فلوس'.. انتي دلوقتي بتبني الدرع اللي هيحميكي ويخليكي ست الكل",
+  5: "💄 جهزي اللبس الشيك والميك أب، انتي خلاص بقيتي على بُعد خطوة من توقيع العقد وبداية حياة 'الهوانم",
+  6: "🏆 اسعي انك تحققي الاستقلال والرفاهية والفلوس والنجاح",
+  7: "⭐ الصمود هو السر عندما يتعب الآخرون، يظهر معدن الأبطال.. أنت تقترب.",
+  8: "🧠 خليكي البنت اللي الكل بيسألها: 'عملتي ده إزاي؟'.. مش البنت اللي بتسأل الناس: 'أعمل إيه",
+  9: "💳 تخيلي شعورك وأول فيزا باسمك بتسحب أول مرتب كبير.. اللحظة دي قريبة جداً، كملي.",
+  10: "🎯 النجاح السهل (50%) يعني أنك في قائمة الانتظار مع الجميع.. لكن هدفنا هو القمة، هدفنا هو الاجتياز !",
+  11: "💰 كل قرش دفعتيه هنا، هيرجعلك أضعاف في أول شهر قبض.. انتي دلوقتي بتشتري مستقبلك بجد",
+  12: "👑 النجاح بيليق عليكي، والفلوس هتخلي النجاح ده له طعم تاني خالص.. انتي قدها",
+  13: "🔥 مفيش حد هيحقق لك أحلامك غيرك، اشتغلي دلوقتي عشان تعيشي عيشة الهوانم اللي بجد",
+  14: "🚀 كل خطوة دلوقتي بتقربك من هدفك.. استمري وما توقفيش",
+  15: "اللي بيعدّي محور الجدارات السلوكية صح… بيكسب نص الطريق 💪 هو أسهل فرصة تضمن بيها درجات بسرعة",
+  16: "📈 اللي وصل هنا مش بيهزر… انتي دلوقتي في مرحلة الفرق الحقيقي، ركزي وكل خطوة محسوبة",
+
+17: "🔥 التعب اللي حسيتيه قبل كده؟ هو اللي وصّلك لهنا… كملي بنفس النفس، النهاية قريبة",
+
+18: "💼 تخيلي أول يوم شغل رسمي ليكي… لبسك، ثقتك، مرتبك… كل ده بيبدأ من اللي بتعمليه دلوقتي",
+
+19: "🧠 مش الأذكى هو اللي بيكسب… اللي بيكسب هو اللي بيكمل للآخر، وانتي لسه مكملة",
+
+20: "🏆 خلاص بقى بينك وبين الهدف خطوات بسيطة… متضغطيش على نفسك، بس ما توقفيش",
+21: "💰 كل دقيقة مذاكرة دلوقتي بتتحول لفلوس بعدين… كملي، انتي بتبني مصدر دخلك بنفسك",
+
+22: "👑 انتي مش جاية لحد هنا عشان ترجعي… انتي جاية عشان توصلي وتكسبي المكان اللي تستحقيه",
+
+23: "🚀 المرحلة دي للناس اللي بجد… وانتي أثبتي إنك منهم، كملي للآخر"
+,
+24: "🎯 خلاص شايفة الهدف قدامك؟ فاضل لمسة واحدة بس… ركزي في كل سؤال",
+
+25: "🔥 لسه ما خلصتيش… باقي أهم الأسئلة جاية، ركزي وشدي حيلك عشان تعدي المرحلة دي بقوة"};
+
+      // --- عرض الخريطة والمودال ---
+      const levelModal = document.getElementById("level-modal");
+      const modalStartBtn = document.getElementById("modal-start-btn");
+      const closeModalBtn = document.getElementById("close-modal");
+
+      // إغلاق المودال عند الضغط على ×
+      closeModalBtn.addEventListener("click", () => {
+        levelModal.style.display = "none";
+      });
+
+      // إغلاق المودال عند الضغط خارج المحتوى
+      levelModal.addEventListener("click", (e) => {
+        if (e.target === levelModal) {
+          levelModal.style.display = "none";
+        }
+      });
+
+async function showLevels() {
+        if (!currentUser) return;
+        loginSection.style.display = "none";
+        levelsDiv.style.display = "flex";
+        if (logoutBtn) logoutBtn.classList.add("show");
+        document.getElementById('logout-from-levels').style.display = 'block';
+        if (leaderboardBtn) leaderboardBtn.style.display = "inline-block";
+        if (adminBtn) adminBtn.style.display = "none";
+        resultSection.classList.add("hidden");
+        levelsDiv.innerHTML = "";
+        
+        // إظهار الهيدر في صفحة المستويات
+        document.querySelector("header").style.display = "block";
+
+        // إظهار عملة الهيدر وإخفاء عملة تسجيل الدخول
+        if (headerCoins) headerCoins.style.display = "flex";
+        if (loginCoins) loginCoins.style.display = "none";
+
+        // Load prizes and styles from DB
+        await Promise.all([
+          loadPrizesFromDB(),
+          loadLevelStylesFromDB()
+        ]);
+
+        // رسالة ترحيبية للمستخدم (فقط عند الدخول الأول)
+        if (isNewLogin) {
+          const userCoins = currentUser.coins || 0;
+          showToast("🎉", `أهلاً يا ${currentUser.username}! انت محوش ${userCoins} جنيه شد حيلك النهاردة واكسب اكتر`, "success");
+          isNewLogin = false;
+        }
+
+        const passed = currentUser.passedLevels || [];
+        const highest = passed.length ? Math.max(...passed) : 0;
+
+        // Calculate cumulative prizes up to highest
+        let cumulative = 0;
+        for (let i = 1; i <= highest; i++) {
+          cumulative += levelPrizes[i] || 0;
+        }
+
+        Object.keys(levelsData).forEach((lvlStr) => {
+          const lvl = +lvlStr;
+          const card = document.createElement("div");
+          
+          let baseClass = passed.includes(lvl) ? "passed" : lvl === highest + 1 ? "open" : "locked";
+          let icon = passed.includes(lvl)
+            ? "✅"
+            : lvl === highest + 1
+              ? "🔓"
+              : "🔒";
+
+          const prize = levelPrizes[lvl] || 0;
+          const styleClass = (levelStyles[lvl] === 'strike') ? 'strike' : '';
+          
+          let revealedClass = '';
+          if (levelStyles[lvl] === 'strike' && (passed.includes(lvl) || lvl === highest + 1)) {
+            revealedClass = ' revealed';
+          }
+          
+          card.className = `level-card ${baseClass}${revealedClass}`;
+          card.innerHTML = `<div class="level-title">المستوى ${lvl} ${icon}<span class="prize-badge ${styleClass}">${prize.toLocaleString()} جنيه</span></div>`;
+
+          card.addEventListener("click", async () => {
+
+            if (lvl > highest + 1) {
+              showToast("🔒", "هذا المستوى مغلق", "warn");
+              return;
+            }
+            currentLevel = lvl;
+            
+            document.getElementById("modal-level-number").textContent = lvl;
+            
+            // النسبة المطلوبة للاجتياز
+            const passRatePercent = (levelsData[lvl].passRate * 100).toFixed(0);
+            document.getElementById("modal-pass-rate").innerHTML = 
+              `<span class="pass-rate-label">النسبة المطلوبة للاجتياز:</span> <span class="pass-rate-value">${passRatePercent}%</span>`;
+            
+            const questions = await loadQuestionsFromDB(lvl);
+            document.getElementById("modal-questions-count").innerHTML = 
+              `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${questions.length} أسئلة</span>`;
+            
+            // الكلمة التشجيعية للمستوى
+            const encouragement = encouragementMessages[lvl] || "معانا هتذاكر وتكسب كمان! 🔥✨";
+            document.getElementById("modal-encouragement").innerHTML = 
+              `<span class="encouragement-text">${encouragement.replace(/\n/g, '<br>')}</span>`;
+            
+            levelModal.style.display = "block";
+          });
+          levelsDiv.appendChild(card);
+        });
+      }
+
+      modalStartBtn.addEventListener("click", () => {
+        levelModal.style.display = "none";
+        showLevelGroups(currentLevel);
+      });
+
+async function showPasswordModal() {
+  const modal = document.getElementById('password-modal');
+  const input = document.getElementById('password-input');
+  const submitBtn = document.getElementById('password-submit-btn');
+  const subscribeBtn = modal.querySelector('.subscribe-small-btn');
+  
+  modal.style.display = 'flex';
+  
+  // Dynamic level text
+  const levelText = document.getElementById('modal-level-text');
+  const currentLevelEl = document.getElementById('current-level');
+  if (levelText && currentLevelEl) {
+    levelText.textContent = `إتمام المرحلة ${currentLevel}`;
+    currentLevelEl.textContent = currentLevel;
+  }
+  
+  input.value = '';
+  input.focus();
+  
+  const closeModal = () => {
+    modal.style.display = 'none';
+    levelsDiv.style.display = 'flex'; // Return to levels
+  };
+  
+  const checkPassword = () => {
+    const pass = input.value.trim();
+    if (!pass) return showToast('⚠️', 'أدخل كلمة المرور أولاً', 'warn');
+    
+    const inputHash = simpleHash(pass);
+    if (inputHash === levelsData[currentLevel].passwordHash) {
+      closeModal();
+      // Proceed with level
+      currentQuestionIndex = 0;
+      correctAnswers = 0;
+      userAnswers = [];
+      levelsDiv.style.display = "none";
+      questionBox.style.display = "block";
+      resultSection.style.display = "none";
+      resultSection.classList.add("hidden");
+        if (logoutBtn) logoutBtn.classList.remove("show");
+        document.getElementById('logout-from-levels').style.display = 'none';
+        if (headerCoins) headerCoins.style.display = "none";
+        if (leaderboardBtn) leaderboardBtn.style.display = "none";
+      
+      loadQuestionsFromDB(currentLevel).then(questions => {
+        currentQuestions = questions;
+        if (currentQuestions.length === 0) {
+          throw new Error('No questions');
+        }
+        console.log(`✅ Password correct. Loaded ${currentQuestions.length} questions`);
+        timeLeft = levelsData[currentLevel].time;
+        levelTimer = setInterval(updateTimer, 1000);
+        renderQuestion();
+      }).catch(e => {
+        console.error('❌ Questions load failed:', e);
+        showToast('❌', 'خطأ في تحميل الأسئلة', 'err');
+        levelsDiv.style.display = "flex";
+      });
+    } else {
+      showToast("❌", "كلمة المرور خاطئة", "err");
+      input.value = '';
+      input.classList.add('shake');
+      setTimeout(() => input.classList.remove('shake'), 500);
+    }
+  };
+  
+  submitBtn.onclick = checkPassword;
+  input.onkeypress = (e) => {
+    if (e.key === 'Enter') checkPassword();
+  };
+  subscribeBtn.onclick = (e) => {
+    e.stopPropagation();
+  };
+  modal.onclick = (e) => {
+    if (e.target === modal) closeModal();
+  };
+}
+
+async function startLevel(level) {
+  totalSkips = 0;
+  console.log('🚀 Starting level', level);
+  
+ if ((level === 11 || level === 15 || level === 20 || level === 25) && levelsData[level]?.passwordHash) {
+    showPasswordModal();
+    return;
+}
+
+  currentQuestionIndex = 0;
+  correctAnswers = 0;
+  userAnswers = [];
+  levelsDiv.style.display = "none";
+  questionBox.style.display = "block";
+  resultSection.style.display = "none";
+  resultSection.classList.add("hidden");
+  if (logoutBtn) logoutBtn.classList.remove("show");
+  if (headerCoins) headerCoins.style.display = "none";
+  if (leaderboardBtn) leaderboardBtn.style.display = "none";
+
+  try {
+    currentQuestions = await loadQuestionsFromDB(level);
+    if (currentQuestions.length === 0) throw new Error('No questions');
+    console.log(`📥 Loaded ${currentQuestions.length} questions`);
+    timeLeft = levelsData[level].time;
+    levelTimer = setInterval(updateTimer, 1000);
+    renderQuestion();
+  } catch (e) {
+    console.error('❌ Failed to load questions:', e);
+    showToast('❌', 'خطأ في تحميل الأسئلة', 'err');
+    levelsDiv.style.display = "flex";
+  }
+}
+
+      // --- النهاية والنتائج ---
+      async function endLevel() {
+        clearInterval(levelTimer);
+        questionBox.style.display = "none";
+        resultSection.style.display = "block";
+        resultSection.classList.remove("hidden");
+        
+        // إخفاء الهيدر في شاشة النتيجة
+        document.querySelector("header").style.display = "none";
+
+
+        // إخفاء عملة الهيدر وزر المتصدرين في صفحة النتيجة
+        if (headerCoins) headerCoins.style.display = "none";
+        if (leaderboardBtn) leaderboardBtn.style.display = "none";
+
+        const total = currentQuestions.length;
+        const passRate = correctAnswers / total;
+        const isPassed = passRate >= levelsData[currentLevel].passRate;
+
+        if (isPassed && !currentUser.passedLevels.includes(currentLevel)) {
+          currentUser.passedLevels.push(currentLevel);
+          const levelPrize = levelPrizes[currentLevel] || 10;
+          userCoins += levelPrize;
+          coinCountEl.textContent = userCoins + " جنيه";
+          await update(
+            ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)),
+            {
+              passedLevels: currentUser.passedLevels,
+              coins: userCoins,
+            },
+          );
+          showToast("🎉", `مبروك! كسبت ${levelPrize} جنيه من المستوى ${currentLevel}!`, "success");
+        }
+
+        document.getElementById("result-stats").textContent =
+          `النتيجة: ${correctAnswers} من ${total}`;
+        document.getElementById("result-stats").classList.add("auto-dir");
+        const feedback = document.getElementById("result-feedback");
+        feedback.textContent = isPassed
+          ? "🎉مبروك تم اجتياز المستوي بنجاح!"
+          : "⚠️ حاول مرة أخرى";
+        feedback.classList.add("auto-dir");
+        feedback.style.color = isPassed ? "green" : "red";
+
+        console.log('🔍 Building results review for', currentQuestions.length, 'questions');
+        const answersReview = document.getElementById('answers-review');
+        answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px; color: var(--text);">مراجعة الإجابات:</h3>';
+        
+        currentQuestions.forEach((q, i) => {
+          if (!q?.options?.length) {
+            console.warn(`Skipping invalid question ${i}`);
+            return;
+          }
+          
+          const uAns = userAnswers.find(a => a.questionIndex === i);
+          const isCorrect = uAns?.correct ?? false;
+          
+          // Full flexible matching
+          const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2'];
+          const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
+          const correctIdx = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
+          const userIdx = uAns?.userChoice ?? -1;
+          
+          const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
+          const safeUserText = (userIdx >= 0 && userIdx < safeOptions.length) ? safeOptions[userIdx] : 'لم تجب';
+          const safeQuestion = q.question || q.q || 'سؤال غير محدد';
+          
+          // Explanation always available
+          const explanation = q.explanation || q.tip || '';
+          
+          console.group(`سؤال ${i+1}`);
+          console.log('السؤال:', safeQuestion);
+          console.log('إجابتك:', safeUserText, 'الصح:', safeCorrectText, 'صحيح?', isCorrect);
+          console.groupEnd();
+          
+          // Safe DOM creation
+          const itemDiv = document.createElement('div');
+          itemDiv.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
+          itemDiv.style.cssText = `
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            border-left: 5px solid ${isCorrect ? '#28a745' : '#dc3545'};
+            background: ${isCorrect ? '#f0fff4' : '#fff5f5'};
+            direction: rtl;
+            font-family: 'Tajawal', Arial, sans-serif;
+          `;
+          
+          // Question line
+          const qLine = document.createElement('div');
+          qLine.style.cssText = 'font-weight: bold; margin-bottom: 8px; color: var(--text); font-size: 15px;';
+          qLine.innerHTML = `<span style="margin-inline-end: 8px;">س${i+1}:</span>`;
+          const qSpan = document.createElement('span');
+          qSpan.className = 'auto-dir review-text';
+          qSpan.textContent = safeQuestion;
+          qLine.appendChild(qSpan);
+          itemDiv.appendChild(qLine);
+          
+          // Your answer
+          const userLine = document.createElement('div');
+          userLine.style.cssText = `color: ${isCorrect ? '#28a745' : '#dc3545'}; font-weight: 700; padding: 8px 0; border-top: 1px solid #eee;`;
+          userLine.innerHTML = '<span style="margin-inline-end: 8px;">إجابتك:</span>';
+          const userSpan = document.createElement('span');
+          userSpan.className = 'auto-dir review-text';
+          userSpan.textContent = safeUserText;
+          userLine.appendChild(userSpan);
+          itemDiv.appendChild(userLine);
+          
+          // Correct answer + explanation (always)
+          const corrContainer = document.createElement('div');
+          corrContainer.style.cssText = 'margin-top: 8px;';
+          
+          const corrAnswerDiv = document.createElement('div');
+          corrAnswerDiv.style.cssText = 'color: #28a745; background: #e8f5e8; padding: 10px; border-radius: 8px; margin-bottom: 6px; font-weight: 600;';
+          corrAnswerDiv.innerHTML = '✅ الإجابة الصحيحة: ';
+          const corrSpan = document.createElement('span');
+          corrSpan.className = 'auto-dir review-text';
+          corrSpan.textContent = safeCorrectText;
+          corrAnswerDiv.appendChild(corrSpan);
+          
+          corrContainer.appendChild(corrAnswerDiv);
+          
+          // Explanation if exists
+          if (explanation.trim()) {
+            const explDiv = document.createElement('div');
+            explDiv.style.cssText = 'color: #0066cc; background: #e3f2fd; padding: 8px 12px; border-radius: 6px; font-size: 14px; margin-top: 4px; border-right: 3px solid #1cb0f6;';
+            explDiv.innerHTML = '💡 <strong>التفسير:</strong> ';
+            const explSpan = document.createElement('span');
+            explSpan.className = 'auto-dir';
+            explSpan.textContent = explanation;
+            explDiv.appendChild(explSpan);
+            corrContainer.appendChild(explDiv);
+          }
+          
+          if (!isCorrect && safeCorrectText !== 'غير متاح') {
+            itemDiv.appendChild(corrContainer);
+          }
+          
+          answersReview.appendChild(itemDiv);
+        });
+      }
+
+      // العودة للمستويات من شاشة النتائج - النسخة المُحسَّنة مع error handling
+      window.backToLevelsFromResults = function () {
+        console.log('🔙 زرار العودة ضغط عليه - بداية التنفيذ');
+        try {
+          resultSection.style.display = "none";
+          resultSection.classList.add("hidden");
+          document.querySelector("header").style.display = "block";
+          
+          console.log('✅ تم إخفاء نتائج + إظهار header');
+          
+          if (typeof showLevels === 'function') {
+            showLevels();
+            console.log('✅ تم استدعاء showLevels() بنجاح');
+          } else {
+            console.error('❌ showLevels غير متوفرة');
+            // Fallback: إعادة تحميل الصفحة
+            setTimeout(() => location.reload(), 100);
+          }
+        } catch (error) {
+          console.error('❌ خطأ في backToLevelsFromResults():', error);
+          // Emergency reset
+          setTimeout(() => location.reload(), 500);
+        }
+        console.log('🔙 انتهى تنفيذ backToLevelsFromResults');
+      };
+
+      // العودة للمستويات من شاشة النتائج (وظيفة جديدة للزر)
+      window.logoutFromResult = function () {
+        resultSection.style.display = "none";
+        resultSection.classList.add("hidden");
+        // إظهار الهيدر مرة أخرى
+        document.querySelector("header").style.display = "block";
+        showLevels();
+      };
+
+// --- زر الخروج ---
+      if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+          currentUser = null;
+          userCoins = 0;
+          coinCountEl.textContent = "جنيه ";
+          loginSection.style.display = "block";
+          levelsDiv.style.display = "none";
+          if (leaderboardBtn) leaderboardBtn.style.display = "none";
+          logoutBtn.classList.remove("show");
+          // إخفاء عملة الهيدر وإظهار رسالة تسجيل الدخول
+          if (headerCoins) headerCoins.style.display = "none";
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+        });
+      }
+
+      // Fixed bottom logout in levels screen
+      const logoutLevelsBtn = document.getElementById('logout-from-levels');
+      if (logoutLevelsBtn) {
+        logoutLevelsBtn.addEventListener('click', () => {
+          currentUser = null;
+          userCoins = 0;
+          coinCountEl.textContent = "جنيه ";
+          loginSection.style.display = "block";
+          levelsDiv.style.display = "none";
+          if (leaderboardBtn) leaderboardBtn.style.display = "none";
+          logoutLevelsBtn.style.display = "none";
+          if (headerCoins) headerCoins.style.display = "none";
+          document.getElementById("username").value = "";
+          document.getElementById("password").value = "";
+        });
+      }
+
+      // --- وظائف إضافية ---
+      // إظهار الهيدر بشكل افتراضي على صفحة تسجيل الدخول
+      // NEW: Group UI Event Handlers
+document.getElementById('back-to-levels')?.addEventListener('click', () => {
+        document.getElementById('groups-section').style.display = 'none';
+        levelsDiv.style.display = 'flex';
+        document.getElementById('logout-from-levels').style.display = 'block';
+      });
+      
+      document.getElementById('close-group-modal')?.addEventListener('click', () => {
+        document.getElementById('group-modal').style.display = 'none';
+      });
+      
+      document.getElementById('group-start-btn')?.addEventListener('click', () => {
+        startGroupQuiz();
+      });
+      
+      document.getElementById('group-modal')?.addEventListener('click', (e) => {
+        if (e.target === document.getElementById('group-modal')) {
+          document.getElementById('group-modal').style.display = 'none';
+        }
+      });
+      
+      document.addEventListener('DOMContentLoaded', async function() {
+        document.querySelector("header").style.display = "block";
+        await loadAdminConfig();
+      });
+
+
+
+      function sanitizeFirebaseKey(k) {
+        return k.replace(/[.#$\[\]]/g, "_");
+      }
+
+      function showToast(title, msg, type) {
+        toastTitle.textContent = title;
+        toastMsg.textContent = msg;
+        toastMsg.classList.add("auto-dir");
+        toastEl.className = `toast show ${type}`;
+        setTimeout(() => {
+          toastEl.classList.remove("show");
+          toastMsg.classList.remove("auto-dir");
+        }, 2000);
+      }
+
+      // Loading Spinner Functions
+      function showLoading() {
+        loadingSpinner.classList.add("show");
+      }
+
+      function hideLoading() {
+        loadingSpinner.classList.remove("show");
+      }
+
+      // --- لوحة المتصدرين ---
+      if (leaderboardBtn) {
+leaderboardBtn.addEventListener("click", async () => {
+          // حفظ موضع التمرير
+          levelsScrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || levelsDiv.scrollTop || 0;
+          
+          // إخفاء header و top-controls و logout btn
+          document.querySelector("header").style.display = "none";
+          if (headerCoins) headerCoins.style.display = "none";
+          if (logoutBtn) logoutBtn.classList.remove("show"); 
+          levelsDiv.style.display = "none";
+          document.body.classList.add('leaderboard-open');
+          leaderboardCard.style.display = "block";
+          lbList.innerHTML = "جارٍ التحميل...";
+
+
+          try {
+            const usersRef = ref(db, "users");
+            const snapshot = await get(usersRef);
+            if (snapshot.exists()) {
+              const users = Object.entries(snapshot.val()).map(
+                ([username, data]) => ({
+                  username,
+                  passedLevels: data.passedLevels?.length || 0,
+                  coins: data.coins || 0,
+                }),
+              );
+
+              users.sort(
+                (a, b) => b.passedLevels - a.passedLevels || b.coins - a.coins,
+              );
+
+              let html = "";
+users.forEach((user, i) => {
+                let rankClass = "";
+                if (i === 0) rankClass = "first-place";
+                else if (i === 1) rankClass = "second-place";
+                else if (i === 2) rankClass = "third-place";
+
+                html += `
+                <div class="leader-user ${rankClass}">
+                  <span class="rank">${i + 1}</span>
+                  <div class="user-info">
+                    <div class="user-name">${user.username}</div>
+<div class="user-stats">✅ ${user.passedLevels} مستويات | 🪙 ${user.coins} جنيه</div>
+                  </div>
+                </div>
+              `;
+              });
+
+              lbList.innerHTML = html || "لا يوجد مستخدمين بعد";
+            } else {
+              lbList.innerHTML = "لا يوجد مستخدمين بعد";
+            }
+          } catch (e) {
+            lbList.innerHTML = "حدث خطأ في تحميل البيانات";
+          }
+        });
+      }
+
+      if (closeLeaderboardBtn) {
+closeLeaderboardBtn.addEventListener("click", () => {
+          // إظهار header و top-controls و logout btn مرة أخرى
+          document.querySelector("header").style.display = "block";
+          if (headerCoins) headerCoins.style.display = "flex";
+          if (logoutBtn && currentUser) logoutBtn.classList.add("show");
+          
+          // إظهار المستويات إذا لس مش في اختبار/نتيجة
+          if (questionBox.style.display !== "block" && resultSection.style.display !== "block") {
+            levelsDiv.style.display = "flex";
+          }
+          
+          document.body.classList.remove('leaderboard-open');
+          leaderboardCard.style.display = "none";
+          
+          // استعادة الموضع بعد الرجوع
+          setTimeout(() => {
+            window.scrollTo(0, levelsScrollPos);
+            levelsDiv.scrollTop = levelsScrollPos;
+          }, 200);
+        });
+
+      }
+
+      // --- Coins Modal Handlers ---
+      if (headerCoins) {
+        headerCoins.addEventListener("click", () => {
+          if (coinsModal) {
+            coinsModal.style.display = "block";
+          }
+        });
+      }
+
+      if (closeCoinsModal) {
+        closeCoinsModal.addEventListener("click", () => {
+          if (coinsModal) {
+            coinsModal.style.display = "none";
+          }
+        });
+      }
+
+// Enter key support for Next Button
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && questionBox.style.display === 'block' && !isProcessing) {
+    const checkedRadio = document.querySelector('input[name="quiz-opt"]:checked');
+    if (checkedRadio) {
+      console.log('↵ Enter pressed - triggering next');
+      nextBtn.click();
+    }
+  }
+});
+
+// Close coins modal when clicking outside
+      // Channels Modal Handlers
+      if (channelsBtn) {
+        channelsBtn.addEventListener("click", () => {
+          if (channelsModal) {
+            channelsModal.style.display = "block";
+          }
+        });
+      }
+      if (closeChannelsModal) {
+        closeChannelsModal.addEventListener("click", () => {
+          if (channelsModal) {
+            channelsModal.style.display = "none";
+          }
+        });
+      }
+      if (channelsModal) {
+        channelsModal.addEventListener("click", (e) => {
+          if (e.target === channelsModal) {
+            channelsModal.style.display = "none";
+          }
+        });
+      }
+
+      if (coinsModal) {
+        coinsModal.addEventListener("click", (e) => {
+          if (e.target === coinsModal) {
+            coinsModal.style.display = "none";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
