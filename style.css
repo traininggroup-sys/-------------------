@@ -844,12 +844,15 @@ div#level-modal {
 /* Result Section */
 #result-section {
   display: none;
+  height: 100vh;
   background: var(--bg);
-  padding: 35px 25px;
-
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
   box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
   border-bottom: 4px solid var(--gray-200);
   text-align: center;
+  overflow-y: auto;
 }
 
 #result-section h2 {
@@ -877,9 +880,12 @@ div#level-modal {
 
 #answers-review {
   text-align: right;
-  margin: 25px 0;
-  max-height: 300px;
+  flex: 1;
+  margin: 15px 0 0 0;
+  max-height: none;
   overflow-y: auto;
+  padding-right: 5px;
+  scrollbar-width: thin;
 }
 
 #answers-review h3 {
