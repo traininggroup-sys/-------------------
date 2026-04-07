@@ -415,7 +415,7 @@ document.addEventListener('DOMContentLoaded', function() {
         onValue,
       } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
       
-import { allLevelsQuestions, loadQuestions, GROUP_NAMES, GROUP_TITLES, levelsGroupsConfig, loadGroupQuestions } from './questions.js';
+import { GROUP_NAMES, GROUP_TITLES, levelsGroupsConfig, loadGroupQuestions } from './questions.js';
 
       // إعدادات Firebase
       const firebaseConfig = {
@@ -620,8 +620,9 @@ function updateTimerDisplay() {
 
       // --- نظام الأسئلة ---
 async function loadQuestionsFromDB(level) {
-  // 🔥 PURE LOCAL - no Firebase/DB خالص ✅
-  return await loadQuestions(level);
+  // Groups Only - load first group (arabic) as fallback
+  console.log(`🔄 Groups fallback: loading level ${level} arabic`);
+  return await loadGroupQuestions(level, 'arabic');
 }
 
       async function loadPrizesFromDB() {
@@ -837,6 +838,7 @@ async function endGroupQuiz() {
   clearInterval(levelTimer);
   questionBox.style.display = 'none';
   resultSection.style.display = 'block';
+  resultSection.classList.remove('hidden'); // ✅ Force show results
   
   const total = currentQuestions.length;
   const passRate = correctAnswers / total;
@@ -1040,8 +1042,14 @@ showLoader();
         console.log('✅ renderQuestion() called');
       } else {
         // NEW: Check if group or level quiz
-        endLevel(); // Always show results like before
-        console.log('🏁 End of quiz');
+        // 🔥 Groups Only Fix: Check mode
+        if (currentGroupName) {
+          endGroupQuiz(); 
+          console.log(`🏁 Group quiz complete: ${currentGroupName}`);
+        } else {
+          endLevel();
+          console.log('🏁 Legacy level complete');
+        }
       }
     }
     
@@ -1258,9 +1266,9 @@ async function showLevels() {
             document.getElementById("modal-level-number").textContent = lvl;
             
             // النسبة المطلوبة للاجتياز
-            const questions = await loadQuestionsFromDB(lvl);
+            const totalQuestions = await getTotalQuestionsForLevel(lvl);
             document.getElementById("modal-questions-count").innerHTML = 
-              `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${questions.length} أسئلة</span>`;
+              `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${totalQuestions} ${GROUP_ENABLED_LEVELS.includes(lvl) ? '(كل المجموعات)' : 'أسئلة'}</span>`;
             
             // الكلمة التشجيعية للمستوى
             const encouragement = encouragementMessages[lvl] || "معانا هتذاكر وتكسب كمان! 🔥✨";
@@ -1272,6 +1280,30 @@ async function showLevels() {
           levelsDiv.appendChild(card);
         });
       }
+
+      // NEW: دالة حساب إجمالي أسئلة المستوي (كل المجموعات)
+const GROUP_ENABLED_LEVELS = [1,2,15,24,25];  // المستويات ذات Groups
+
+async function getTotalQuestionsForLevel(level) {
+  if (GROUP_ENABLED_LEVELS.includes(level)) {
+    let total = 0;
+    console.log(`📊 Calculating total for level ${level} groups...`);
+    for (const groupName of GROUP_NAMES) {
+      try {
+        const questions = await loadGroupQuestions(level, groupName);
+        total += questions.length;
+        console.log(`  ${GROUP_TITLES[groupName]}: ${questions.length}`);
+      } catch (e) {
+        console.warn(`⚠️ No questions for ${groupName}:`, e.message);
+      }
+    }
+    console.log(`✅ Level ${level} TOTAL: ${total} questions (all groups)`);
+    return total;
+  }
+  // Fallback: legacy questions
+  console.log(`📊 Level ${level}: using legacy (${(await loadQuestions(level)).length} questions)`);
+  return (await loadQuestions(level)).length;
+}
 
       modalStartBtn.addEventListener("click", () => {
         levelModal.style.display = "none";

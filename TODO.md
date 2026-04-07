@@ -1,15 +1,23 @@
-# TODO: إضافة النسبة المطلوبة للاجتياز في Group Modal
+# ✅ Step 1 COMPLETE: Created questions-level1.js stub (no more 404s)
 
-## الخطة المعتمدة:
-- النسبة تظهر في `#group-modal` بنفس نسبة المستوى من `levelsData`.
-- تضاف معلومات عدد الأسئلة للمجموعة.
-- نحافظ على level modal كما هو.
+# Fix 404 Errors & Enable Full Groups System for All Levels
 
-## الخطوات:
-- [x] **Step 1**: ✓ HTML added to group modal.
-- [x] **Step 2**: ✓ JS updated - showGroupModal now loads passRate + questions count.
-- [x] **Step 3**: ✓ CSS updated - Styled .pass-rate-row/.questions-row matching level modal.
-- [x] **Step 4**: ✓ Tested - Live server running. Group modal now shows pass rate % & questions count.
-- [ ] **Step 5**: attempt_completion.
+## Goal: كل مستوى مجموعاته + أسئلته + شاشة نتيجة بعد كل مجموعة
 
-**Status**: Ready to start Step 1.
+## Steps:
+
+### ✅ 1. Fix 404s - Create missing legacy stubs ✓
+
+### [ ] 2. Fix existing stubs 
+- Audit questions-levelX.js → ensure correct exports
+
+### [ ] 3. questions.js: Smart fallback
+- loadQuestions(): empty → load first group
+
+### [ ] 4. Enable Groups for ALL levels 1-25
+
+### [ ] 5. Test full flow
+
+### [ ] 6. Final verification
+
+**Next: Step 2 - Fix stub exports**
