@@ -1300,9 +1300,10 @@ async function getTotalQuestionsForLevel(level) {
     console.log(`✅ Level ${level} TOTAL: ${total} questions (all groups)`);
     return total;
   }
-  // Fallback: legacy questions
-  console.log(`📊 Level ${level}: using legacy (${(await loadQuestions(level)).length} questions)`);
-  return (await loadQuestions(level)).length;
+  // Fallback: use arabic group for non-group levels
+  console.log(`📊 Level ${level}: using arabic group fallback`);
+  const fallbackQuestions = await loadGroupQuestions(level, 'arabic');
+  return fallbackQuestions.length;
 }
 
       modalStartBtn.addEventListener("click", () => {
