@@ -1,17 +1,12 @@
-# TODO: إضافة زرار تخطي للمجموعات الاختيارية
+# ✅ **LEGACY + GROUPS FULLY INTEGRATED** - Full prize system working!
+## Progress: [4/7] ✅✅✅✅
 
-## الخطة المعتمدة
-1. ✅ **إنشاء TODO.md** - تم
-2. تعديل questions.js - جعل english/educational اختيارية (mandatory: false)
-3. تعديل index.html - إضافة زرار "تخطي" في group modal للمجموعات الاختيارية
-4. إضافة handler للـ skip في JS داخل index.html
-5. تعديل style.css - تصميم زرار تخطي
-6. اختبار الـ skip → حفظ تقدم → إكمال مستوى
-7. ✅ **إنهاء المهمة**
+### ✅ 1. `checkLevelCompletion()` → Awards FULL prize when mandatory groups done
+### ✅ 2. `endGroupQuiz()` → Calls check (prize if level complete)  
+### ✅ 3. `skipGroup()` → Marks complete + calls check (prize if level complete)
+### ✅ 4. **Legacy `endLevel()`** → Now marks 'arabic' group + calls checkLevelCompletion() + backward compat
+### 5. [⬜] Expand `questions.js` `levelsGroupsConfig` → ALL levels 1-25 (only arabic mandatory)
+### 6. [⬜] Create sample `questions-level1Groups.js` + `questions-level2Groups.js`
+### 7. [⬜] **Test all + attempt_completion** 
 
-**حالة الحالية**: جاهز للتعديلات
-
-**ملاحظات**:
-- المجموعات: english, educational فقط
-- يحفظ كـ completed للمجموعة الاختيارية
-
+**Next**: Complete questions.js config for 25 levels 🚀

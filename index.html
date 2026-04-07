@@ -648,6 +648,8 @@ function migrateProgress() {
           groups: GROUP_NAMES.reduce((acc, g) => ({...acc, [g]: true}), {}),
           complete: true
         };
+        // Update Firebase legacy → new system
+        saveUserProgress();
       }
     });
   }
@@ -761,29 +763,39 @@ function showGroupModal(groupIndex, groupName, groupTitle) {
   currentGroupName = groupName;
 }
 
-// NEW: Skip optional group
+// 🔥 NEW: Check if level complete & award FULL prize (100%)
+async function checkLevelCompletion() {
+  if (!completedLevels[currentLevel]) return false;
+  
+  const config = window.levelsGroupsConfig[currentLevel] || {};
+  const allMandatoryComplete = GROUP_NAMES.every(g => {
+    const groupConfig = config.groups?.[g] || {mandatory: true};
+    return groupConfig.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
+  });
+  
+  if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
+    completedLevels[currentLevel].complete = true;
+    const prize = levelPrizes[currentLevel] || 10;
+    userCoins += prize; // ✅ FULL PRIZE 100%
+    if (coinCountEl) coinCountEl.textContent = userCoins + " جنيه";
+    
+    showToast('🎉', `مبروك! أكملت المستوى ${currentLevel} كاملاً وكسبت ${prize} جنيه كاملة! 💰`, 'success');
+    await saveUserProgress();
+    return true;
+  }
+  return false;
+}
+
+// NEW: Skip optional group  
 async function skipGroup() {
   document.getElementById('group-modal').style.display = 'none';
   
   if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
   completedLevels[currentLevel].groups[currentGroupName] = true;
   
-  // Check level complete
-  const allMandatoryComplete = GROUP_NAMES.every(g => {
-    const config = window.levelsGroupsConfig[currentLevel]?.groups?.[g] || {mandatory: true};
-    return config.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
-  });
+  checkLevelCompletion(); // ✅ Check & award full prize if complete
   
-  if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
-    completedLevels[currentLevel].complete = true;
-    const prize = levelPrizes[currentLevel] || 10;
-    userCoins += prize / 2; // Half prize for skip
-    if (coinCountEl) coinCountEl.textContent = userCoins + " جنيه";
-    showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]} وكملت المستوى ${currentLevel}! +${prize/2} جنيه`, 'success');
-  } else {
-    showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]}`, 'success');
-  }
-  
+  showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]} بنجاح`, 'success');
   await saveUserProgress();
   renderGroupCards(completedLevels[currentLevel] || { groups: {}, complete: false });
 }
@@ -809,7 +821,7 @@ async function startGroupQuiz() {
   renderQuestion();
 }
 
-// NEW: End group quiz
+// NEW: End group quiz - FIXED prize logic
 async function endGroupQuiz() {
   clearInterval(levelTimer);
   questionBox.style.display = 'none';
@@ -824,20 +836,7 @@ async function endGroupQuiz() {
     if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
     completedLevels[currentLevel].groups[currentGroupName] = true;
     
-    // Check if all mandatory groups complete → level complete
-    const allMandatoryComplete = GROUP_NAMES.every(g => {
-      const config = levelsGroupsConfig[currentLevel]?.groups?.[g] || {mandatory: true};
-      return config.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
-    });
-    
-    if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
-      completedLevels[currentLevel].complete = true;
-      // Award prize like old system
-      const prize = levelPrizes[currentLevel] || 10;
-      userCoins += prize;
-      coinCountEl.textContent = userCoins + " جنيه";
-      showToast('🎉', `مبروك! أكملت المستوى ${currentLevel} وكسبت ${prize} جنيه`, 'success');
-    }
+    checkLevelCompletion(); // ✅ Award full prize if level complete
     
     await saveUserProgress();
     showToast('✅', `مبروك! أكملت مجموعة ${GROUP_TITLES[currentGroupName]}`, 'success');
@@ -1403,19 +1402,27 @@ async function startLevel(level) {
         const passRate = correctAnswers / total;
         const isPassed = passRate >= levelsData[currentLevel].passRate;
 
-        if (isPassed && !currentUser.passedLevels.includes(currentLevel)) {
-          currentUser.passedLevels.push(currentLevel);
-          const levelPrize = levelPrizes[currentLevel] || 10;
-          userCoins += levelPrize;
-          coinCountEl.textContent = userCoins + " جنيه";
-          await update(
-            ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)),
-            {
-              passedLevels: currentUser.passedLevels,
-              coins: userCoins,
-            },
-          );
-          showToast("🎉", `مبروك! كسبت ${levelPrize} جنيه من المستوى ${currentLevel}!`, "success");
+        // 🔥 NEW: Legacy GROUP SYSTEM integration - Full prize!
+        if (passed) {
+          // Mark as first group complete (legacy assumes single quiz = first group)
+          if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
+          completedLevels[currentLevel].groups['arabic'] = true; // Default first group
+          
+          if (checkLevelCompletion()) {
+            // Already awarded full prize above
+          } else {
+            showToast('✅', `مبروك نجاح الكويز - ${GROUP_TITLES['arabic']} مكتمل`, 'success');
+          }
+          
+          // Backward compatibility - mark legacy passedLevels
+          if (!currentUser.passedLevels.includes(currentLevel)) {
+            currentUser.passedLevels.push(currentLevel);
+            await update(ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)), {
+              passedLevels: currentUser.passedLevels
+            });
+          }
+          
+          await saveUserProgress();
         }
 
         document.getElementById("result-stats").textContent =
