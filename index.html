@@ -1268,7 +1268,7 @@ async function showLevels() {
             // النسبة المطلوبة للاجتياز
             const totalQuestions = await getTotalQuestionsForLevel(lvl);
             document.getElementById("modal-questions-count").innerHTML = 
-              `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${totalQuestions} ${GROUP_ENABLED_LEVELS.includes(lvl) ? '(كل المجموعات)' : 'أسئلة'}</span>`;
+              `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${totalQuestions} ${GROUP_ENABLED_LEVELS.includes(lvl) ? '(كل المجموعات)' : 'سؤال'}</span>`;
             
             // الكلمة التشجيعية للمستوى
             const encouragement = encouragementMessages[lvl] || "معانا هتذاكر وتكسب كمان! 🔥✨";
