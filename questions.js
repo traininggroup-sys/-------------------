@@ -26,6 +26,10 @@ import { level23Questions } from './questions-level23.js';
 import { level24Questions } from './questions-level24.js';
 import { level25Questions } from './questions-level25.js';
 import { level1Groups } from './questions-level1Groups.js';
+import { level2Groups } from './questions-level2Groups.js';
+import { level15Groups } from './questions-level15Groups.js';
+import { level24Groups } from './questions-level24Groups.js';
+import { level25Groups } from './questions-level25Groups.js';
 
 
 
@@ -73,6 +77,10 @@ export async function loadQuestions(level) {
 export async function loadGroupQuestions(level, groupName) {
 window.allLevelsGroups = window.allLevelsGroups || {};
 window.allLevelsGroups[1] = level1Groups;
+window.allLevelsGroups[2] = level2Groups;
+window.allLevelsGroups[15] = level15Groups;
+window.allLevelsGroups[24] = level24Groups;
+window.allLevelsGroups[25] = level25Groups;
   // level1Groups = {arabic: [...], general: [...], etc.}
   if (!window.allLevelsGroups?.[level]?.[groupName]) {
     console.warn(`⚠️ No questions for level ${level} group '${groupName}' - أضيفي level${level}Groups.js`);
@@ -95,10 +103,51 @@ export const GROUP_TITLES = {
 
 // Config التحكم في المجموعات (افتراضي كلها إجبارية)
 export const levelsGroupsConfig = {
-  1: {groups: GROUP_NAMES.reduce((acc, g) => ({...acc, [g]: {mandatory: true}}), {})},
-  2: {groups: GROUP_NAMES.reduce((acc, g) => ({...acc, [g]: {mandatory: true}}), {})},
-  // Examples - edit false for optional
-  // 3: {groups: GROUP_NAMES.reduce((acc, g) => ({...acc, [g]: {mandatory: g !== 'english' ? true : false}}), {})}
+  1: {
+    groups: {
+      arabic: { mandatory: true },      // إجباري
+      general: { mandatory: true },     // إجباري
+      computer: { mandatory: true },    // إجباري
+      english: { mandatory: false },    // اختياري ✅
+      educational: { mandatory: false } // اختياري ✅
+    }
+  },
+  2: {
+    groups: {
+      arabic: {mandatory: true},
+      general: {mandatory: true},
+      computer: {mandatory: true},
+      english: {mandatory: false},     // اختياري ✅
+      educational: {mandatory: false}  // اختياري ✅
+    }
+  },
+  15: {
+    groups: {
+      arabic: {mandatory: true},
+      general: {mandatory: true},
+      computer: {mandatory: true},
+      english: {mandatory: false},     // اختياري ✅
+      educational: {mandatory: false}  // اختياري ✅
+    }
+  },
+  24: {
+    groups: {
+      arabic: {mandatory: true},
+      general: {mandatory: true},
+      computer: {mandatory: true},
+      english: {mandatory: false},     // اختياري ✅
+      educational: {mandatory: false}  // اختياري ✅
+    }
+  },
+  25: {
+    groups: {
+      arabic: {mandatory: true},
+      general: {mandatory: true},
+      computer: {mandatory: true},
+      english: {mandatory: false},     // اختياري ✅
+      educational: {mandatory: false}  // اختياري ✅
+    }
+  }
 };
 window.levelsGroupsConfig = levelsGroupsConfig; // Global access
 // Add more levels...

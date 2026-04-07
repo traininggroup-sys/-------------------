@@ -85,6 +85,7 @@
           <p id="group-modal-info"></p>
           <div class="modal-buttons">
             <button id="group-start-btn">ابدأ</button>
+            <button id="group-skip-btn" class="skip-btn" style="display: none;">تخطي</button>
           </div>
         </div>
       </section>
@@ -743,8 +744,48 @@ function renderGroupCards(levelProgress) {
 function showGroupModal(groupIndex, groupName, groupTitle) {
   document.getElementById('group-modal-title').textContent = `المجموعة ${groupIndex + 1} - ${groupTitle}`;
   document.getElementById('group-modal-info').textContent = `ابدأ المجموعة ${groupTitle} من المستوى ${currentLevel}`;
+  
+  // Check if optional → show skip button
+  const config = window.levelsGroupsConfig?.[currentLevel]?.groups?.[groupName];
+  const skipBtn = document.getElementById('group-skip-btn');
+  if (skipBtn) {
+    if (config && !config.mandatory) {
+      skipBtn.style.display = 'block';
+      skipBtn.onclick = skipGroup;
+    } else {
+      skipBtn.style.display = 'none';
+    }
+  }
+  
   document.getElementById('group-modal').style.display = 'block';
   currentGroupName = groupName;
+}
+
+// NEW: Skip optional group
+async function skipGroup() {
+  document.getElementById('group-modal').style.display = 'none';
+  
+  if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
+  completedLevels[currentLevel].groups[currentGroupName] = true;
+  
+  // Check level complete
+  const allMandatoryComplete = GROUP_NAMES.every(g => {
+    const config = window.levelsGroupsConfig[currentLevel]?.groups?.[g] || {mandatory: true};
+    return config.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
+  });
+  
+  if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
+    completedLevels[currentLevel].complete = true;
+    const prize = levelPrizes[currentLevel] || 10;
+    userCoins += prize / 2; // Half prize for skip
+    if (coinCountEl) coinCountEl.textContent = userCoins + " جنيه";
+    showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]} وكملت المستوى ${currentLevel}! +${prize/2} جنيه`, 'success');
+  } else {
+    showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]}`, 'success');
+  }
+  
+  await saveUserProgress();
+  renderGroupCards(completedLevels[currentLevel] || { groups: {}, complete: false });
 }
 
 // NEW: Start group quiz (like startLevel)
