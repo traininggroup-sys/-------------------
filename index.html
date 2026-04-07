@@ -1308,6 +1308,13 @@ async function getTotalQuestionsForLevel(level) {
 
       modalStartBtn.addEventListener("click", () => {
         levelModal.style.display = "none";
+        
+        // ✅ NEW: Password check قبل المجموعات
+        if (levelsData[currentLevel]?.passwordHash) {
+          showPasswordModal();
+          return;
+        }
+        
         showLevelGroups(currentLevel);
       });
 
@@ -1335,40 +1342,16 @@ async function showPasswordModal() {
     levelsDiv.style.display = 'flex'; // Return to levels
   };
   
-  const checkPassword = () => {
+      const checkPassword = () => {
     const pass = input.value.trim();
     if (!pass) return showToast('⚠️', 'أدخل كلمة المرور أولاً', 'warn');
     
     const inputHash = simpleHash(pass);
     if (inputHash === levelsData[currentLevel].passwordHash) {
       closeModal();
-      // Proceed with level
-      currentQuestionIndex = 0;
-      correctAnswers = 0;
-      userAnswers = [];
-      levelsDiv.style.display = "none";
-      questionBox.style.display = "block";
-      resultSection.style.display = "none";
-      resultSection.classList.add("hidden");
-        if (logoutBtn) logoutBtn.classList.remove("show");
-        document.getElementById('logout-from-levels').style.display = 'none';
-        if (headerCoins) headerCoins.style.display = "none";
-        if (leaderboardBtn) leaderboardBtn.style.display = "none";
       
-      loadQuestionsFromDB(currentLevel).then(questions => {
-        currentQuestions = questions;
-        if (currentQuestions.length === 0) {
-          throw new Error('No questions');
-        }
-        console.log(`✅ Password correct. Loaded ${currentQuestions.length} questions`);
-        timeLeft = levelsData[currentLevel].time;
-        levelTimer = setInterval(updateTimer, 1000);
-        renderQuestion();
-      }).catch(e => {
-        console.error('❌ Questions load failed:', e);
-        showToast('❌', 'خطأ في تحميل الأسئلة', 'err');
-        levelsDiv.style.display = "flex";
-      });
+      // ✅ NEW: Groups system بعد كلمة المرور
+      showLevelGroups(currentLevel);
     } else {
       showToast("❌", "كلمة المرور خاطئة", "err");
       input.value = '';
