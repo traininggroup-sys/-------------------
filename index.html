@@ -82,8 +82,10 @@
         <div id="group-modal" class="level-modal" style="display: none;">
           <button id="close-group-modal" class="close-modal">×</button>
           <h3 id="group-modal-title">المجموعة 1</h3>
-          <p id="group-modal-info"></p>
-          <div class="modal-buttons">
+<p id="group-modal-info"></p>
+        <p id="group-modal-pass-rate" class="pass-rate-row"></p>
+        <p id="group-modal-questions-count" class="questions-row"></p>
+        <div class="modal-buttons">
             <button id="group-start-btn">ابدأ</button>
             <button id="group-skip-btn" class="skip-btn" style="display: none;">تخطي</button>
           </div>
@@ -743,9 +745,18 @@ function renderGroupCards(levelProgress) {
 }
 
 // NEW: Show group info modal
-function showGroupModal(groupIndex, groupName, groupTitle) {
+async function showGroupModal(groupIndex, groupName, groupTitle) {
   document.getElementById('group-modal-title').textContent = `المجموعة ${groupIndex + 1} - ${groupTitle}`;
   document.getElementById('group-modal-info').textContent = `ابدأ المجموعة ${groupTitle} من المستوى ${currentLevel}`;
+  
+  // Load pass rate and questions count (same as level modal)
+  const passRatePercent = (levelsData[currentLevel].passRate * 100).toFixed(0);
+  document.getElementById('group-modal-pass-rate').innerHTML = 
+    `<span class="pass-rate-label">النسبة المطلوبة للاجتياز:</span> <span class="pass-rate-value">${passRatePercent}%</span>`;
+  
+  const questions = await loadGroupQuestions(currentLevel, groupName);
+  document.getElementById('group-modal-questions-count').innerHTML = 
+    `<span class="questions-label">عدد أسئلة المجموعة:</span> <span class="questions-value">${questions.length} سؤال</span>`;
   
   // Check if optional → show skip button
   const config = window.levelsGroupsConfig?.[currentLevel]?.groups?.[groupName];
@@ -1247,10 +1258,6 @@ async function showLevels() {
             document.getElementById("modal-level-number").textContent = lvl;
             
             // النسبة المطلوبة للاجتياز
-            const passRatePercent = (levelsData[lvl].passRate * 100).toFixed(0);
-            document.getElementById("modal-pass-rate").innerHTML = 
-              `<span class="pass-rate-label">النسبة المطلوبة للاجتياز:</span> <span class="pass-rate-value">${passRatePercent}%</span>`;
-            
             const questions = await loadQuestionsFromDB(lvl);
             document.getElementById("modal-questions-count").innerHTML = 
               `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${questions.length} أسئلة</span>`;

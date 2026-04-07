@@ -1196,36 +1196,53 @@ div#level-modal {
   font-weight: 600;
 }
 
-/* Pass Rate Display in Modal */
+/* Pass Rate Display in Modal - Level & Group */
+.pass-rate-row,
 .pass-rate-label {
   color: #272525;
   font-weight: 800;
+  margin: 12px 0;
+  font-size: 15px;
 }
 
 .pass-rate-value {
   color: var(--duo-green);
   font-weight: 800;
-  font-size: 16px;
-  background: rgba(88, 204, 2, 0.15);
-  padding: 6px 16px;
+  font-size: 18px;
+  background: rgba(88, 204, 2, 0.2);
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
-  margin-inline-start: 8px;
+  margin-inline-start: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(88, 204, 2, 0.3);
 }
 
-/* Questions Count Display in Modal */
+/* Questions Count Display in Modal - Level & Group */
+.questions-row,
 .questions-label {
   color: #272525;
   font-weight: 800;
+  margin: 12px 0;
+  font-size: 15px;
 }
 
 .questions-value {
   color: var(--duo-blue);
   font-weight: 800;
-  font-size: 16px;
-  background: rgba(28, 176, 246, 0.15);
-  padding: 6px 16px;
+  font-size: 18px;
+  background: rgba(28, 176, 246, 0.2);
+  padding: 8px 20px;
   border-radius: var(--radius-pill);
-  margin-inline-start: 8px;
+  margin-inline-start: 12px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(28, 176, 246, 0.3);
+}
+
+/* Group Modal Specific */
+#group-modal .pass-rate-row,
+#group-modal .questions-row {
+  font-size: 16px;
+  margin: 16px 0;
 }
 
 /* Encouragement Text in Modal */

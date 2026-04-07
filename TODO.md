@@ -1,12 +1,15 @@
-# ✅ **LEGACY + GROUPS FULLY INTEGRATED** - Full prize system working!
-## Progress: [4/7] ✅✅✅✅
+# TODO: إضافة النسبة المطلوبة للاجتياز في Group Modal
 
-### ✅ 1. `checkLevelCompletion()` → Awards FULL prize when mandatory groups done
-### ✅ 2. `endGroupQuiz()` → Calls check (prize if level complete)  
-### ✅ 3. `skipGroup()` → Marks complete + calls check (prize if level complete)
-### ✅ 4. **Legacy `endLevel()`** → Now marks 'arabic' group + calls checkLevelCompletion() + backward compat
-### 5. [⬜] Expand `questions.js` `levelsGroupsConfig` → ALL levels 1-25 (only arabic mandatory)
-### 6. [⬜] Create sample `questions-level1Groups.js` + `questions-level2Groups.js`
-### 7. [⬜] **Test all + attempt_completion** 
+## الخطة المعتمدة:
+- النسبة تظهر في `#group-modal` بنفس نسبة المستوى من `levelsData`.
+- تضاف معلومات عدد الأسئلة للمجموعة.
+- نحافظ على level modal كما هو.
 
-**Next**: Complete questions.js config for 25 levels 🚀
+## الخطوات:
+- [x] **Step 1**: ✓ HTML added to group modal.
+- [x] **Step 2**: ✓ JS updated - showGroupModal now loads passRate + questions count.
+- [x] **Step 3**: ✓ CSS updated - Styled .pass-rate-row/.questions-row matching level modal.
+- [x] **Step 4**: ✓ Tested - Live server running. Group modal now shows pass rate % & questions count.
+- [ ] **Step 5**: attempt_completion.
+
+**Status**: Ready to start Step 1.
