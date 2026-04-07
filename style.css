@@ -853,6 +853,25 @@ div#level-modal {
   border-bottom: 4px solid var(--gray-200);
   text-align: center;
   overflow-y: auto;
+
+  /* إخفاء الهيدر في شاشة النتيجة - مطلوب من المستخدم */
+  header {
+    display: none !important;
+  }
+
+  /* تأكيد إخفاء top-controls (coins/leaderboard) */
+  .top-controls {
+    display: none !important;
+  }
+}
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.05);
+  border-bottom: 4px solid var(--gray-200);
+  text-align: center;
+  overflow-y: auto;
 }
 
 #result-section h2 {

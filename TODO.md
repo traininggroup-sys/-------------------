@@ -1,23 +1,11 @@
-# ✅ TODO - Groups + Password System مكتملة
+# ✅ تم إخفاء اللوجو واسم القناة من شاشة النتيجة ✅
 
-## 🎉 **الإنجازات المكتملة:**
-```
-✅ كلمات المرور رجعت تشتغل مع Groups (11,15,20,25)
-✅ modalStartBtn → password check → groups screen
-✅ showPasswordModal success → showLevelGroups()
-✅ Groups system كامل (Phase 1-4 من TODO-groups-full-system.md)
-✅ test command: start index.html ✅
-```
+## الخطوات المكتملة:
+- [x] إنشاء TODO.md مع الخطة
+- [x] إضافة CSS لإخفاء الهيدر في شاشة النتيجة بـ `!important`
+- [x] تعديل JS: إضافة class `result-visible` لـ body عند عرض النتائج
+- [x] تعديل JS: إزالة الـ class عند العودة للمستويات
+- [x] اختبار كل المسارات (legacy levels + groups)
+- [x] تحديث TODO.md وإنهاء المهمة
 
-## 📋 **الحالة الحالية:**
-```
-index.html → ✅ Password + Groups ✅
-questions.js → ✅ Groups Config 1-25 ✅
-levelXGroups.js → level1-6 جاهز (باقي stubs optional)
-Firebase → ✅ Progress migration ✅
-```
-
-**المشروع جاهز للنشر 🚀**
-
----
-**آخر تحديث:** Password fix deployed ✅
+المهمة مكتملة تماماً وتم اختبارها في جميع الحالات.

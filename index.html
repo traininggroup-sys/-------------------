@@ -837,8 +837,12 @@ async function startGroupQuiz() {
 async function endGroupQuiz() {
   clearInterval(levelTimer);
   questionBox.style.display = 'none';
-  resultSection.style.display = 'block';
-  resultSection.classList.remove('hidden'); // ✅ Force show results
+        resultSection.style.display = 'block';
+        resultSection.classList.remove('hidden'); // ✅ Force show results
+        
+        // تأكيد إخفاء الهيدر في النتائج (CSS يتعامل معاها)
+        document.querySelector('header').style.display = 'none';
+        document.body.classList.add('result-visible');
   
   const total = currentQuestions.length;
   const passRate = correctAnswers / total;
@@ -1413,10 +1417,10 @@ async function startLevel(level) {
         resultSection.style.display = "block";
         resultSection.classList.remove("hidden");
         
-        // إخفاء الهيدر في شاشة النتيجة
+        // إخفاء الهيدر في شاشة النتيجة (CSS يتعامل)
         document.querySelector("header").style.display = "none";
-
-
+        document.body.classList.add('result-visible');
+        
         // إخفاء عملة الهيدر وزر المتصدرين في صفحة النتيجة
         if (headerCoins) headerCoins.style.display = "none";
         if (leaderboardBtn) leaderboardBtn.style.display = "none";
@@ -1562,6 +1566,7 @@ async function startLevel(level) {
         try {
           resultSection.style.display = "none";
           resultSection.classList.add("hidden");
+          document.body.classList.remove('result-visible');
           document.querySelector("header").style.display = "block";
           
           console.log('✅ تم إخفاء نتائج + إظهار header');
@@ -1581,6 +1586,7 @@ async function startLevel(level) {
         }
         console.log('🔙 انتهى تنفيذ backToLevelsFromResults');
       };
+
 
       // العودة للمستويات من شاشة النتائج (وظيفة جديدة للزر)
       window.logoutFromResult = function () {
