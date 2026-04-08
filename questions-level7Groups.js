@@ -1,6 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level7Questions =[
+// بطل سرقة يا حرامي هتروح النار 😈
 
+// Level 7 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "اليوم العالمي للغة العربية يوافق يوم؟",
     "options": ["18 ديسمبر", "28 ديسمبر", "18 سبتمبر", "13 ديسمبر", "8 ديسمبر"],
@@ -156,9 +161,11 @@ const level7Questions =[
     "answer": "2023",
     "explanation": "تم افتتاح ميناء أكتوبر الجاف عام 2023 لدعم منظومة النقل واللوجستيات في مصر."
   },
+];
 
-
-   {
+// 2. حاسب (Computer)
+const computer = [
+    {
     "question": "عبارة عن شريحة إلكترونية تقوم بمعالجة البيانات ______؟",
     "options": [
       "وحدة التحكم",
@@ -387,145 +394,11 @@ const level7Questions =[
           options: ["Windows", "Android OS", "macOS", "Linux"],
           answer: "Android OS",
         },
-
-  {
-      "question": "A calm person who doesn't laugh is:",
-      "options": ["Noisy", "Funny", "Shy", "Talkative"],
-      "answer": "Shy"
-    },
-    {
-      "question": "What do we use to see?",
-      "options": ["Eyes", "Nose", "Ears", "Mouth"],
-      "answer": "Eyes"
-    },
-    {
-      "question": "Hurghada is a tourist city with a beautiful__.",
-      "options": ["Forest", "Mountain", "Desert", "Beach"],
-      "answer": "Beach"
-    },
-    {
-      "question": "Which science studies countries?",
-      "options": ["Math", "Geography", "History", "Chemistry"],
-      "answer": "Geography"
-    },
-    {
-      "question": "Which fruit has a hard stone inside it?",
-      "options": ["Apple", "Banana", "Peach", "Grapes"],
-      "answer": "Peach"
-    },
-
-  {
-    "question": "What gives us milk and cheese?",
-    "options": ["Tiger", "Cow", "Horse", "Lion"],
-    "answer": "Cow"
-  },
-  {
-    "question": "What moves on water?",
-    "options": ["Car", "Train", "Boat", "Bicycle"],
-    "answer": "Boat"
-  },
-  {
-    "question": "What is an instrument made of plastic used for writing with ink?",
-    "options": ["Pen", "Brush", "Ruler", "Spoon"],
-    "answer": "Pen"
-  },
-  {
-    "question": "The sun goes down and the sky gets dark in the __.",
-    "options": ["Afternoon", "Noon", "Morning", "Evening"],
-    "answer": "Evening"
-  },
-  {
-    "question": "The _ of the film makes me laugh.",
-    "options": ["Fear", "Humor", "Drama", "Sadness"],
-    "answer": "Humor"
-  },
+];
 
 
- {
-      "question": "The person who helps the doctor?",
-      "options": ["Chef", "Teacher", "Nurse", "Driver"],
-      "answer": "Nurse"
-    },
-    {
-      "question": "A rubbery thing that is used in sports?",
-      "options": ["Ball", "Cap", "Net", "Bat"],
-      "answer": "Ball"
-    },
-    {
-      "question": "What is a piece of clothing worn above the trousers?",
-      "options": ["Shorts", "Pants", "Socks", "Shirt"],
-      "answer": "Shirt"
-    },
-    {
-      "question": "What does the athlete wear on his feet?",
-      "options": ["Boots", "Sneakers", "Sandals", "Slippers"],
-      "answer": "Sneakers"
-    },
-    {
-      "question": "What is the name of the toy described as a circular object that moves up and down on a long piece of string?",
-      "options": ["Doll", "Car", "Yo-yo", "Kite"],
-      "answer": "Yo-yo"
-    },
- 
-
-  {
-      "question": "A big animal with a trunk and gray color",
-      "options": ["Camel", "Elephant", "Bear", "Zebra"],
-      "answer": "Elephant"
-    },
-    {
-      "question": "A pet animal that barks is",
-      "options": ["Rabbit", "Cat", "Dog", "Horse"],
-      "answer": "Dog"
-    },
-    {
-      "question": "Which animal lives in African forests and has a long neck?",
-      "options": ["Giraffe", "Lion", "Zebra", "Elephant"],
-      "answer": "Giraffe"
-    },
-    {
-      "question": "The person who works in petroleum engineering",
-      "options": ["Mechanical engineer", "Electrician", "Driver", "Petroleum engineer"],
-      "answer": "Petroleum engineer"
-    },
-    {
-      "question": "What do we wear on our hands or wrists?",
-      "options": ["Shoes", "Bracelet / Watch", "Hat", "Gloves"],
-      "answer": "Bracelet / Watch"
-    },
- 
-
-{
-    "question": "Which animal is well known for its ability to mimic human actions?",
-    "options": ["Horse 🐎", "Dog 🐕", "Monkey 🐒", "Cat 🐈"],
-    "answer": "Monkey 🐒",
-    "explanation": "القرد معروف بقدرته على تقليد تصرفات الإنسان."
-  },
-  {
-    "question": "Which animal has wings and a beak?",
-    "options": ["Dog 🐶", "Fish 🐟", "Rabbit 🐰", "Bird 🐦"],
-    "answer": "Bird 🐦",
-    "explanation": "الطائر هو الكائن الوحيد هنا اللي عنده جناحات ومنقار."
-  },
-  {
-    "question": "What is the fastest animal?",
-    "options": ["Lion 🦁", "Horse 🐎", "Cheetah 🐆", "Elephant 🐘"],
-    "answer": "Cheetah 🐆",
-    "explanation": "الفهد هو أسرع حيوان بري على الإطلاق."
-  },
-  {
-    "question": "Which animal is white and lays eggs?",
-    "options": ["Hen / chicken 🐔", "Dog 🐶", "Cat 🐱", "Cow 🐄"],
-    "answer": "Hen / chicken 🐔",
-    "explanation": "الدجاجة لونها أبيض وهي تبيض، عكس الحيوانات الأخرى."
-  },
-  {
-    "question": "What is the plural of (Woman)?",
-    "options": ["Wimen", "Womanses", "Women", "Womans"],
-    "answer": "Women",
-    "explanation": "جمع كلمة 'woman' هو 'women' وليس بإضافة 's' فقط."
-  },
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
     "question": "قال المعلم لتلاميذه ( ) أنتم المستقبل:",
     "options": [":", "؛", "،"],
@@ -732,10 +605,168 @@ const level7Questions =[
     "answer": "اجبر"
   },
 
+];
 
 
-]
 
-export { level7Questions };
-console.log('✅ questions-level7.js ready -', level7Questions.length, 'questions');
 
+
+// 4. انجليزي (English)
+const english = [
+ {
+      "question": "A calm person who doesn't laugh is:",
+      "options": ["Noisy", "Funny", "Shy", "Talkative"],
+      "answer": "Shy"
+    },
+    {
+      "question": "What do we use to see?",
+      "options": ["Eyes", "Nose", "Ears", "Mouth"],
+      "answer": "Eyes"
+    },
+    {
+      "question": "Hurghada is a tourist city with a beautiful__.",
+      "options": ["Forest", "Mountain", "Desert", "Beach"],
+      "answer": "Beach"
+    },
+    {
+      "question": "Which science studies countries?",
+      "options": ["Math", "Geography", "History", "Chemistry"],
+      "answer": "Geography"
+    },
+    {
+      "question": "Which fruit has a hard stone inside it?",
+      "options": ["Apple", "Banana", "Peach", "Grapes"],
+      "answer": "Peach"
+    },
+
+  {
+    "question": "What gives us milk and cheese?",
+    "options": ["Tiger", "Cow", "Horse", "Lion"],
+    "answer": "Cow"
+  },
+  {
+    "question": "What moves on water?",
+    "options": ["Car", "Train", "Boat", "Bicycle"],
+    "answer": "Boat"
+  },
+  {
+    "question": "What is an instrument made of plastic used for writing with ink?",
+    "options": ["Pen", "Brush", "Ruler", "Spoon"],
+    "answer": "Pen"
+  },
+  {
+    "question": "The sun goes down and the sky gets dark in the __.",
+    "options": ["Afternoon", "Noon", "Morning", "Evening"],
+    "answer": "Evening"
+  },
+  {
+    "question": "The _ of the film makes me laugh.",
+    "options": ["Fear", "Humor", "Drama", "Sadness"],
+    "answer": "Humor"
+  },
+
+
+ {
+      "question": "The person who helps the doctor?",
+      "options": ["Chef", "Teacher", "Nurse", "Driver"],
+      "answer": "Nurse"
+    },
+    {
+      "question": "A rubbery thing that is used in sports?",
+      "options": ["Ball", "Cap", "Net", "Bat"],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is a piece of clothing worn above the trousers?",
+      "options": ["Shorts", "Pants", "Socks", "Shirt"],
+      "answer": "Shirt"
+    },
+    {
+      "question": "What does the athlete wear on his feet?",
+      "options": ["Boots", "Sneakers", "Sandals", "Slippers"],
+      "answer": "Sneakers"
+    },
+    {
+      "question": "What is the name of the toy described as a circular object that moves up and down on a long piece of string?",
+      "options": ["Doll", "Car", "Yo-yo", "Kite"],
+      "answer": "Yo-yo"
+    },
+ 
+
+  {
+      "question": "A big animal with a trunk and gray color",
+      "options": ["Camel", "Elephant", "Bear", "Zebra"],
+      "answer": "Elephant"
+    },
+    {
+      "question": "A pet animal that barks is",
+      "options": ["Rabbit", "Cat", "Dog", "Horse"],
+      "answer": "Dog"
+    },
+    {
+      "question": "Which animal lives in African forests and has a long neck?",
+      "options": ["Giraffe", "Lion", "Zebra", "Elephant"],
+      "answer": "Giraffe"
+    },
+    {
+      "question": "The person who works in petroleum engineering",
+      "options": ["Mechanical engineer", "Electrician", "Driver", "Petroleum engineer"],
+      "answer": "Petroleum engineer"
+    },
+    {
+      "question": "What do we wear on our hands or wrists?",
+      "options": ["Shoes", "Bracelet / Watch", "Hat", "Gloves"],
+      "answer": "Bracelet / Watch"
+    },
+ 
+
+{
+    "question": "Which animal is well known for its ability to mimic human actions?",
+    "options": ["Horse 🐎", "Dog 🐕", "Monkey 🐒", "Cat 🐈"],
+    "answer": "Monkey 🐒",
+    "explanation": "القرد معروف بقدرته على تقليد تصرفات الإنسان."
+  },
+  {
+    "question": "Which animal has wings and a beak?",
+    "options": ["Dog 🐶", "Fish 🐟", "Rabbit 🐰", "Bird 🐦"],
+    "answer": "Bird 🐦",
+    "explanation": "الطائر هو الكائن الوحيد هنا اللي عنده جناحات ومنقار."
+  },
+  {
+    "question": "What is the fastest animal?",
+    "options": ["Lion 🦁", "Horse 🐎", "Cheetah 🐆", "Elephant 🐘"],
+    "answer": "Cheetah 🐆",
+    "explanation": "الفهد هو أسرع حيوان بري على الإطلاق."
+  },
+  {
+    "question": "Which animal is white and lays eggs?",
+    "options": ["Hen / chicken 🐔", "Dog 🐶", "Cat 🐱", "Cow 🐄"],
+    "answer": "Hen / chicken 🐔",
+    "explanation": "الدجاجة لونها أبيض وهي تبيض، عكس الحيوانات الأخرى."
+  },
+  {
+    "question": "What is the plural of (Woman)?",
+    "options": ["Wimen", "Womanses", "Women", "Womans"],
+    "answer": "Women",
+    "explanation": "جمع كلمة 'woman' هو 'women' وليس بإضافة 's' فقط."
+  },
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level7Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level7Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

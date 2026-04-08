@@ -1286,7 +1286,7 @@ async function showLevels() {
       }
 
       // NEW: دالة حساب إجمالي أسئلة المستوي (كل المجموعات)
-const GROUP_ENABLED_LEVELS = [1,2,15,24,25];  // المستويات ذات Groups
+const GROUP_ENABLED_LEVELS = Array.from({length: 25}, (_, i) => i+1);  // كل المستويات 1-25 بنظام Groups كامل
 
 async function getTotalQuestionsForLevel(level) {
   if (GROUP_ENABLED_LEVELS.includes(level)) {
