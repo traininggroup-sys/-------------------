@@ -5,7 +5,7 @@
 
 
 // 1. معلومات عامة (General)
-const general = [
+const behavioral = [
 
  
  
@@ -1395,9 +1395,9 @@ const general = [
 
 ]
 
-export const level15Groups = {general};
+export const level15Groups = {behavioral};
 
 console.log('✅ questions-level15Groups.js: ', {
-  general: general.length, 
+  behavioral: behavioral.length, 
 
 });

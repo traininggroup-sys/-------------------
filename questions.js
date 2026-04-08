@@ -104,4 +104,3 @@ window.levelsGroupsConfig = levelsGroupsConfig;
 console.log('✅ Groups Config: كل المستويات 1-25 جاهزة! 🎉');
 
 console.log('🚀 questions.js loaded - All levels ready (local only, level3-test merged)');
-
