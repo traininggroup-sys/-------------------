@@ -6,7 +6,8 @@ import { level2Groups } from './questions-level2Groups.js';
 import { level3Groups } from './questions-level3Groups.js';
 import { level4Groups } from './questions-level4Groups.js';
 import { level5Groups } from './questions-level5Groups.js';
-// Stubs سيتم إضافتهم هنا تلقائياً
+import { level6Groups } from './questions-level6Groups.js';
+
 
 // جديد: تحميل مجموعة من مستوى معين
 export async function loadGroupQuestions(level, groupName) {
@@ -19,6 +20,7 @@ export async function loadGroupQuestions(level, groupName) {
   window.allLevelsGroups[3] = level3Groups;
   window.allLevelsGroups[4] = level4Groups;
   window.allLevelsGroups[5] = level5Groups;
+  window.allLevelsGroups[6] = level6Groups;
   
   if (!window.allLevelsGroups?.[level]?.[groupName]) {
     console.warn(`⚠️ No questions for level ${level} group '${groupName}'`);
