@@ -9,8 +9,8 @@ import { level5Groups } from './questions-level5Groups.js';
 import { level6Groups } from './questions-level6Groups.js';
 import { level7Groups } from './questions-level7Groups.js';
 import { level8Groups } from './questions-level8Groups.js';
-import { level9Groups } from './questions-level8Groups.js';
-import { level10Groups } from './questions-level0Groups.js';
+import { level9Groups } from './questions-level9Groups.js';
+import { level10Groups } from './questions-level10Groups.js';
 import { level11Groups } from './questions-level11Groups.js';
 import { level12Groups } from './questions-level12Groups.js';
 import { level13Groups } from './questions-level13Groups.js';
@@ -25,7 +25,7 @@ import { level21Groups } from './questions-level21Groups.js';
 import { level22Groups } from './questions-level22Groups.js';
 import { level23Groups } from './questions-level23Groups.js';
 import { level24Groups } from './questions-level24Groups.js';
-import { level25Groups } from './questions-leve25Groups.js';
+import { level25Groups } from './questions-level25Groups.js';
 
 
 
