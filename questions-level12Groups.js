@@ -1,6 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level12Questions = [
+// بطل سرقة يا حرامي هتروح النار 😈
 
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "شهد الرئيس عبد الفتاح السيسي موكب المومياوات في عام ---",
     "options": ["2023", "2021", "2019", "2022", "2017"],
@@ -136,8 +141,11 @@ const level12Questions = [
     "answer": "الإسيسكو",
     "explanation": "الإسيسكو (ICESCO) هي منظمة العالم الإسلامي للتربية والعلوم والثقافة."
   },
- 
-  {
+];
+
+// 2. حاسب (Computer)
+const computer = [
+   {
     "question": "أي تبويب تستخدمه لمعرفة كيف سيبدو مستندك عند طباعته؟",
     "options": ["الصفحة الرئيسية", "مراجعة", "عرض", "المراسلات"],
     "answer": "عرض"
@@ -299,141 +307,11 @@ const level12Questions = [
     "answer": "2"
   },
 
- {
-    "question": "Is a purported disc-shaped UFO.",
-    "options": ["A satellite", "A drone", "A flying saucer", "A spaceship"],
-    "answer": "A flying saucer"
-  },
-  {
-    "question": "What has reduced the use of paper?",
-    "options": ["Computer", "Printer", "Book", "Notebook"],
-    "answer": "Computer"
-  },
-  {
-    "question": "What has two wheels and a motor?",
-    "options": ["Truck", "Car", "Bus", "Motorcycle"],
-    "answer": "Motorcycle"
-  },
-  {
-    "question": "Which fruit has a rough texture on the outside, is round, small, used to make juice, and has a red interior?",
-    "options": ["Apple", "Grapefruit", "Banana", "Watermelon"],
-    "answer": "Grapefruit"
-  },
-  {
-    "question": "What covers the window?",
-    "options": ["Pillow", "Carpet", "Curtain", "Tablecloth"],
-    "answer": "Curtain"
-  },
+];
 
 
-  {
-    "question": "Cakes ____ are flour, eggs and butter.",
-    "options": ["Colors", "Ingredients", "Styles", "Sizes"],
-    "answer": "Ingredients"
-  },
-  {
-    "question": "What do we do after washing our hands?",
-    "options": ["We wear gloves", "We shake hands", "We dry them with a towel", "We wash our face"],
-    "answer": "We dry them with a towel"
-  },
-  {
-    "question": "If you went to the desert, you would live in",
-    "options": ["Tent", "House", "Cave", "Hotel"],
-    "answer": "Tent"
-  },
-  {
-    "question": "Muslims go to ___ to pray.",
-    "options": ["Church", "Temple", "School", "Mosque"],
-    "answer": "Mosque"
-  },
-  {
-    "question": "The metallic object you use to write words is long and thin and usually made of wood.",
-    "options": ["Eraser", "Pencil", "Ruler", "Marker"],
-    "answer": "Pencil"
-  },
- 
-
-  {
-    "question": "What is a very sweet, juicy fruit with an edible peel and a hard pit in the middle that grows on trees?",
-    "options": ["Peach", "Apple", "Orange", "Plum"],
-    "answer": "Peach"
-  },
- 
-  {
-    "question": "What is used for cutting paper?",
-    "options": ["Knife", "Ruler", "Pen", "Scissors"],
-    "answer": "Scissors"
-  },
-  {
-    "question": "Where do we go when someone is sick?",
-    "options": ["Market", "Doctor", "School", "Park"],
-    "answer": "Doctor"
-  },
-  {
-    "question": "If you have an infection, what should you wear to protect others?",
-    "options": ["Cap", "Gloves", "Mask", "Glasses"],
-    "answer": "Mask"
-  },
-          {
-  "question": "What do you buy from the butcher?",
-  "options": ["Meat", "Fish", "Bread", "Cheese"],
-  "answer": "Meat"
-},
-
-  {
-    "question": "The killer who murdered the child was sentenced to death.",
-    "options": ["Imprisonment", "Death", "Warning", "Fine"],
-    "answer": "Death"
-  },
-  {
-    "question": "A hot drink and black is called ____",
-    "options": ["Milk", "Juice", "Tea", "Coffee"],
-    "answer": "Tea"
-  },
-  {
-    "question": "What flowers represent peace?",
-    "options": ["Peace Lily", "Sunflower", "Tulip", "Daisy"],
-    "answer": "Peace Lily"
-  },
-  {
-    "question": "What do we sleep on?",
-    "options": ["Chair", "Sofa", "Table", "Bed"],
-    "answer": "Bed"
-  },
-  {
-    "question": "Which fruit is yellow in color and sour in taste?",
-    "options": ["Banana", "Lemon", "Watermelon", "Mango"],
-    "answer": "Lemon"
-  },
- 
-
-{
-      "question": "A sea animal with a shell",
-      "options": ["Fish", "Turtle", "Octopus", "Whale"],
-      "answer": "Turtle"
-    },
-    {
-      "question": "Resala is a big____.",
-      "options": ["Hospital", "Restaurant", "Charity", "School"],
-      "answer": "Charity"
-    },
-    {
-      "question": "___ help some people to see better.",
-      "options": ["Glasses", "Shoes", "Watches", "Gloves"],
-      "answer": "Glasses"
-    },
-    {
-      "question": "An animal climbs trees?",
-      "options": ["Dog", "Elephant", "Horse", "Monkey"],
-      "answer": "Monkey"
-    },
-    {
-      "question": "We use _ to navigate on the computer screen.",
-      "options": ["Keyboard", "Mouse", "Monitor", "Printer"],
-      "answer": "Mouse"
-    },
-  
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "النون في (الرجال يدعون-النساء يدعون):",
   "options": [
@@ -661,7 +539,167 @@ const level12Questions = [
   
   
 
-]
-export { level12Questions };
-console.log('✅ questions-level12.js ready - Password protected level');
+];
 
+
+
+
+
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "Is a purported disc-shaped UFO.",
+    "options": ["A satellite", "A drone", "A flying saucer", "A spaceship"],
+    "answer": "A flying saucer"
+  },
+  {
+    "question": "What has reduced the use of paper?",
+    "options": ["Computer", "Printer", "Book", "Notebook"],
+    "answer": "Computer"
+  },
+  {
+    "question": "What has two wheels and a motor?",
+    "options": ["Truck", "Car", "Bus", "Motorcycle"],
+    "answer": "Motorcycle"
+  },
+  {
+    "question": "Which fruit has a rough texture on the outside, is round, small, used to make juice, and has a red interior?",
+    "options": ["Apple", "Grapefruit", "Banana", "Watermelon"],
+    "answer": "Grapefruit"
+  },
+  {
+    "question": "What covers the window?",
+    "options": ["Pillow", "Carpet", "Curtain", "Tablecloth"],
+    "answer": "Curtain"
+  },
+
+
+  {
+    "question": "Cakes ____ are flour, eggs and butter.",
+    "options": ["Colors", "Ingredients", "Styles", "Sizes"],
+    "answer": "Ingredients"
+  },
+  {
+    "question": "What do we do after washing our hands?",
+    "options": ["We wear gloves", "We shake hands", "We dry them with a towel", "We wash our face"],
+    "answer": "We dry them with a towel"
+  },
+  {
+    "question": "If you went to the desert, you would live in",
+    "options": ["Tent", "House", "Cave", "Hotel"],
+    "answer": "Tent"
+  },
+  {
+    "question": "Muslims go to ___ to pray.",
+    "options": ["Church", "Temple", "School", "Mosque"],
+    "answer": "Mosque"
+  },
+  {
+    "question": "The metallic object you use to write words is long and thin and usually made of wood.",
+    "options": ["Eraser", "Pencil", "Ruler", "Marker"],
+    "answer": "Pencil"
+  },
+ 
+
+  {
+    "question": "What is a very sweet, juicy fruit with an edible peel and a hard pit in the middle that grows on trees?",
+    "options": ["Peach", "Apple", "Orange", "Plum"],
+    "answer": "Peach"
+  },
+ 
+  {
+    "question": "What is used for cutting paper?",
+    "options": ["Knife", "Ruler", "Pen", "Scissors"],
+    "answer": "Scissors"
+  },
+  {
+    "question": "Where do we go when someone is sick?",
+    "options": ["Market", "Doctor", "School", "Park"],
+    "answer": "Doctor"
+  },
+  {
+    "question": "If you have an infection, what should you wear to protect others?",
+    "options": ["Cap", "Gloves", "Mask", "Glasses"],
+    "answer": "Mask"
+  },
+          {
+  "question": "What do you buy from the butcher?",
+  "options": ["Meat", "Fish", "Bread", "Cheese"],
+  "answer": "Meat"
+},
+
+  {
+    "question": "The killer who murdered the child was sentenced to death.",
+    "options": ["Imprisonment", "Death", "Warning", "Fine"],
+    "answer": "Death"
+  },
+  {
+    "question": "A hot drink and black is called ____",
+    "options": ["Milk", "Juice", "Tea", "Coffee"],
+    "answer": "Tea"
+  },
+  {
+    "question": "What flowers represent peace?",
+    "options": ["Peace Lily", "Sunflower", "Tulip", "Daisy"],
+    "answer": "Peace Lily"
+  },
+  {
+    "question": "What do we sleep on?",
+    "options": ["Chair", "Sofa", "Table", "Bed"],
+    "answer": "Bed"
+  },
+  {
+    "question": "Which fruit is yellow in color and sour in taste?",
+    "options": ["Banana", "Lemon", "Watermelon", "Mango"],
+    "answer": "Lemon"
+  },
+ 
+
+{
+      "question": "A sea animal with a shell",
+      "options": ["Fish", "Turtle", "Octopus", "Whale"],
+      "answer": "Turtle"
+    },
+    {
+      "question": "Resala is a big____.",
+      "options": ["Hospital", "Restaurant", "Charity", "School"],
+      "answer": "Charity"
+    },
+    {
+      "question": "___ help some people to see better.",
+      "options": ["Glasses", "Shoes", "Watches", "Gloves"],
+      "answer": "Glasses"
+    },
+    {
+      "question": "An animal climbs trees?",
+      "options": ["Dog", "Elephant", "Horse", "Monkey"],
+      "answer": "Monkey"
+    },
+    {
+      "question": "We use _ to navigate on the computer screen.",
+      "options": ["Keyboard", "Mouse", "Monitor", "Printer"],
+      "answer": "Mouse"
+    },
+  
+
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level12Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level12Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

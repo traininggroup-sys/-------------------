@@ -1,7 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level10Questions = [
+// بطل سرقة يا حرامي هتروح النار 😈
 
- 
+// Level 10 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "أكبر دولة في أفريقيا من حيث المساحة هي؟",
     "options": ["مصر", "الإمارات", "الجزائر", "المغرب", "ليبيا"],
@@ -155,8 +159,11 @@ const level10Questions = [
     "answer": "2015",
     "explanation": "صدر قانون مكافحة الإرهاب في مصر عام 2015 لتنظيم آليات مكافحة الجرائم الإرهابية."
   },
+];
 
-{
+// 2. حاسب (Computer)
+const computer = [
+ {
     "question": "عدد هوامش الصفحة في برنامج Word هو:",
     "options": ["1", "2", "3", "4"],
     "answer": "4"
@@ -311,143 +318,11 @@ const level10Questions = [
           answer: "خطأ",
         },
 
-  {
-    "question": "A winter sport that we use to glide over snow is",
-    "options": ["Swimming", "Running", "Skiing", "Football"],
-    "answer": "Skiing"
-  },
-  {
-    "question": "A metallic object used to open a door is called a",
-    "options": ["Key", "Knife", "Ring", "Coin"],
-    "answer": "Key"
-  },
-  {
-    "question": "I have a cough, so I will go to the ____",
-    "options": ["School", "Pharmacy", "Office", "Doctor"],
-    "answer": "Doctor"
-  },
-  {
-    "question": "The color of the sky is ____",
-    "options": ["Green", "Blue", "Red", "Black"],
-    "answer": "Blue"
-  },
-  {
-    "question": "A smooth fruit with a seed inside is a ____",
-    "options": ["Apple", "Pear", "Mango", "Peach"],
-    "answer": "Mango"
-  },
+];
 
 
-  {
-    "question": "Black and white photos of people often give a sense of ____",
-    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
-    "answer": "Old Fashioned"
-  },
-  {
-    "question": "Money lent by a bank is called a ____",
-    "options": ["Salary", "Debt", "Loan", "Bill"],
-    "answer": "Loan"
-  },
-  {
-    "question": "What do we use to print paper?",
-    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
-    "answer": "Printer"
-  },
-  {
-    "question": "Where do people usually go to buy food and groceries?",
-    "options": ["School", "Office", "Hospital", "Market"],
-    "answer": "Market"
-  },
-  {
-    "question": "It is used to store food and drink",
-    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
-    "answer": "Fridge"
-  },
-
- {
-    "question": "What is the name of the person who flies airplanes?",
-    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
-    "answer": "Pilot"
-  },
-  {
-    "question": "What do we use to draw?",
-    "options": ["Brush", "Knife", "Needle", "Chalk"],
-    "answer": "Brush"
-  },
-  {
-    "question": "What do we call the son of a sister?",
-    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
-    "answer": "Nephew"
-  },
-  {
-    "question": "The first meal is ____",
-    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
-    "answer": "Breakfast"
-  },
-  {
-    "question": "Something you wear on your face to protect against disease is a ____",
-    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
-    "answer": "Mask"
-  },
-
- {
-    "question": "The day between Tuesday and Thursday is ____",
-    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
-    "answer": "Wednesday"
-  },
-  {
-    "question": "How many days do we have in a week?",
-    "options": ["5", "6", "7", "4"],
-    "answer": "7"
-  },
-  {
-    "question": "Which month comes between September and November?",
-    "options": ["October", "August", "November", "September"],
-    "answer": "October"
-  },
-  {
-    "question": "Which month comes before April?",
-    "options": ["February", "May", "June", "March"],
-    "answer": "March"
-  },
-  {
-    "question": "Which month comes after January?",
-    "options": ["March", "February", "May", "June"],
-    "answer": "February"
-  },
-
-
- {
-    "question": "I ____ a headache.",
-    "options": ["Having", "Havee", "Have", "Has"],
-    "answer": "Have",
-    "explanation": "الشكل الصحيح للجملة هو I have a headache."
-  },
-  {
-    "question": "The _____ is the most important person in the company.",
-    "options": ["Manager", "Janitor", "Customer", "Driver"],
-    "answer": "Manager",
-    "explanation": "المدير هو الشخص الأكثر أهمية في الشركة من حيث الإدارة."
-  },
-  {
-    "question": "What is the device used to print the paper?",
-    "options": ["Monitor", "Camera", "Computer", "Printer"],
-    "answer": "Printer",
-    "explanation": "الطابعة هي الجهاز المستخدم لطباعة الورق."
-  },
-  {
-    "question": "What do we use after a shower to dry our bodies and hands?",
-    "options": ["Razor", "Towel", "Sponge", "Lotion"],
-    "answer": "Towel",
-    "explanation": "نستخدم المنشفة لتجفيف الجسم بعد الاستحمام."
-  },
-  {
-    "question": "What do we call the person who makes and sells bread?",
-    "options": ["Doctor", "Baker", "Teacher", "Worker"],
-    "answer": "Baker",
-    "explanation": "الشخص الذي يصنع ويبيع الخبز يُسمى خبّاز."
-  },
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "قم الليل إلا قليلًا – الأسلوب:",
   "options": [
@@ -679,9 +554,168 @@ const level10Questions = [
     "answer": "فعل"
   },
 
- 
+];
 
-]
-export { level10Questions };
-console.log('✅ questions-level10.js ready');
 
+
+
+
+// 4. انجليزي (English)
+const english = [
+   {
+    "question": "A winter sport that we use to glide over snow is",
+    "options": ["Swimming", "Running", "Skiing", "Football"],
+    "answer": "Skiing"
+  },
+  {
+    "question": "A metallic object used to open a door is called a",
+    "options": ["Key", "Knife", "Ring", "Coin"],
+    "answer": "Key"
+  },
+  {
+    "question": "I have a cough, so I will go to the ____",
+    "options": ["School", "Pharmacy", "Office", "Doctor"],
+    "answer": "Doctor"
+  },
+  {
+    "question": "The color of the sky is ____",
+    "options": ["Green", "Blue", "Red", "Black"],
+    "answer": "Blue"
+  },
+  {
+    "question": "A smooth fruit with a seed inside is a ____",
+    "options": ["Apple", "Pear", "Mango", "Peach"],
+    "answer": "Mango"
+  },
+
+
+  {
+    "question": "Black and white photos of people often give a sense of ____",
+    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
+    "answer": "Old Fashioned"
+  },
+  {
+    "question": "Money lent by a bank is called a ____",
+    "options": ["Salary", "Debt", "Loan", "Bill"],
+    "answer": "Loan"
+  },
+  {
+    "question": "What do we use to print paper?",
+    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
+    "answer": "Printer"
+  },
+  {
+    "question": "Where do people usually go to buy food and groceries?",
+    "options": ["School", "Office", "Hospital", "Market"],
+    "answer": "Market"
+  },
+  {
+    "question": "It is used to store food and drink",
+    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
+    "answer": "Fridge"
+  },
+
+ {
+    "question": "What is the name of the person who flies airplanes?",
+    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
+    "answer": "Pilot"
+  },
+  {
+    "question": "What do we use to draw?",
+    "options": ["Brush", "Knife", "Needle", "Chalk"],
+    "answer": "Brush"
+  },
+  {
+    "question": "What do we call the son of a sister?",
+    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
+    "answer": "Nephew"
+  },
+  {
+    "question": "The first meal is ____",
+    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
+    "answer": "Breakfast"
+  },
+  {
+    "question": "Something you wear on your face to protect against disease is a ____",
+    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
+    "answer": "Mask"
+  },
+
+ {
+    "question": "The day between Tuesday and Thursday is ____",
+    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
+    "answer": "Wednesday"
+  },
+  {
+    "question": "How many days do we have in a week?",
+    "options": ["5", "6", "7", "4"],
+    "answer": "7"
+  },
+  {
+    "question": "Which month comes between September and November?",
+    "options": ["October", "August", "November", "September"],
+    "answer": "October"
+  },
+  {
+    "question": "Which month comes before April?",
+    "options": ["February", "May", "June", "March"],
+    "answer": "March"
+  },
+  {
+    "question": "Which month comes after January?",
+    "options": ["March", "February", "May", "June"],
+    "answer": "February"
+  },
+
+
+ {
+    "question": "I ____ a headache.",
+    "options": ["Having", "Havee", "Have", "Has"],
+    "answer": "Have",
+    "explanation": "الشكل الصحيح للجملة هو I have a headache."
+  },
+  {
+    "question": "The _____ is the most important person in the company.",
+    "options": ["Manager", "Janitor", "Customer", "Driver"],
+    "answer": "Manager",
+    "explanation": "المدير هو الشخص الأكثر أهمية في الشركة من حيث الإدارة."
+  },
+  {
+    "question": "What is the device used to print the paper?",
+    "options": ["Monitor", "Camera", "Computer", "Printer"],
+    "answer": "Printer",
+    "explanation": "الطابعة هي الجهاز المستخدم لطباعة الورق."
+  },
+  {
+    "question": "What do we use after a shower to dry our bodies and hands?",
+    "options": ["Razor", "Towel", "Sponge", "Lotion"],
+    "answer": "Towel",
+    "explanation": "نستخدم المنشفة لتجفيف الجسم بعد الاستحمام."
+  },
+  {
+    "question": "What do we call the person who makes and sells bread?",
+    "options": ["Doctor", "Baker", "Teacher", "Worker"],
+    "answer": "Baker",
+    "explanation": "الشخص الذي يصنع ويبيع الخبز يُسمى خبّاز."
+  },
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level10Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level10Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

@@ -1,7 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level20Questions = [
+// 1. معلومات عامة (General)
+const general = [
 
   {
     "question": "يوجد بمكتبة الإسكندرية:",
@@ -156,8 +160,11 @@ const level20Questions = [
     "answer": "صح",
     "explanation": "الحديد من الفلزات التي تُعد موصلات جيدة للكهرباء بسبب وجود إلكترونات حرة."
   },
+];
 
-{
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "يتم استخدام Microsoft Excel (الجداول الإلكترونية) لـ.....؟",
     "options": ["تحليل", "المحاسبة", "الميزانية", "كل ما سبق"],
     "answer": "كل ما سبق"
@@ -293,161 +300,11 @@ const level20Questions = [
     "options": ["Macfes", "Microsoft Write", "Word Pad"],
     "answer": "Microsoft Write"
   },
- 
+];
 
- {
-    "question": "What is the plural of the word 'child'?",
-    "options": ["Childes", "Childs", "Children", "Childer"],
-    "answer": "Children",
-    "explanation": "Child معناها طفل، وجمعها غير منتظم بيكون Children."
-  },
-  {
-    "question": "What is the plural of 'mouse'?",
-    "options": ["Mice", "Mouses", "Mices", "Mouse"],
-    "answer": "Mice",
-    "explanation": "Mouse معناها فأر، وجمعها غير منتظم بيكون Mice."
-  },
-  {
-    "question": "What is the plural of 'book'?",
-    "options": ["Book", "Boks", "Bookes", "Books"],
-    "answer": "Books",
-    "explanation": "Book معناها كتاب، والجمع الصحيح بإضافة s: Books."
-  },
-  {
-    "question": "Select the most appropriate synonym of 'Beautiful'",
-    "options": ["Obnoxious", "Pretty", "Despicable", "Detestable"],
-    "answer": "Pretty",
-    "explanation": "Pretty معناها جميل، وهي أقرب مرادف لكلمة Beautiful."
-  },
-  {
-    "question": "What is the antonym of 'full'?",
-    "options": ["Long", "Clean", "Empty", "Old"],
-    "answer": "Empty",
-    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
-  },
 
-  {
-    "question": "What is the antonym of (full)?",
-    "options": ["Clean", "Empty", "Long", "Old"],
-    "answer": "Empty",
-    "explanation": "كلمة full معناها ممتلئ، وعكسها هو empty (فارغ)."
-  },
-  {
-    "question": "What is the opposite of (spend)?",
-    "options": ["Buy", "Lose", "Save", "Waste"],
-    "answer": "Save",
-    "explanation": "Spend معناها ينفق، وعكسها Save (يدخر)."
-  },
-  {
-    "question": "What is the opposite of (happy)?",
-    "options": ["Sad", "Angry", "Crazy", "Tired"],
-    "answer": "Sad",
-    "explanation": "Happy معناها سعيد، وعكسها Sad (حزين)."
-  },
-  {
-    "question": "The opposite of 'soft' is ____.",
-    "options": ["Smooth", "Firm", "Rough", "Hard"],
-    "answer": "Hard",
-    "explanation": "Soft معناها ناعم أو لين، وعكسها Hard (صلب)."
-  },
-  {
-    "question": "Which question word is used to ask about people?",
-    "options": ["What", "Who", "Where", "Why"],
-    "answer": "Who",
-    "explanation": "نستخدم Who للسؤال عن الأشخاص."
-  },
-  
-
- {
-    "question": "The opposite of the word 'full' is ____",
-    "options": ["Big", "Filled", "Empty", "Complete"],
-    "answer": "Empty",
-    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
-  },
-  {
-    "question": "The opposite of the word 'happy' is ____",
-    "options": ["Sad", "Glad", "Joyful", "Kind"],
-    "answer": "Sad",
-    "explanation": "Happy معناها سعيد، وعكسها Sad اللي معناها حزين."
-  },
-  {
-    "question": "The opposite of the word 'big' is ____",
-    "options": ["Huge", "Tall", "Large", "Small"],
-    "answer": "Small",
-    "explanation": "Big معناها كبير، وعكسها Small يعني صغير."
-  },
-  {
-    "question": "The opposite of the word 'light' is ____",
-    "options": ["Lamp", "Darkness", "Brightness", "Clear"],
-    "answer": "Darkness",
-    "explanation": "Light معناها ضوء، وعكسها Darkness يعني الظلام."
-  },
-  {
-    "question": "What is the opposite of 'up'?",
-    "options": ["Top", "Rise", "Down", "Open"],
-    "answer": "Down",
-    "explanation": "Up معناها أعلى، وعكسها Down يعني أسفل."
-  },
-  
-
-{
-    "question": "The plural of 'man' is ____",
-    "options": ["Mans", "Men", "Males", "Mens"],
-    "answer": "Men",
-    "explanation": "Man معناها رجل، وجمعها الصحيح هو Men."
-  },
-  {
-    "question": "The plural of 'fox' is ____",
-    "options": ["Foes", "Foxs", "Foxes", "Fox"],
-    "answer": "Foxes",
-    "explanation": "Fox معناها ثعلب، وجمعها الصحيح Foxes بإضافة es."
-  },
-  {
-    "question": "The plural of 'foot' is ____",
-    "options": ["Feet", "Foots", "Feets", "Foot"],
-    "answer": "Feet",
-    "explanation": "Foot معناها قدم، وجمعها الصحيح هو Feet."
-  },
-  {
-    "question": "What is the plural of the word 'baby'?",
-    "options": ["Baby", "Babyes", "Babys", "Babies"],
-    "answer": "Babies",
-    "explanation": "Baby بتنتهي بـ y وقبلها حرف ساكن، فبنشيل y ونضيف ies عشان نجيب الجمع الصحيح: Babies."
-  },
-  {
-    "question": "What is the plural of the word 'foot'?",
-    "options": ["Foots", "Feet", "Feets", "Foot"],
-    "answer": "Feet",
-    "explanation": "Foot معناها قدم، والجمع غير منتظم بيكون Feet."
-  },
- 
-
- {
-    "question": "What is the name of the person who flies airplanes?",
-    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
-    "answer": "Pilot"
-  },
-  {
-    "question": "What do we use to draw?",
-    "options": ["Brush", "Knife", "Needle", "Chalk"],
-    "answer": "Brush"
-  },
-  {
-    "question": "What do we call the son of a sister?",
-    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
-    "answer": "Nephew"
-  },
-  {
-    "question": "The first meal is ____",
-    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
-    "answer": "Breakfast"
-  },
-  {
-    "question": "Something you wear on your face to protect against disease is a ____",
-    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
-    "answer": "Mask"
-  },
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "اختر الجملة الصحيحة",
   "options": [
@@ -683,9 +540,184 @@ const level20Questions = [
   "answer": "حضر خمس عشرة طالبةً"
 },
 
+];
 
 
-]
-export { level20Questions };
-console.log('✅ questions-level1.js ready -', level20Questions.length, 'questions (pure JS objects/JSON)');
 
+
+
+// 4. انجليزي (English)
+const english = [
+
+ {
+    "question": "What is the plural of the word 'child'?",
+    "options": ["Childes", "Childs", "Children", "Childer"],
+    "answer": "Children",
+    "explanation": "Child معناها طفل، وجمعها غير منتظم بيكون Children."
+  },
+  {
+    "question": "What is the plural of 'mouse'?",
+    "options": ["Mice", "Mouses", "Mices", "Mouse"],
+    "answer": "Mice",
+    "explanation": "Mouse معناها فأر، وجمعها غير منتظم بيكون Mice."
+  },
+  {
+    "question": "What is the plural of 'book'?",
+    "options": ["Book", "Boks", "Bookes", "Books"],
+    "answer": "Books",
+    "explanation": "Book معناها كتاب، والجمع الصحيح بإضافة s: Books."
+  },
+  {
+    "question": "Select the most appropriate synonym of 'Beautiful'",
+    "options": ["Obnoxious", "Pretty", "Despicable", "Detestable"],
+    "answer": "Pretty",
+    "explanation": "Pretty معناها جميل، وهي أقرب مرادف لكلمة Beautiful."
+  },
+  {
+    "question": "What is the antonym of 'full'?",
+    "options": ["Long", "Clean", "Empty", "Old"],
+    "answer": "Empty",
+    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
+  },
+
+  {
+    "question": "What is the antonym of (full)?",
+    "options": ["Clean", "Empty", "Long", "Old"],
+    "answer": "Empty",
+    "explanation": "كلمة full معناها ممتلئ، وعكسها هو empty (فارغ)."
+  },
+  {
+    "question": "What is the opposite of (spend)?",
+    "options": ["Buy", "Lose", "Save", "Waste"],
+    "answer": "Save",
+    "explanation": "Spend معناها ينفق، وعكسها Save (يدخر)."
+  },
+  {
+    "question": "What is the opposite of (happy)?",
+    "options": ["Sad", "Angry", "Crazy", "Tired"],
+    "answer": "Sad",
+    "explanation": "Happy معناها سعيد، وعكسها Sad (حزين)."
+  },
+  {
+    "question": "The opposite of 'soft' is ____.",
+    "options": ["Smooth", "Firm", "Rough", "Hard"],
+    "answer": "Hard",
+    "explanation": "Soft معناها ناعم أو لين، وعكسها Hard (صلب)."
+  },
+  {
+    "question": "Which question word is used to ask about people?",
+    "options": ["What", "Who", "Where", "Why"],
+    "answer": "Who",
+    "explanation": "نستخدم Who للسؤال عن الأشخاص."
+  },
+  
+
+ {
+    "question": "The opposite of the word 'full' is ____",
+    "options": ["Big", "Filled", "Empty", "Complete"],
+    "answer": "Empty",
+    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
+  },
+  {
+    "question": "The opposite of the word 'happy' is ____",
+    "options": ["Sad", "Glad", "Joyful", "Kind"],
+    "answer": "Sad",
+    "explanation": "Happy معناها سعيد، وعكسها Sad اللي معناها حزين."
+  },
+  {
+    "question": "The opposite of the word 'big' is ____",
+    "options": ["Huge", "Tall", "Large", "Small"],
+    "answer": "Small",
+    "explanation": "Big معناها كبير، وعكسها Small يعني صغير."
+  },
+  {
+    "question": "The opposite of the word 'light' is ____",
+    "options": ["Lamp", "Darkness", "Brightness", "Clear"],
+    "answer": "Darkness",
+    "explanation": "Light معناها ضوء، وعكسها Darkness يعني الظلام."
+  },
+  {
+    "question": "What is the opposite of 'up'?",
+    "options": ["Top", "Rise", "Down", "Open"],
+    "answer": "Down",
+    "explanation": "Up معناها أعلى، وعكسها Down يعني أسفل."
+  },
+  
+
+{
+    "question": "The plural of 'man' is ____",
+    "options": ["Mans", "Men", "Males", "Mens"],
+    "answer": "Men",
+    "explanation": "Man معناها رجل، وجمعها الصحيح هو Men."
+  },
+  {
+    "question": "The plural of 'fox' is ____",
+    "options": ["Foes", "Foxs", "Foxes", "Fox"],
+    "answer": "Foxes",
+    "explanation": "Fox معناها ثعلب، وجمعها الصحيح Foxes بإضافة es."
+  },
+  {
+    "question": "The plural of 'foot' is ____",
+    "options": ["Feet", "Foots", "Feets", "Foot"],
+    "answer": "Feet",
+    "explanation": "Foot معناها قدم، وجمعها الصحيح هو Feet."
+  },
+  {
+    "question": "What is the plural of the word 'baby'?",
+    "options": ["Baby", "Babyes", "Babys", "Babies"],
+    "answer": "Babies",
+    "explanation": "Baby بتنتهي بـ y وقبلها حرف ساكن، فبنشيل y ونضيف ies عشان نجيب الجمع الصحيح: Babies."
+  },
+  {
+    "question": "What is the plural of the word 'foot'?",
+    "options": ["Foots", "Feet", "Feets", "Foot"],
+    "answer": "Feet",
+    "explanation": "Foot معناها قدم، والجمع غير منتظم بيكون Feet."
+  },
+ 
+
+ {
+    "question": "What is the name of the person who flies airplanes?",
+    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
+    "answer": "Pilot"
+  },
+  {
+    "question": "What do we use to draw?",
+    "options": ["Brush", "Knife", "Needle", "Chalk"],
+    "answer": "Brush"
+  },
+  {
+    "question": "What do we call the son of a sister?",
+    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
+    "answer": "Nephew"
+  },
+  {
+    "question": "The first meal is ____",
+    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
+    "answer": "Breakfast"
+  },
+  {
+    "question": "Something you wear on your face to protect against disease is a ____",
+    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
+    "answer": "Mask"
+  },
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level20Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level20Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

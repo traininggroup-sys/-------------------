@@ -1,6 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level11Questions = [
+// بطل سرقة يا حرامي هتروح النار 😈
 
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "ينتقل الضوء في مسار _____",
     "options": ["مستقيم", "متعرج", "دائري", "منكسر", "لا شيء"],
@@ -138,15 +143,18 @@ const level11Questions = [
     "options": ["سميرة موسى", "لطيفة الزيات", "حكمت أبو زيد", "عائشة محمد"],
     "answer": "حكمت أبو زيد",
     "explanation": "تُعد حكمت أبو زيد أول سيدة تتولى منصب وزيرة في مصر حيث عُينت وزيرة للشئون الاجتماعية عام 1962 في عهد الرئيس جمال عبد الناصر."
-  },
-  {
+  }, {
     "question": "اختصار منظمة الأمم المتحدة للتنمية الصناعية هو؟",
     "options": ["اليونيدو", "اليونيسكو", "الفاو", "الأونكتاد", "اليونيسف", "الإسيسكو"],
     "answer": "اليونيدو",
     "explanation": "اليونيدو (UNIDO) هي منظمة الأمم المتحدة للتنمية الصناعية."
   },
 
-{
+];
+
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "ما الاسم الصحيح لشريط الأوامر في برامج Microsoft Office؟",
     "options": ["شريط الأدوات", "شريط الأوامر", "الشريط (Ribbon)", "شريط القوائم"],
     "answer": "الشريط (Ribbon)"
@@ -241,7 +249,7 @@ const level11Questions = [
     "question": "الصفحة الأولى التي تحتوي على عنوان المستند، اسم الكاتب، والتاريخ من المستند هي ………؟",
     "options": ["الصفحة الأولى", "صفحة الغلاف", "الملف", "لا شيء مما سبق"],
     "answer": "صفحة الغلاف"
-  },,
+  },
   {
   "question": "يمكن لبرنامج Word أن يقوم بـ:",
   "options": [
@@ -313,145 +321,11 @@ const level11Questions = [
     ],
     "answer": "جهاز الإدخال"
   },
-
-  {
-    "question": "What is a very sweet, juicy fruit with an edible peel and a hard pit in the middle that grows on trees?",
-    "options": ["Peach", "Apple", "Orange", "Plum"],
-    "answer": "Peach"
-  },
- 
-  {
-    "question": "What is used for cutting paper?",
-    "options": ["Knife", "Ruler", "Pen", "Scissors"],
-    "answer": "Scissors"
-  },
-  {
-    "question": "Where do we go when someone is sick?",
-    "options": ["Market", "Doctor", "School", "Park"],
-    "answer": "Doctor"
-  },
-  {
-    "question": "If you have an infection, what should you wear to protect others?",
-    "options": ["Cap", "Gloves", "Mask", "Glasses"],
-    "answer": "Mask"
-  },
-          {
-  "question": "What do you buy from the butcher?",
-  "options": ["Meat", "Fish", "Bread", "Cheese"],
-  "answer": "Meat"
-},
-
-  {
-    "question": "The killer who murdered the child was sentenced to death.",
-    "options": ["Imprisonment", "Death", "Warning", "Fine"],
-    "answer": "Death"
-  },
-  {
-    "question": "A hot drink and black is called ____",
-    "options": ["Milk", "Juice", "Tea", "Coffee"],
-    "answer": "Tea"
-  },
-  {
-    "question": "What flowers represent peace?",
-    "options": ["Peace Lily", "Sunflower", "Tulip", "Daisy"],
-    "answer": "Peace Lily"
-  },
-  {
-    "question": "What do we sleep on?",
-    "options": ["Chair", "Sofa", "Table", "Bed"],
-    "answer": "Bed"
-  },
-  {
-    "question": "Which fruit is yellow in color and sour in taste?",
-    "options": ["Banana", "Lemon", "Watermelon", "Mango"],
-    "answer": "Lemon"
-  },
- 
-
-  {
-    "question": "A winter sport that we use to glide over snow is",
-    "options": ["Swimming", "Running", "Skiing", "Football"],
-    "answer": "Skiing"
-  },
-  {
-    "question": "A metallic object used to open a door is called a",
-    "options": ["Key", "Knife", "Ring", "Coin"],
-    "answer": "Key"
-  },
-  {
-    "question": "I have a cough, so I will go to the ____",
-    "options": ["School", "Pharmacy", "Office", "Doctor"],
-    "answer": "Doctor"
-  },
-  {
-    "question": "The color of the sky is ____",
-    "options": ["Green", "Blue", "Red", "Black"],
-    "answer": "Blue"
-  },
-  {
-    "question": "A smooth fruit with a seed inside is a ____",
-    "options": ["Apple", "Pear", "Mango", "Peach"],
-    "answer": "Mango"
-  },
+];
 
 
-  {
-    "question": "Black and white photos of people often give a sense of ____",
-    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
-    "answer": "Old Fashioned"
-  },
-  {
-    "question": "Money lent by a bank is called a ____",
-    "options": ["Salary", "Debt", "Loan", "Bill"],
-    "answer": "Loan"
-  },
-  {
-    "question": "What do we use to print paper?",
-    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
-    "answer": "Printer"
-  },
-  {
-    "question": "Where do people usually go to buy food and groceries?",
-    "options": ["School", "Office", "Hospital", "Market"],
-    "answer": "Market"
-  },
-  {
-    "question": "It is used to store food and drink",
-    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
-    "answer": "Fridge"
-  },
-
-{
-    "question": "Made of metal and plastic and used in writing.",
-    "options": ["Ruler", "Eraser", "Pencil", "Pen"],
-    "answer": "Pen",
-    "explanation": "القلم مصنوع من البلاستيك والمعدن ويُستخدم في الكتابة."
-  },
-  {
-    "question": "When we mix black color with white color, the result is?",
-    "options": ["Red", "Grey", "Black", "White"],
-    "answer": "Grey",
-    "explanation": "عند خلط الأبيض والأسود نحصل على اللون الرمادي."
-  },
-  {
-    "question": "Where do we go to play sports?",
-    "options": ["School", "Mosque", "Club", "Home"],
-    "answer": "Club",
-    "explanation": "نذهب إلى النادي لممارسة الأنشطة الرياضية."
-  },
-  {
-    "question": "What is the season before summer? What is the season after the winter?",
-    "options": ["Winter", "Autumn", "Summer", "Spring"],
-    "answer": "Spring",
-    "explanation": "الربيع يأتي بعد الشتاء وقبل الصيف."
-  },
-  {
-    "question": "We feel cold in the ____.",
-    "options": ["Summer", "Winter", "Autumn", "Summer"],
-    "answer": "Winter",
-    "explanation": "نشعر بالبرد في فصل الشتاء بسبب انخفاض درجات الحرارة."
-  },
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "ولا تلبسوا الحق بالباطل – الفعل (تلبسوا):",
   "options": [
@@ -679,10 +553,168 @@ const level11Questions = [
     ],
     "answer": "نقطتان رأسيتان - نقطة"
   },
+];
 
-  
 
-]
-export { level11Questions };
-console.log('✅ questions-level11.js ready - Password protected level');
 
+
+
+// 4. انجليزي (English)
+const english = [
+ {
+    "question": "What is a very sweet, juicy fruit with an edible peel and a hard pit in the middle that grows on trees?",
+    "options": ["Peach", "Apple", "Orange", "Plum"],
+    "answer": "Peach"
+  },
+ 
+  {
+    "question": "What is used for cutting paper?",
+    "options": ["Knife", "Ruler", "Pen", "Scissors"],
+    "answer": "Scissors"
+  },
+  {
+    "question": "Where do we go when someone is sick?",
+    "options": ["Market", "Doctor", "School", "Park"],
+    "answer": "Doctor"
+  },
+  {
+    "question": "If you have an infection, what should you wear to protect others?",
+    "options": ["Cap", "Gloves", "Mask", "Glasses"],
+    "answer": "Mask"
+  },
+          {
+  "question": "What do you buy from the butcher?",
+  "options": ["Meat", "Fish", "Bread", "Cheese"],
+  "answer": "Meat"
+},
+
+  {
+    "question": "The killer who murdered the child was sentenced to death.",
+    "options": ["Imprisonment", "Death", "Warning", "Fine"],
+    "answer": "Death"
+  },
+  {
+    "question": "A hot drink and black is called ____",
+    "options": ["Milk", "Juice", "Tea", "Coffee"],
+    "answer": "Tea"
+  },
+  {
+    "question": "What flowers represent peace?",
+    "options": ["Peace Lily", "Sunflower", "Tulip", "Daisy"],
+    "answer": "Peace Lily"
+  },
+  {
+    "question": "What do we sleep on?",
+    "options": ["Chair", "Sofa", "Table", "Bed"],
+    "answer": "Bed"
+  },
+  {
+    "question": "Which fruit is yellow in color and sour in taste?",
+    "options": ["Banana", "Lemon", "Watermelon", "Mango"],
+    "answer": "Lemon"
+  },
+ 
+
+  {
+    "question": "A winter sport that we use to glide over snow is",
+    "options": ["Swimming", "Running", "Skiing", "Football"],
+    "answer": "Skiing"
+  },
+  {
+    "question": "A metallic object used to open a door is called a",
+    "options": ["Key", "Knife", "Ring", "Coin"],
+    "answer": "Key"
+  },
+  {
+    "question": "I have a cough, so I will go to the ____",
+    "options": ["School", "Pharmacy", "Office", "Doctor"],
+    "answer": "Doctor"
+  },
+  {
+    "question": "The color of the sky is ____",
+    "options": ["Green", "Blue", "Red", "Black"],
+    "answer": "Blue"
+  },
+  {
+    "question": "A smooth fruit with a seed inside is a ____",
+    "options": ["Apple", "Pear", "Mango", "Peach"],
+    "answer": "Mango"
+  },
+
+
+  {
+    "question": "Black and white photos of people often give a sense of ____",
+    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
+    "answer": "Old Fashioned"
+  },
+  {
+    "question": "Money lent by a bank is called a ____",
+    "options": ["Salary", "Debt", "Loan", "Bill"],
+    "answer": "Loan"
+  },
+  {
+    "question": "What do we use to print paper?",
+    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
+    "answer": "Printer"
+  },
+  {
+    "question": "Where do people usually go to buy food and groceries?",
+    "options": ["School", "Office", "Hospital", "Market"],
+    "answer": "Market"
+  },
+  {
+    "question": "It is used to store food and drink",
+    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
+    "answer": "Fridge"
+  },
+
+{
+    "question": "Made of metal and plastic and used in writing.",
+    "options": ["Ruler", "Eraser", "Pencil", "Pen"],
+    "answer": "Pen",
+    "explanation": "القلم مصنوع من البلاستيك والمعدن ويُستخدم في الكتابة."
+  },
+  {
+    "question": "When we mix black color with white color, the result is?",
+    "options": ["Red", "Grey", "Black", "White"],
+    "answer": "Grey",
+    "explanation": "عند خلط الأبيض والأسود نحصل على اللون الرمادي."
+  },
+  {
+    "question": "Where do we go to play sports?",
+    "options": ["School", "Mosque", "Club", "Home"],
+    "answer": "Club",
+    "explanation": "نذهب إلى النادي لممارسة الأنشطة الرياضية."
+  },
+  {
+    "question": "What is the season before summer? What is the season after the winter?",
+    "options": ["Winter", "Autumn", "Summer", "Spring"],
+    "answer": "Spring",
+    "explanation": "الربيع يأتي بعد الشتاء وقبل الصيف."
+  },
+  {
+    "question": "We feel cold in the ____.",
+    "options": ["Summer", "Winter", "Autumn", "Summer"],
+    "answer": "Winter",
+    "explanation": "نشعر بالبرد في فصل الشتاء بسبب انخفاض درجات الحرارة."
+  },
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level11Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level11Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

@@ -1,6 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level9Questions = [
+// بطل سرقة يا حرامي هتروح النار 😈
 
+// Level 9 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "من المسؤول عن إصدار القرارات في الاتحاد الأوروبي؟",
     "options": ["المفوضية الأوروبية", "المجلس الأوروبي", "مجلس الاتحاد الأوروبي", "البرلمان الأوروبي", "لا شيء"],
@@ -156,7 +161,11 @@ const level9Questions = [
     "explanation": "الاتحاد الجمركي هو تكتل اقتصادي يجمع بين منطقة تجارة حرة وتعرفة جمركية موحدة وسياسات تجارية خارجية مشتركة."
   },
 
-{
+];
+
+// 2. حاسب (Computer)
+const computer = [
+ {
     "question": "ما هو برنامج معالجة النصوص المرفق مع حزمة مايكروسوفت أوفيس؟",
     "options": ["MS Word", "MS PowerPoint", "MS Excel", "MS Access"],
     "answer": "MS Word"
@@ -345,145 +354,12 @@ const level9Questions = [
           answer: "Unix",
         },
 
- {
-    "question": "What is the name of the person who flies airplanes?",
-    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
-    "answer": "Pilot"
-  },
-  {
-    "question": "What do we use to draw?",
-    "options": ["Brush", "Knife", "Needle", "Chalk"],
-    "answer": "Brush"
-  },
-  {
-    "question": "What do we call the son of a sister?",
-    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
-    "answer": "Nephew"
-  },
-  {
-    "question": "The first meal is ____",
-    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
-    "answer": "Breakfast"
-  },
-  {
-    "question": "Something you wear on your face to protect against disease is a ____",
-    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
-    "answer": "Mask"
-  },
-
- {
-    "question": "The day between Tuesday and Thursday is ____",
-    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
-    "answer": "Wednesday"
-  },
-  {
-    "question": "How many days do we have in a week?",
-    "options": ["5", "6", "7", "4"],
-    "answer": "7"
-  },
-  {
-    "question": "Which month comes between September and November?",
-    "options": ["October", "August", "November", "September"],
-    "answer": "October"
-  },
-  {
-    "question": "Which month comes before April?",
-    "options": ["February", "May", "June", "March"],
-    "answer": "March"
-  },
-  {
-    "question": "Which month comes after January?",
-    "options": ["March", "February", "May", "June"],
-    "answer": "February"
-  },
+];
 
 
- {
-    "question": "An animal called the (desert ship).",
-    "options": ["Horse", "Elephant", "Camel", "Dog"],
-    "answer": "Camel"
-  },
-  {
-    "question": "A furry pet animal that lives in the house.",
-    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
-    "answer": "Cat"
-  },
-  {
-    "question": "When it rains, we use____.",
-    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
-    "answer": "Umbrella"
-  },
-  {
-    "question": "What produces eggs?",
-    "options": ["Duck", "Hen", "Cow", "Dog"],
-    "answer": "Hen"
-  },
-  {
-    "question": "Which insect produces honey?",
-    "options": ["Ant", "Fly", "Bee", "Butterfly"],
-    "answer": "Bee"
-  },
- 
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
-    "question": "A red round fruit with black seeds inside is ____",
-    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
-    "answer": "Watermelon"
-  },
-  {
-    "question": "Where can we put books?",
-    "options": ["Floor", "Bag", "Shelf", "Window"],
-    "answer": "Shelf"
-  },
-  {
-    "question": "A black and white animal is ____",
-    "options": ["Zebra", "Panda", "Cow", "Penguin"],
-    "answer": "Zebra"
-  },
-  {
-    "question": "When we leave we say ____",
-    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
-    "answer": "Goodbye"
-  },
-  {
-    "question": "When we meet a person for the first time we say ____",
-    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
-    "answer": "Nice to meet you"
-  },
-
-
-{
-    "question": "Dr. Magdy Yacoub is___.",
-    "options": ["Surgeon", "Lawyer", "Teacher", "Pharmacist"],
-    "answer": "Surgeon",
-    "explanation": "الدكتور مجدي يعقوب جراح قلب عالمي مصري."
-  },
-  {
-    "question": "What is the result of mixing red color with yellow color?",
-    "options": ["Green", "Brown", "Purple", "Orange"],
-    "answer": "Orange",
-    "explanation": "عند خلط اللون الأحمر مع الأصفر نحصل على اللون البرتقالي."
-  },
-  {
-    "question": "What do we wear on our eyes to protect them from the sun?",
-    "options": ["Blouse", "Sunglasses", "Mask", "Hat"],
-    "answer": "Sunglasses",
-    "explanation": "نرتدي النظارات الشمسية لحماية أعيننا من أشعة الشمس."
-  },
-  {
-    "question": "What is the correct spelling of the word in the sentence: (The volcano _____) ?",
-    "options": ["Exploded", "Expoloded", "Exploaded", "Ecploded"],
-    "answer": "Exploded",
-    "explanation": "التهجئة الصحيحة لكلمة 'انفجر' بالإنجليزية هي Exploded."
-  },
-  {
-    "question": "When we eat, we use ____.",
-    "options": ["Ruler", "Brush", "Pen", "Spoon"],
-    "answer": "Spoon",
-    "explanation": "نستخدم الملعقة لتناول الطعام."
-  },
-
- {
     "question": "الجملة الصحيحة:",
     "options": [
       "لست معصوم عن الخطأ",
@@ -726,10 +602,168 @@ const level9Questions = [
     "answer": "مجزوم وعلامة جزمه حذف حرف العلة"
   },
 
+];
 
 
-]
 
-export { level9Questions };
-console.log('✅ questions-level9.js ready');
 
+
+// 4. انجليزي (English)
+const english = [
+ {
+    "question": "What is the name of the person who flies airplanes?",
+    "options": ["Driver", "Sailor", "Pilot", "Soldier"],
+    "answer": "Pilot"
+  },
+  {
+    "question": "What do we use to draw?",
+    "options": ["Brush", "Knife", "Needle", "Chalk"],
+    "answer": "Brush"
+  },
+  {
+    "question": "What do we call the son of a sister?",
+    "options": ["Cousin", "Brother", "Uncle", "Nephew"],
+    "answer": "Nephew"
+  },
+  {
+    "question": "The first meal is ____",
+    "options": ["Lunch", "Breakfast", "Dinner", "Snack"],
+    "answer": "Breakfast"
+  },
+  {
+    "question": "Something you wear on your face to protect against disease is a ____",
+    "options": ["Helmet", "Glasses", "Mask", "Scarf"],
+    "answer": "Mask"
+  },
+
+ {
+    "question": "The day between Tuesday and Thursday is ____",
+    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
+    "answer": "Wednesday"
+  },
+  {
+    "question": "How many days do we have in a week?",
+    "options": ["5", "6", "7", "4"],
+    "answer": "7"
+  },
+  {
+    "question": "Which month comes between September and November?",
+    "options": ["October", "August", "November", "September"],
+    "answer": "October"
+  },
+  {
+    "question": "Which month comes before April?",
+    "options": ["February", "May", "June", "March"],
+    "answer": "March"
+  },
+  {
+    "question": "Which month comes after January?",
+    "options": ["March", "February", "May", "June"],
+    "answer": "February"
+  },
+
+
+ {
+    "question": "An animal called the (desert ship).",
+    "options": ["Horse", "Elephant", "Camel", "Dog"],
+    "answer": "Camel"
+  },
+  {
+    "question": "A furry pet animal that lives in the house.",
+    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
+    "answer": "Cat"
+  },
+  {
+    "question": "When it rains, we use____.",
+    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
+    "answer": "Umbrella"
+  },
+  {
+    "question": "What produces eggs?",
+    "options": ["Duck", "Hen", "Cow", "Dog"],
+    "answer": "Hen"
+  },
+  {
+    "question": "Which insect produces honey?",
+    "options": ["Ant", "Fly", "Bee", "Butterfly"],
+    "answer": "Bee"
+  },
+ 
+
+{
+    "question": "A red round fruit with black seeds inside is ____",
+    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
+    "answer": "Watermelon"
+  },
+  {
+    "question": "Where can we put books?",
+    "options": ["Floor", "Bag", "Shelf", "Window"],
+    "answer": "Shelf"
+  },
+  {
+    "question": "A black and white animal is ____",
+    "options": ["Zebra", "Panda", "Cow", "Penguin"],
+    "answer": "Zebra"
+  },
+  {
+    "question": "When we leave we say ____",
+    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
+    "answer": "Goodbye"
+  },
+  {
+    "question": "When we meet a person for the first time we say ____",
+    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
+    "answer": "Nice to meet you"
+  },
+
+
+{
+    "question": "Dr. Magdy Yacoub is___.",
+    "options": ["Surgeon", "Lawyer", "Teacher", "Pharmacist"],
+    "answer": "Surgeon",
+    "explanation": "الدكتور مجدي يعقوب جراح قلب عالمي مصري."
+  },
+  {
+    "question": "What is the result of mixing red color with yellow color?",
+    "options": ["Green", "Brown", "Purple", "Orange"],
+    "answer": "Orange",
+    "explanation": "عند خلط اللون الأحمر مع الأصفر نحصل على اللون البرتقالي."
+  },
+  {
+    "question": "What do we wear on our eyes to protect them from the sun?",
+    "options": ["Blouse", "Sunglasses", "Mask", "Hat"],
+    "answer": "Sunglasses",
+    "explanation": "نرتدي النظارات الشمسية لحماية أعيننا من أشعة الشمس."
+  },
+  {
+    "question": "What is the correct spelling of the word in the sentence: (The volcano _____) ?",
+    "options": ["Exploded", "Expoloded", "Exploaded", "Ecploded"],
+    "answer": "Exploded",
+    "explanation": "التهجئة الصحيحة لكلمة 'انفجر' بالإنجليزية هي Exploded."
+  },
+  {
+    "question": "When we eat, we use ____.",
+    "options": ["Ruler", "Brush", "Pen", "Spoon"],
+    "answer": "Spoon",
+    "explanation": "نستخدم الملعقة لتناول الطعام."
+  },
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level9Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level9Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

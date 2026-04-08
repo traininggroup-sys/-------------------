@@ -1,9 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level23Questions = [
-
- 
+// 1. معلومات عامة (General)
+const general = [
   {
     "question": "جبل --- هو أعلى جبل في مصر. يقع في محافظة جنوب سيناء، ويصل ارتفاعه إلى 2629 مترًا فوق مستوى سطح البحر.",
     "options": ["سانت كاترين", "موسى", "الطور", "النبي شعيب"],
@@ -81,7 +83,8 @@ const level23Questions = [
     "answer": "صح",
     "explanation": "الجهاز الهضمي يحول جزيئات الغذاء المعقدة إلى بسيطة يمكن امتصاصها في الجسم."
   },
-{
+
+ {
   "question": "هي دولة تقع في وسط غرب إفريقيا، تُعرف بـ\"إفريقيا المصغرة\".",
   "options": ["نيجيريا", "الكاميرون", "تشاد", "غانا"],
   "answer": "الكاميرون",
@@ -161,7 +164,12 @@ const level23Questions = [
   },
   
 
- {
+
+];
+
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "ما هو الاسم الافتراضي لملف EXCEL؟",
     "options": ["Workbook.xlsx", "Worksheet.xlsx", "Worksheet1.xlsx", "Workbook1.xlsx"],
     "answer": "Workbook1.xlsx"
@@ -287,7 +295,7 @@ const level23Questions = [
     "question": "الصفحة الأولى التي تحتوي على عنوان المستند، اسم الكاتب، والتاريخ من المستند هي ………؟",
     "options": ["الصفحة الأولى", "صفحة الغلاف", "الملف", "لا شيء مما سبق"],
     "answer": "صفحة الغلاف"
-  },,
+  },
   {
   "question": "يمكن لبرنامج Word أن يقوم بـ:",
   "options": [
@@ -308,162 +316,13 @@ const level23Questions = [
   ],
   "answer": "مستند1 - Word"
 },
+  
 
- {
-    "question": "This gift is ___ you.",
-    "options": ["To", "With", "For", "At"],
-    "answer": "For",
-    "explanation": "'For' معناها من أجل، وبتدل إن الحاجة موجهة لشخص معين."
-  },
-  {
-    "question": "I wrote the note ___ a pen.",
-    "options": ["With", "To", "In", "At"],
-    "answer": "With",
-    "explanation": "'With' معناها باستخدام، وبتدل على الأداة اللي استُخدمت في الكتابة."
-  },
-  {
-    "question": "We traveled ___ car to Alexandria.",
-    "options": ["On", "To", "With", "By"],
-    "answer": "By",
-    "explanation": "'By' بتستخدم مع وسائل المواصلات لما نتكلم عن طريقة السفر."
-  },
-  {
-    "question": "In Europe, banks close ___ 3:30 PM.",
-    "options": ["In", "At", "On", "From"],
-    "answer": "At",
-    "explanation": "'At' بتستخدم لتحديد الوقت بالساعة."
-  },
- {
-  "question": "Which preposition is used with the verb \"crashed\"?",
-  "options": ["At", "On", "Into", "From"],
-  "answer": "Into",
-  "explanation": "'Crashed into' معناها اصطدم في، وده الاستخدام الصحيح مع الفعل."
-},
- 
-
- {
-    "question": "_____ is?",
-    "options": ["When", "Where", "Who", "Why"],
-    "answer": "Where",
-    "explanation": "'Where' بتُستخدم للسؤال عن المكان."
-  },
-  {
-    "question": "Ahmad wanted to read ___ comic book.",
-    "options": ["an", "the", "a", "some"],
-    "answer": "a",
-    "explanation": "'A' بتُستخدم قبل الكلمات اللي بتبدأ بصوت ساكن، وكلمة 'comic' بتبدأ بصوت ساكن."
-  },
-  {
-    "question": "If you were ___ pair of glasses.",
-    "options": ["a", "an", "some", "the"],
-    "answer": "a",
-    "explanation": "'A pair of glasses' تعتبر مفرد في الاستخدام رغم إنها شكل مزدوج، فبنستخدم 'a'."
-  },
-  {
-    "question": "___ do you live?",
-    "options": ["When", "What", "Who", "Where"],
-    "answer": "Where",
-    "explanation": "'Where' بتُستخدم للسؤال عن المكان اللي الشخص عايش فيه."
-  },
-  {
-    "question": "___ car is this?",
-    "options": ["Where", "Whose", "Who", "What"],
-    "answer": "Whose",
-    "explanation": "'Whose' معناها 'لمن' وبتُستخدم للسؤال عن الملكية."
-  },
- 
+];
 
 
- {
-    "question": "Go to the park ___ my friend.",
-    "options": ["To", "By", "With", "At"],
-    "answer": "With",
-    "explanation": "With تعني مع شخص آخر."
-  },
- {
-    "question": "I go to school ___ bus.",
-    "options": ["By", "On", "In", "At"],
-    "answer": "By",
-    "explanation": "By تُستخدم مع وسائل النقل بدون أدوات تعريف."
-  },
-  {
-    "question": "Which preposition is used before days?",
-    "options": ["In", "At", "To", "On"],
-    "answer": "On",
-    "explanation": "نستخدم on قبل الأيام مثل on Monday."
-  },
-  {
-    "question": "I ate ___ the restaurant.",
-    "options": ["On", "At", "In", "To"],
-    "answer": "At",
-    "explanation": "At تُستخدم مع الأماكن العامة مثل المطاعم."
-  },
-  {
-    "question": "Go to the park ___ my friend.",
-    "options": ["To", "By", "With", "At"],
-    "answer": "With",
-    "explanation": "With تعني مع شخص آخر."
-  },
-
- {
-    "question": "Who comes to Egypt to see its monuments and visit its tourist attractions?",
-    "options": ["Doctors", "Tourists", "Engineers", "Farmers"],
-    "answer": "Tourists",
-    "explanation": "السياح هم اللي بييجوا مصر علشان يشوفوا الآثار ويزوروا الأماكن السياحية."
-  },
-  {
-    "question": "What is the largest animal in the world?",
-    "options": ["Giraffe", "Elephant", "Blue Whale", "Great White Shark"],
-    "answer": "Blue Whale",
-    "explanation": "الحوت الأزرق هو أكبر حيوان على وجه الأرض."
-  },
-  {
-    "question": "The plane flew ___ the mountains.",
-    "options": ["Over", "Under", "In", "With"],
-    "answer": "Over",
-    "explanation": "كلمة 'Over' معناها فوق أو أعلى، ودي بتستخدم لوصف الطيران فوق الجبال."
-  },
-  {
-    "question": "The cat is hiding ___ the table.",
-    "options": ["Over", "On", "With", "Under"],
-    "answer": "Under",
-    "explanation": "'Under' معناها تحت، ودي بنستخدمها لما الحاجة تبقى أسفل شيء تاني."
-  },
-  {
-    "question": "We were talking ___ the problem.",
-    "options": ["In", "About", "With", "From"],
-    "answer": "About",
-    "explanation": "'About' معناها عن، وبتستخدم لما بنتكلم عن موضوع معين."
-  },
- 
-
-  {
-    "question": "Black and white photos of people often give a sense of ____",
-    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
-    "answer": "Old Fashioned"
-  },
-  {
-    "question": "Money lent by a bank is called a ____",
-    "options": ["Salary", "Debt", "Loan", "Bill"],
-    "answer": "Loan"
-  },
-  {
-    "question": "What do we use to print paper?",
-    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
-    "answer": "Printer"
-  },
-  {
-    "question": "Where do people usually go to buy food and groceries?",
-    "options": ["School", "Office", "Hospital", "Market"],
-    "answer": "Market"
-  },
-  {
-    "question": "It is used to store food and drink",
-    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
-    "answer": "Fridge"
-  },
-
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "كتبت الهمزة في كلمة (ضرائب) على نبرة لأنها",
   "options": [
@@ -696,12 +555,185 @@ const level23Questions = [
   "answer": "مساجد"
 },
 
+];
 
 
 
 
-]
 
-export { level23Questions };
-console.log('✅ questions-level1.js ready -', level23Questions.length, 'questions (pure JS objects/JSON)');
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "This gift is ___ you.",
+    "options": ["To", "With", "For", "At"],
+    "answer": "For",
+    "explanation": "'For' معناها من أجل، وبتدل إن الحاجة موجهة لشخص معين."
+  },
+  {
+    "question": "I wrote the note ___ a pen.",
+    "options": ["With", "To", "In", "At"],
+    "answer": "With",
+    "explanation": "'With' معناها باستخدام، وبتدل على الأداة اللي استُخدمت في الكتابة."
+  },
+  {
+    "question": "We traveled ___ car to Alexandria.",
+    "options": ["On", "To", "With", "By"],
+    "answer": "By",
+    "explanation": "'By' بتستخدم مع وسائل المواصلات لما نتكلم عن طريقة السفر."
+  },
+  {
+    "question": "In Europe, banks close ___ 3:30 PM.",
+    "options": ["In", "At", "On", "From"],
+    "answer": "At",
+    "explanation": "'At' بتستخدم لتحديد الوقت بالساعة."
+  },
+ {
+  "question": "Which preposition is used with the verb \"crashed\"?",
+  "options": ["At", "On", "Into", "From"],
+  "answer": "Into",
+  "explanation": "'Crashed into' معناها اصطدم في، وده الاستخدام الصحيح مع الفعل."
+},
+ 
 
+ {
+    "question": "_____ is?",
+    "options": ["When", "Where", "Who", "Why"],
+    "answer": "Where",
+    "explanation": "'Where' بتُستخدم للسؤال عن المكان."
+  },
+  {
+    "question": "Ahmad wanted to read ___ comic book.",
+    "options": ["an", "the", "a", "some"],
+    "answer": "a",
+    "explanation": "'A' بتُستخدم قبل الكلمات اللي بتبدأ بصوت ساكن، وكلمة 'comic' بتبدأ بصوت ساكن."
+  },
+  {
+    "question": "If you were ___ pair of glasses.",
+    "options": ["a", "an", "some", "the"],
+    "answer": "a",
+    "explanation": "'A pair of glasses' تعتبر مفرد في الاستخدام رغم إنها شكل مزدوج، فبنستخدم 'a'."
+  },
+  {
+    "question": "___ do you live?",
+    "options": ["When", "What", "Who", "Where"],
+    "answer": "Where",
+    "explanation": "'Where' بتُستخدم للسؤال عن المكان اللي الشخص عايش فيه."
+  },
+  {
+    "question": "___ car is this?",
+    "options": ["Where", "Whose", "Who", "What"],
+    "answer": "Whose",
+    "explanation": "'Whose' معناها 'لمن' وبتُستخدم للسؤال عن الملكية."
+  },
+ 
+
+
+ {
+    "question": "Go to the park ___ my friend.",
+    "options": ["To", "By", "With", "At"],
+    "answer": "With",
+    "explanation": "With تعني مع شخص آخر."
+  },
+ {
+    "question": "I go to school ___ bus.",
+    "options": ["By", "On", "In", "At"],
+    "answer": "By",
+    "explanation": "By تُستخدم مع وسائل النقل بدون أدوات تعريف."
+  },
+  {
+    "question": "Which preposition is used before days?",
+    "options": ["In", "At", "To", "On"],
+    "answer": "On",
+    "explanation": "نستخدم on قبل الأيام مثل on Monday."
+  },
+  {
+    "question": "I ate ___ the restaurant.",
+    "options": ["On", "At", "In", "To"],
+    "answer": "At",
+    "explanation": "At تُستخدم مع الأماكن العامة مثل المطاعم."
+  },
+  {
+    "question": "Go to the park ___ my friend.",
+    "options": ["To", "By", "With", "At"],
+    "answer": "With",
+    "explanation": "With تعني مع شخص آخر."
+  },
+
+ {
+    "question": "Who comes to Egypt to see its monuments and visit its tourist attractions?",
+    "options": ["Doctors", "Tourists", "Engineers", "Farmers"],
+    "answer": "Tourists",
+    "explanation": "السياح هم اللي بييجوا مصر علشان يشوفوا الآثار ويزوروا الأماكن السياحية."
+  },
+  {
+    "question": "What is the largest animal in the world?",
+    "options": ["Giraffe", "Elephant", "Blue Whale", "Great White Shark"],
+    "answer": "Blue Whale",
+    "explanation": "الحوت الأزرق هو أكبر حيوان على وجه الأرض."
+  },
+  {
+    "question": "The plane flew ___ the mountains.",
+    "options": ["Over", "Under", "In", "With"],
+    "answer": "Over",
+    "explanation": "كلمة 'Over' معناها فوق أو أعلى، ودي بتستخدم لوصف الطيران فوق الجبال."
+  },
+  {
+    "question": "The cat is hiding ___ the table.",
+    "options": ["Over", "On", "With", "Under"],
+    "answer": "Under",
+    "explanation": "'Under' معناها تحت، ودي بنستخدمها لما الحاجة تبقى أسفل شيء تاني."
+  },
+  {
+    "question": "We were talking ___ the problem.",
+    "options": ["In", "About", "With", "From"],
+    "answer": "About",
+    "explanation": "'About' معناها عن، وبتستخدم لما بنتكلم عن موضوع معين."
+  },
+ 
+
+  {
+    "question": "Black and white photos of people often give a sense of ____",
+    "options": ["Modernity", "Old Fashioned", "Efficient", "Fashioned"],
+    "answer": "Old Fashioned"
+  },
+  {
+    "question": "Money lent by a bank is called a ____",
+    "options": ["Salary", "Debt", "Loan", "Bill"],
+    "answer": "Loan"
+  },
+  {
+    "question": "What do we use to print paper?",
+    "options": ["Printer", "Scanner", "Tablet", "Photocopier"],
+    "answer": "Printer"
+  },
+  {
+    "question": "Where do people usually go to buy food and groceries?",
+    "options": ["School", "Office", "Hospital", "Market"],
+    "answer": "Market"
+  },
+  {
+    "question": "It is used to store food and drink",
+    "options": ["Table", "Fridge", "Cupboard", "Microwave"],
+    "answer": "Fridge"
+  },
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level23Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level23Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

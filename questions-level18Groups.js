@@ -1,8 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level18Questions = [
-
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "الحكومة من الجهات التنفيذية.",
     "options": ["صح", "خطأ"],
@@ -139,7 +142,11 @@ const level18Questions = [
   "explanation": "يُعد جمال عبد الناصر القائد الفعلي لتنظيم الضباط الأحرار ومخطط ثورة 23 يوليو 1952، بينما كان محمد نجيب واجهتها وأول رئيس للجمهورية."
   },
 
-{
+];
+
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "تبويب 'عرض' يُستخدم لتغيير طريقة عرض المستند أو الملف في برامج الأوفيس.",
     "options": ["صح", "خطأ"],
     "answer": "صح"
@@ -300,222 +307,11 @@ const level18Questions = [
       "كلاهما نفس الشيء"
     ],
     "answer": "البيانات هي حقائق خام، والمعلومات هي بيانات معالجة ومفسرة"
-  },
+  },];
 
- {
-    "question": "The opposite of 'on' is____",
-    "options": [
-      "Start",
-      "In",
-      "Off",
-      "Top"
-    ],
-    "answer": "Off"
-  },
-  {
-    "question": "The opposite of 'old' is____",
-    "options": [
-      "New",
-      "Used",
-      "Classic",
-      "Ancient"
-    ],
-    "answer": "New"
-  },
-  {
-    "question": "The opposite of 'dry' is____",
-    "options": [
-      "Cool",
-      "Thick",
-      "Clean",
-      "Wet"
-    ],
-    "answer": "Wet"
-  },
-  {
-    "question": "The rabbit is fast, but the turtle is ____",
-    "options": [
-      "Quick",
-      "Slow",
-      "Happy",
-      "Smart"
-    ],
-    "answer": "Slow"
-  },
-  {
-    "question": "The opposite of 'strong' is____",
-    "options": [
-      "Heavy",
-      "Bright",
-      "Weak",
-      "Tall"
-    ],
-    "answer": "Weak"
-  },
 
-  {
-    "question": "The opposite of 'strong' is ____",
-    "options": ["Heavy", "Weak", "Bright", "Tall"],
-    "answer": "Weak",
-    "explanation": "كلمة strong معناها قوي، وعكسها هو weak اللي معناها ضعيف."
-  },
-  {
-    "question": "The antonym for 'push' is ____",
-    "options": ["Tap", "Stop", "Pull", "Throw"],
-    "answer": "Pull",
-    "explanation": "Push معناها يدفع، أما Pull فمعناها يسحب، وده هو العكس تمامًا."
-  },
-  {
-    "question": "The opposite of 'ugly' is ____",
-    "options": ["Beautiful", "Weird", "Boring", "Dark"],
-    "answer": "Beautiful",
-    "explanation": "Ugly معناها قبيح، وعكسها Beautiful اللي معناها جميل."
-  },
-  {
-    "question": "What is a synonym for 'short'?",
-    "options": ["Open", "Fast", "Tall", "Brief"],
-    "answer": "Brief",
-    "explanation": "Short معناها قصير، وBrief معناها مختصر، وهي مرادف ليها."
-  },
-  {
-    "question": "The opposite of 'careful' is ____",
-    "options": ["Kind", "Careless", "Neat", "Calm"],
-    "answer": "Careless",
-    "explanation": "Careful معناها حذر أو منتبه، وعكسها Careless يعني مهمل."
-  },
- 
-
- {
-    "question": "What is the dish you like ____?",
-    "options": [
-      "Many",
-      "Much",
-      "Most",
-      "Best"
-    ],
-    "answer": "Most"
-  },
-  {
-    "question": "What is the comparative form of 'big'?",
-    "options": [
-      "Bigger",
-      "More big",
-      "Biggest",
-      "Biger"
-    ],
-    "answer": "Bigger"
-  },
-  {
-    "question": "What is the superlative form of 'good'?",
-    "options": [
-      "Goodest",
-      "More good",
-      "Better",
-      "Best"
-    ],
-    "answer": "Best"
-  },
-  {
-    "question": "What is the comparative form of 'good'?",
-    "options": [
-      "More good",
-      "Better",
-      "Gooder",
-      "Best"
-    ],
-    "answer": "Better"
-  },
-  {
-    "question": "What is the superlative form of 'beautiful'?",
-    "options": [
-      "Very beautiful",
-      "More beautiful",
-      "The most beautiful",
-      "Beautifuller"
-    ],
-    "answer": "The most beautiful"
-  },
- 
-
- {
-    "question": "Which is the _______ exciting city in the world?",
-    "options": [
-      "More",
-      "Most",
-      "Much",
-      "Many"
-    ],
-    "answer": "Most"
-  },
-  {
-    "question": "What is the synonym of 'beautiful'?",
-    "options": [
-      "Dirty",
-      "Ugly",
-      "Pretty",
-      "Tired"
-    ],
-    "answer": "Pretty"
-  },
-  {
-    "question": "The opposite of 'rich' is ____",
-    "options": [
-      "Poor",
-      "Nice",
-      "Busy",
-      "High"
-    ],
-    "answer": "Poor"
-  },
-  {
-    "question": "The opposite of 'cruel' is____",
-    "options": [
-      "Weak",
-      "Quiet",
-      "Cold",
-      "Kind"
-    ],
-    "answer": "Kind"
-  },
-  {
-    "question": "The opposite of 'right' is____",
-    "options": [
-      "Left",
-      "Wrong",
-      "Fast",
-      "True"
-    ],
-    "answer": "Wrong"
-  },
- 
-
- {
-    "question": "An animal called the (desert ship).",
-    "options": ["Horse", "Elephant", "Camel", "Dog"],
-    "answer": "Camel"
-  },
-  {
-    "question": "A furry pet animal that lives in the house.",
-    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
-    "answer": "Cat"
-  },
-  {
-    "question": "When it rains, we use____.",
-    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
-    "answer": "Umbrella"
-  },
-  {
-    "question": "What produces eggs?",
-    "options": ["Duck", "Hen", "Cow", "Dog"],
-    "answer": "Hen"
-  },
-  {
-    "question": "Which insect produces honey?",
-    "options": ["Ant", "Fly", "Bee", "Butterfly"],
-    "answer": "Bee"
-  },
- 
- 
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "الموظف ............ عن أدائه.",
   "options": [
@@ -747,9 +543,244 @@ const level18Questions = [
 
 
 
+];
 
-]
 
-export { level18Questions };
-console.log('✅ questions-level1.js ready -', level18Questions.length, 'questions (pure JS objects/JSON)');
 
+
+
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "The opposite of 'on' is____",
+    "options": [
+      "Start",
+      "In",
+      "Off",
+      "Top"
+    ],
+    "answer": "Off"
+  },
+  {
+    "question": "The opposite of 'old' is____",
+    "options": [
+      "New",
+      "Used",
+      "Classic",
+      "Ancient"
+    ],
+    "answer": "New"
+  },
+  {
+    "question": "The opposite of 'dry' is____",
+    "options": [
+      "Cool",
+      "Thick",
+      "Clean",
+      "Wet"
+    ],
+    "answer": "Wet"
+  },
+  {
+    "question": "The rabbit is fast, but the turtle is ____",
+    "options": [
+      "Quick",
+      "Slow",
+      "Happy",
+      "Smart"
+    ],
+    "answer": "Slow"
+  },
+  {
+    "question": "The opposite of 'strong' is____",
+    "options": [
+      "Heavy",
+      "Bright",
+      "Weak",
+      "Tall"
+    ],
+    "answer": "Weak"
+  },
+
+  {
+    "question": "The opposite of 'strong' is ____",
+    "options": ["Heavy", "Weak", "Bright", "Tall"],
+    "answer": "Weak",
+    "explanation": "كلمة strong معناها قوي، وعكسها هو weak اللي معناها ضعيف."
+  },
+  {
+    "question": "The antonym for 'push' is ____",
+    "options": ["Tap", "Stop", "Pull", "Throw"],
+    "answer": "Pull",
+    "explanation": "Push معناها يدفع، أما Pull فمعناها يسحب، وده هو العكس تمامًا."
+  },
+  {
+    "question": "The opposite of 'ugly' is ____",
+    "options": ["Beautiful", "Weird", "Boring", "Dark"],
+    "answer": "Beautiful",
+    "explanation": "Ugly معناها قبيح، وعكسها Beautiful اللي معناها جميل."
+  },
+  {
+    "question": "What is a synonym for 'short'?",
+    "options": ["Open", "Fast", "Tall", "Brief"],
+    "answer": "Brief",
+    "explanation": "Short معناها قصير، وBrief معناها مختصر، وهي مرادف ليها."
+  },
+  {
+    "question": "The opposite of 'careful' is ____",
+    "options": ["Kind", "Careless", "Neat", "Calm"],
+    "answer": "Careless",
+    "explanation": "Careful معناها حذر أو منتبه، وعكسها Careless يعني مهمل."
+  },
+ 
+
+ {
+    "question": "What is the dish you like ____?",
+    "options": [
+      "Many",
+      "Much",
+      "Most",
+      "Best"
+    ],
+    "answer": "Most"
+  },
+  {
+    "question": "What is the comparative form of 'big'?",
+    "options": [
+      "Bigger",
+      "More big",
+      "Biggest",
+      "Biger"
+    ],
+    "answer": "Bigger"
+  },
+  {
+    "question": "What is the superlative form of 'good'?",
+    "options": [
+      "Goodest",
+      "More good",
+      "Better",
+      "Best"
+    ],
+    "answer": "Best"
+  },
+  {
+    "question": "What is the comparative form of 'good'?",
+    "options": [
+      "More good",
+      "Better",
+      "Gooder",
+      "Best"
+    ],
+    "answer": "Better"
+  },
+  {
+    "question": "What is the superlative form of 'beautiful'?",
+    "options": [
+      "Very beautiful",
+      "More beautiful",
+      "The most beautiful",
+      "Beautifuller"
+    ],
+    "answer": "The most beautiful"
+  },
+ 
+
+ {
+    "question": "Which is the _______ exciting city in the world?",
+    "options": [
+      "More",
+      "Most",
+      "Much",
+      "Many"
+    ],
+    "answer": "Most"
+  },
+  {
+    "question": "What is the synonym of 'beautiful'?",
+    "options": [
+      "Dirty",
+      "Ugly",
+      "Pretty",
+      "Tired"
+    ],
+    "answer": "Pretty"
+  },
+  {
+    "question": "The opposite of 'rich' is ____",
+    "options": [
+      "Poor",
+      "Nice",
+      "Busy",
+      "High"
+    ],
+    "answer": "Poor"
+  },
+  {
+    "question": "The opposite of 'cruel' is____",
+    "options": [
+      "Weak",
+      "Quiet",
+      "Cold",
+      "Kind"
+    ],
+    "answer": "Kind"
+  },
+  {
+    "question": "The opposite of 'right' is____",
+    "options": [
+      "Left",
+      "Wrong",
+      "Fast",
+      "True"
+    ],
+    "answer": "Wrong"
+  },
+ 
+
+ {
+    "question": "An animal called the (desert ship).",
+    "options": ["Horse", "Elephant", "Camel", "Dog"],
+    "answer": "Camel"
+  },
+  {
+    "question": "A furry pet animal that lives in the house.",
+    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
+    "answer": "Cat"
+  },
+  {
+    "question": "When it rains, we use____.",
+    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
+    "answer": "Umbrella"
+  },
+  {
+    "question": "What produces eggs?",
+    "options": ["Duck", "Hen", "Cow", "Dog"],
+    "answer": "Hen"
+  },
+  {
+    "question": "Which insect produces honey?",
+    "options": ["Ant", "Fly", "Bee", "Butterfly"],
+    "answer": "Bee"
+  },
+ 
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level18Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level18Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

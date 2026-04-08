@@ -1,8 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level22Questions = [
-
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "البطريق من الفقاريات.",
     "options": ["صح", "خطأ"],
@@ -16,7 +19,7 @@ const level22Questions = [
     "explanation": "الجهاز الهضمي يحول جزيئات الغذاء المعقدة إلى بسيطة يمكن امتصاصها في الجسم."
   },
 
-{
+  {
   "question": "هي دولة تقع في وسط غرب إفريقيا، تُعرف بـ\"إفريقيا المصغرة\".",
   "options": ["نيجيريا", "الكاميرون", "تشاد", "غانا"],
   "answer": "الكاميرون",
@@ -164,7 +167,11 @@ const level22Questions = [
     "explanation": "اكتشف العالم ابن النفيس الدورة الدموية الصغرى قبل العلماء الأوروبيين."
   },
 
-{
+];
+
+// 2. حاسب (Computer)
+const computer = [
+ {
     "question": "من B2 لـ E2 كم عدد الخلايا أو النطاق من B2 لحد E2 فيه كام خلية؟",
     "options": ["3", "2", "6", "4"],
     "answer": "4"
@@ -305,167 +312,13 @@ const level22Questions = [
     "answer": "DOCX"
   },
  
+  
+
+];
 
 
- {
-    "question": "Go to the park ___ my friend.",
-    "options": ["To", "By", "With", "At"],
-    "answer": "With",
-    "explanation": "With تعني مع شخص آخر."
-  },
- {
-    "question": "I go to school ___ bus.",
-    "options": ["By", "On", "In", "At"],
-    "answer": "By",
-    "explanation": "By تُستخدم مع وسائل النقل بدون أدوات تعريف."
-  },
-  {
-    "question": "Which preposition is used before days?",
-    "options": ["In", "At", "To", "On"],
-    "answer": "On",
-    "explanation": "نستخدم on قبل الأيام مثل on Monday."
-  },
-  {
-    "question": "I ate ___ the restaurant.",
-    "options": ["On", "At", "In", "To"],
-    "answer": "At",
-    "explanation": "At تُستخدم مع الأماكن العامة مثل المطاعم."
-  },
-  {
-    "question": "Go to the park ___ my friend.",
-    "options": ["To", "By", "With", "At"],
-    "answer": "With",
-    "explanation": "With تعني مع شخص آخر."
-  },
-
- {
-    "question": "Who comes to Egypt to see its monuments and visit its tourist attractions?",
-    "options": ["Doctors", "Tourists", "Engineers", "Farmers"],
-    "answer": "Tourists",
-    "explanation": "السياح هم اللي بييجوا مصر علشان يشوفوا الآثار ويزوروا الأماكن السياحية."
-  },
-  {
-    "question": "What is the largest animal in the world?",
-    "options": ["Giraffe", "Elephant", "Blue Whale", "Great White Shark"],
-    "answer": "Blue Whale",
-    "explanation": "الحوت الأزرق هو أكبر حيوان على وجه الأرض."
-  },
-  {
-    "question": "The plane flew ___ the mountains.",
-    "options": ["Over", "Under", "In", "With"],
-    "answer": "Over",
-    "explanation": "كلمة 'Over' معناها فوق أو أعلى، ودي بتستخدم لوصف الطيران فوق الجبال."
-  },
-  {
-    "question": "The cat is hiding ___ the table.",
-    "options": ["Over", "On", "With", "Under"],
-    "answer": "Under",
-    "explanation": "'Under' معناها تحت، ودي بنستخدمها لما الحاجة تبقى أسفل شيء تاني."
-  },
-  {
-    "question": "We were talking ___ the problem.",
-    "options": ["In", "About", "With", "From"],
-    "answer": "About",
-    "explanation": "'About' معناها عن، وبتستخدم لما بنتكلم عن موضوع معين."
-  },
- 
-
-{
-    "question": "The opposite of 'in' is ____.",
-    "options": ["Up", "Over", "Out", "Inside"],
-    "answer": "Out",
-    "explanation": "In معناها داخل، وعكسها Out (خارج)."
-  },
-  {
-    "question": "I can open the door with a ____.",
-    "options": ["Key", "Door", "Lock", "Handle"],
-    "answer": "Key",
-    "explanation": "نستخدم المفتاح (Key) لفتح الباب."
-  },
-  {
-    "question": "Which fruit is round and smooth that contains a pit?",
-    "options": ["Carrot", "Peach", "Banana", "Orange"],
-    "answer": "Peach",
-    "explanation": "Peach (خوخ) فاكهة مستديرة وملساء وبداخلها نواة."
-  },
-  {
-    "question": "What is the past perfect of (go)?",
-    "options": ["Goes", "Went", "Had gone", "Going"],
-    "answer": "Had gone",
-    "explanation": "الماضي التام من go هو had gone."
-  },
-  {
-    "question": "What is the opposite of (dark)?",
-    "options": ["Cold", "Light", "Grey", "Black"],
-    "answer": "Light",
-    "explanation": "Dark معناها مظلم، وعكسها Light (مضيء)."
-  },
- 
-
- {
-    "question": "Which season comes between summer and winter?",
-    "options": ["Winter", "Spring", "Autumn", "Summer"],
-    "answer": "Autumn",
-    "explanation": "الخريف (Autumn) يأتي بين الصيف والشتاء."
-  },
-  {
-    "question": "What is the opposite of (short)?",
-    "options": ["Long", "Cold", "Light", "Tight"],
-    "answer": "Long",
-    "explanation": "Short معناها قصير، وعكسها Long (طويل)."
-  },
-  {
-    "question": "What is the opposite of (weak)?",
-    "options": ["Poor", "Soft", "Rough", "Strong"],
-    "answer": "Strong",
-    "explanation": "Weak معناها ضعيف، وعكسها Strong (قوي)."
-  },
-  {
-    "question": "Which sentence uses the correct article?",
-    "options": [
-      "She bought a apple.",
-      "He is an honest man.",
-      "I saw an dog in the park.",
-      "This is unique idea."
-    ],
-    "answer": "He is an honest man.",
-    "explanation": "an تستخدم قبل كلمات تبدأ بصوت حرف متحرك مثل honest."
-  },
-  {
-    "question": "Where is…?",
-    "options": ["At Tanta", "From Tanta", "In Tanta", "To Tanta"],
-    "answer": "In Tanta",
-    "explanation": "نستخدم in مع أسماء المدن مثل In Tanta."
-  },
- 
-
-  {
-    "question": "A winter sport that we use to glide over snow is",
-    "options": ["Swimming", "Running", "Skiing", "Football"],
-    "answer": "Skiing"
-  },
-  {
-    "question": "A metallic object used to open a door is called a",
-    "options": ["Key", "Knife", "Ring", "Coin"],
-    "answer": "Key"
-  },
-  {
-    "question": "I have a cough, so I will go to the ____",
-    "options": ["School", "Pharmacy", "Office", "Doctor"],
-    "answer": "Doctor"
-  },
-  {
-    "question": "The color of the sky is ____",
-    "options": ["Green", "Blue", "Red", "Black"],
-    "answer": "Blue"
-  },
-  {
-    "question": "A smooth fruit with a seed inside is a ____",
-    "options": ["Apple", "Pear", "Mango", "Peach"],
-    "answer": "Mango"
-  },
-
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "......... بصحتكَ.",
   "options": [
@@ -701,10 +554,189 @@ const level22Questions = [
   "answer": "سافرتُ ثمانية وعشرين يومًا"
 },
 
+];
 
 
 
-]
-export { level22Questions };
-console.log('✅ questions-level1.js ready -', level22Questions.length, 'questions (pure JS objects/JSON)');
 
+
+// 4. انجليزي (English)
+const english = [
+ {
+    "question": "Go to the park ___ my friend.",
+    "options": ["To", "By", "With", "At"],
+    "answer": "With",
+    "explanation": "With تعني مع شخص آخر."
+  },
+ {
+    "question": "I go to school ___ bus.",
+    "options": ["By", "On", "In", "At"],
+    "answer": "By",
+    "explanation": "By تُستخدم مع وسائل النقل بدون أدوات تعريف."
+  },
+  {
+    "question": "Which preposition is used before days?",
+    "options": ["In", "At", "To", "On"],
+    "answer": "On",
+    "explanation": "نستخدم on قبل الأيام مثل on Monday."
+  },
+  {
+    "question": "I ate ___ the restaurant.",
+    "options": ["On", "At", "In", "To"],
+    "answer": "At",
+    "explanation": "At تُستخدم مع الأماكن العامة مثل المطاعم."
+  },
+  {
+    "question": "Go to the park ___ my friend.",
+    "options": ["To", "By", "With", "At"],
+    "answer": "With",
+    "explanation": "With تعني مع شخص آخر."
+  },
+
+ {
+    "question": "Who comes to Egypt to see its monuments and visit its tourist attractions?",
+    "options": ["Doctors", "Tourists", "Engineers", "Farmers"],
+    "answer": "Tourists",
+    "explanation": "السياح هم اللي بييجوا مصر علشان يشوفوا الآثار ويزوروا الأماكن السياحية."
+  },
+  {
+    "question": "What is the largest animal in the world?",
+    "options": ["Giraffe", "Elephant", "Blue Whale", "Great White Shark"],
+    "answer": "Blue Whale",
+    "explanation": "الحوت الأزرق هو أكبر حيوان على وجه الأرض."
+  },
+  {
+    "question": "The plane flew ___ the mountains.",
+    "options": ["Over", "Under", "In", "With"],
+    "answer": "Over",
+    "explanation": "كلمة 'Over' معناها فوق أو أعلى، ودي بتستخدم لوصف الطيران فوق الجبال."
+  },
+  {
+    "question": "The cat is hiding ___ the table.",
+    "options": ["Over", "On", "With", "Under"],
+    "answer": "Under",
+    "explanation": "'Under' معناها تحت، ودي بنستخدمها لما الحاجة تبقى أسفل شيء تاني."
+  },
+  {
+    "question": "We were talking ___ the problem.",
+    "options": ["In", "About", "With", "From"],
+    "answer": "About",
+    "explanation": "'About' معناها عن، وبتستخدم لما بنتكلم عن موضوع معين."
+  },
+ 
+
+{
+    "question": "The opposite of 'in' is ____.",
+    "options": ["Up", "Over", "Out", "Inside"],
+    "answer": "Out",
+    "explanation": "In معناها داخل، وعكسها Out (خارج)."
+  },
+  {
+    "question": "I can open the door with a ____.",
+    "options": ["Key", "Door", "Lock", "Handle"],
+    "answer": "Key",
+    "explanation": "نستخدم المفتاح (Key) لفتح الباب."
+  },
+  {
+    "question": "Which fruit is round and smooth that contains a pit?",
+    "options": ["Carrot", "Peach", "Banana", "Orange"],
+    "answer": "Peach",
+    "explanation": "Peach (خوخ) فاكهة مستديرة وملساء وبداخلها نواة."
+  },
+  {
+    "question": "What is the past perfect of (go)?",
+    "options": ["Goes", "Went", "Had gone", "Going"],
+    "answer": "Had gone",
+    "explanation": "الماضي التام من go هو had gone."
+  },
+  {
+    "question": "What is the opposite of (dark)?",
+    "options": ["Cold", "Light", "Grey", "Black"],
+    "answer": "Light",
+    "explanation": "Dark معناها مظلم، وعكسها Light (مضيء)."
+  },
+ 
+
+ {
+    "question": "Which season comes between summer and winter?",
+    "options": ["Winter", "Spring", "Autumn", "Summer"],
+    "answer": "Autumn",
+    "explanation": "الخريف (Autumn) يأتي بين الصيف والشتاء."
+  },
+  {
+    "question": "What is the opposite of (short)?",
+    "options": ["Long", "Cold", "Light", "Tight"],
+    "answer": "Long",
+    "explanation": "Short معناها قصير، وعكسها Long (طويل)."
+  },
+  {
+    "question": "What is the opposite of (weak)?",
+    "options": ["Poor", "Soft", "Rough", "Strong"],
+    "answer": "Strong",
+    "explanation": "Weak معناها ضعيف، وعكسها Strong (قوي)."
+  },
+  {
+    "question": "Which sentence uses the correct article?",
+    "options": [
+      "She bought a apple.",
+      "He is an honest man.",
+      "I saw an dog in the park.",
+      "This is unique idea."
+    ],
+    "answer": "He is an honest man.",
+    "explanation": "an تستخدم قبل كلمات تبدأ بصوت حرف متحرك مثل honest."
+  },
+  {
+    "question": "Where is…?",
+    "options": ["At Tanta", "From Tanta", "In Tanta", "To Tanta"],
+    "answer": "In Tanta",
+    "explanation": "نستخدم in مع أسماء المدن مثل In Tanta."
+  },
+ 
+
+  {
+    "question": "A winter sport that we use to glide over snow is",
+    "options": ["Swimming", "Running", "Skiing", "Football"],
+    "answer": "Skiing"
+  },
+  {
+    "question": "A metallic object used to open a door is called a",
+    "options": ["Key", "Knife", "Ring", "Coin"],
+    "answer": "Key"
+  },
+  {
+    "question": "I have a cough, so I will go to the ____",
+    "options": ["School", "Pharmacy", "Office", "Doctor"],
+    "answer": "Doctor"
+  },
+  {
+    "question": "The color of the sky is ____",
+    "options": ["Green", "Blue", "Red", "Black"],
+    "answer": "Blue"
+  },
+  {
+    "question": "A smooth fruit with a seed inside is a ____",
+    "options": ["Apple", "Pear", "Mango", "Peach"],
+    "answer": "Mango"
+  },
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level22Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level22Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

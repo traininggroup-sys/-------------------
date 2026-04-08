@@ -1,6 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
-const level8Questions = [
+// بطل سرقة يا حرامي هتروح النار 😈
 
+// Level 8 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
+
+
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "أول مشاركة واسعة للمرأة في ثورة كانت في ثورة؟",
     "options": ["1710", "1883", "1952", "1971", "1919"],
@@ -155,6 +160,11 @@ const level8Questions = [
     "answer": "2017",
     "explanation": "صدر قرار إنشاء المجلس القومي للمدفوعات عام 2017 بهدف تقليل استخدام النقد وتعزيز الشمول المالي."
   },
+];
+
+// 2. حاسب (Computer)
+const computer = [
+ 
 
  {
     "question": "يُستخدم NOTEPAD لـ؟",
@@ -394,145 +404,11 @@ const level8Questions = [
           options: ["ويندوز XP", "ويندوز XL", "ويندوز 2000", "ويندوز 98"],
           answer: "ويندوز XL",
         },
-
- {
-    "question": "An animal called the (desert ship).",
-    "options": ["Horse", "Elephant", "Camel", "Dog"],
-    "answer": "Camel"
-  },
-  {
-    "question": "A furry pet animal that lives in the house.",
-    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
-    "answer": "Cat"
-  },
-  {
-    "question": "When it rains, we use____.",
-    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
-    "answer": "Umbrella"
-  },
-  {
-    "question": "What produces eggs?",
-    "options": ["Duck", "Hen", "Cow", "Dog"],
-    "answer": "Hen"
-  },
-  {
-    "question": "Which insect produces honey?",
-    "options": ["Ant", "Fly", "Bee", "Butterfly"],
-    "answer": "Bee"
-  },
- 
-
-{
-    "question": "A red round fruit with black seeds inside is ____",
-    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
-    "answer": "Watermelon"
-  },
-  {
-    "question": "Where can we put books?",
-    "options": ["Floor", "Bag", "Shelf", "Window"],
-    "answer": "Shelf"
-  },
-  {
-    "question": "A black and white animal is ____",
-    "options": ["Zebra", "Panda", "Cow", "Penguin"],
-    "answer": "Zebra"
-  },
-  {
-    "question": "When we leave we say ____",
-    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
-    "answer": "Goodbye"
-  },
-  {
-    "question": "When we meet a person for the first time we say ____",
-    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
-    "answer": "Nice to meet you"
-  },
+];
 
 
-  {
-      "question": "A calm person who doesn't laugh is:",
-      "options": ["Noisy", "Funny", "Shy", "Talkative"],
-      "answer": "Shy"
-    },
-    {
-      "question": "What do we use to see?",
-      "options": ["Eyes", "Nose", "Ears", "Mouth"],
-      "answer": "Eyes"
-    },
-    {
-      "question": "Hurghada is a tourist city with a beautiful__.",
-      "options": ["Forest", "Mountain", "Desert", "Beach"],
-      "answer": "Beach"
-    },
-    {
-      "question": "Which science studies countries?",
-      "options": ["Math", "Geography", "History", "Chemistry"],
-      "answer": "Geography"
-    },
-    {
-      "question": "Which fruit has a hard stone inside it?",
-      "options": ["Apple", "Banana", "Peach", "Grapes"],
-      "answer": "Peach"
-    },
-
-  {
-    "question": "What gives us milk and cheese?",
-    "options": ["Tiger", "Cow", "Horse", "Lion"],
-    "answer": "Cow"
-  },
-  {
-    "question": "What moves on water?",
-    "options": ["Car", "Train", "Boat", "Bicycle"],
-    "answer": "Boat"
-  },
-  {
-    "question": "What is an instrument made of plastic used for writing with ink?",
-    "options": ["Pen", "Brush", "Ruler", "Spoon"],
-    "answer": "Pen"
-  },
-  {
-    "question": "The sun goes down and the sky gets dark in the __.",
-    "options": ["Afternoon", "Noon", "Morning", "Evening"],
-    "answer": "Evening"
-  },
-  {
-    "question": "The _ of the film makes me laugh.",
-    "options": ["Fear", "Humor", "Drama", "Sadness"],
-    "answer": "Humor"
-  },
-
-
-{
-    "question": "What do we use to protect our skin from the sun?",
-    "options": ["Sunscreen", "Powder", "Soap", "Moisturizer"],
-    "answer": "Sunscreen",
-    "explanation": "نستخدم كريم الوقاية من الشمس (Sunscreen) لحماية بشرتنا من الأشعة الضارة."
-  },
-  {
-    "question": "People learn from ____.",
-    "options": ["Himself", "People", "Experiences", "Experience"],
-    "answer": "Experience",
-    "explanation": "الناس يتعلمون من الخبرة لأنها تمثل ما يكتسبه الإنسان من مواقف وتجارب."
-  },
-  {
-    "question": "Who was the poet of the prophet?",
-    "options": ["Ahmed Shawqi", "Imru' al-Qais", "Al-Mutanabbi", "Hassan bin Thabit"],
-    "answer": "Hassan bin Thabit",
-    "explanation": "حسان بن ثابت هو شاعر النبي صلى الله عليه وسلم ومدّاحه."
-  },
-  {
-    "question": "A farmer with a sick cow goes to____.",
-    "options": ["Teacher", "Veterinarian", "Chef", "Mechanic"],
-    "answer": "Veterinarian",
-    "explanation": "الطبيب البيطري هو المختص بعلاج الحيوانات."
-  },
-  {
-    "question": "The country that is known for making films is_____",
-    "options": ["Brazil", "Egypt", "United States of America", "China"],
-    "answer": "United States of America",
-    "explanation": "الولايات المتحدة مشهورة بصناعة السينما خاصة في هوليوود."
-  },
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
     "question": "العصا لمن عصى — العصا ، عصى:",
     "options": [
@@ -754,11 +630,169 @@ const level8Questions = [
     "answer":  "جاءت ست وعشرون طالبةّ"
   },
 
+];
 
 
 
-]
 
-export { level8Questions };
-console.log('✅ questions-level8.js ready -', level8Questions.length, 'questions');
 
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "An animal called the (desert ship).",
+    "options": ["Horse", "Elephant", "Camel", "Dog"],
+    "answer": "Camel"
+  },
+  {
+    "question": "A furry pet animal that lives in the house.",
+    "options": ["Cat", "Rabbit", "Bear", "Tiger"],
+    "answer": "Cat"
+  },
+  {
+    "question": "When it rains, we use____.",
+    "options": ["Hat", "Sunglasses", "Towel", "Umbrella"],
+    "answer": "Umbrella"
+  },
+  {
+    "question": "What produces eggs?",
+    "options": ["Duck", "Hen", "Cow", "Dog"],
+    "answer": "Hen"
+  },
+  {
+    "question": "Which insect produces honey?",
+    "options": ["Ant", "Fly", "Bee", "Butterfly"],
+    "answer": "Bee"
+  },
+ 
+
+{
+    "question": "A red round fruit with black seeds inside is ____",
+    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
+    "answer": "Watermelon"
+  },
+  {
+    "question": "Where can we put books?",
+    "options": ["Floor", "Bag", "Shelf", "Window"],
+    "answer": "Shelf"
+  },
+  {
+    "question": "A black and white animal is ____",
+    "options": ["Zebra", "Panda", "Cow", "Penguin"],
+    "answer": "Zebra"
+  },
+  {
+    "question": "When we leave we say ____",
+    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
+    "answer": "Goodbye"
+  },
+  {
+    "question": "When we meet a person for the first time we say ____",
+    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
+    "answer": "Nice to meet you"
+  },
+
+
+  {
+      "question": "A calm person who doesn't laugh is:",
+      "options": ["Noisy", "Funny", "Shy", "Talkative"],
+      "answer": "Shy"
+    },
+    {
+      "question": "What do we use to see?",
+      "options": ["Eyes", "Nose", "Ears", "Mouth"],
+      "answer": "Eyes"
+    },
+    {
+      "question": "Hurghada is a tourist city with a beautiful__.",
+      "options": ["Forest", "Mountain", "Desert", "Beach"],
+      "answer": "Beach"
+    },
+    {
+      "question": "Which science studies countries?",
+      "options": ["Math", "Geography", "History", "Chemistry"],
+      "answer": "Geography"
+    },
+    {
+      "question": "Which fruit has a hard stone inside it?",
+      "options": ["Apple", "Banana", "Peach", "Grapes"],
+      "answer": "Peach"
+    },
+
+  {
+    "question": "What gives us milk and cheese?",
+    "options": ["Tiger", "Cow", "Horse", "Lion"],
+    "answer": "Cow"
+  },
+  {
+    "question": "What moves on water?",
+    "options": ["Car", "Train", "Boat", "Bicycle"],
+    "answer": "Boat"
+  },
+  {
+    "question": "What is an instrument made of plastic used for writing with ink?",
+    "options": ["Pen", "Brush", "Ruler", "Spoon"],
+    "answer": "Pen"
+  },
+  {
+    "question": "The sun goes down and the sky gets dark in the __.",
+    "options": ["Afternoon", "Noon", "Morning", "Evening"],
+    "answer": "Evening"
+  },
+  {
+    "question": "The _ of the film makes me laugh.",
+    "options": ["Fear", "Humor", "Drama", "Sadness"],
+    "answer": "Humor"
+  },
+
+
+{
+    "question": "What do we use to protect our skin from the sun?",
+    "options": ["Sunscreen", "Powder", "Soap", "Moisturizer"],
+    "answer": "Sunscreen",
+    "explanation": "نستخدم كريم الوقاية من الشمس (Sunscreen) لحماية بشرتنا من الأشعة الضارة."
+  },
+  {
+    "question": "People learn from ____.",
+    "options": ["Himself", "People", "Experiences", "Experience"],
+    "answer": "Experience",
+    "explanation": "الناس يتعلمون من الخبرة لأنها تمثل ما يكتسبه الإنسان من مواقف وتجارب."
+  },
+  {
+    "question": "Who was the poet of the prophet?",
+    "options": ["Ahmed Shawqi", "Imru' al-Qais", "Al-Mutanabbi", "Hassan bin Thabit"],
+    "answer": "Hassan bin Thabit",
+    "explanation": "حسان بن ثابت هو شاعر النبي صلى الله عليه وسلم ومدّاحه."
+  },
+  {
+    "question": "A farmer with a sick cow goes to____.",
+    "options": ["Teacher", "Veterinarian", "Chef", "Mechanic"],
+    "answer": "Veterinarian",
+    "explanation": "الطبيب البيطري هو المختص بعلاج الحيوانات."
+  },
+  {
+    "question": "The country that is known for making films is_____",
+    "options": ["Brazil", "Egypt", "United States of America", "China"],
+    "answer": "United States of America",
+    "explanation": "الولايات المتحدة مشهورة بصناعة السينما خاصة في هوليوود."
+  },
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level8Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level8Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

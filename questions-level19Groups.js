@@ -1,8 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level19Questions =[
-
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "غمرة هي منطقة داخل محافظة القاهرة.",
     "options": ["صح", "خطأ"],
@@ -144,8 +147,11 @@ const level19Questions =[
   "answer": "6",
   "explanation": "تشمل المبادرة الوطنية للمشروعات الخضراء الذكية 6 فئات رئيسية لتشجيع المشروعات الذكية والمستدامة في مختلف القطاعات."
   },
+];
 
- {
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "في برنامج Word، التبويب المسؤول عن إرسال البريد الجماعي ودمج المراسلات (Mail Merge) هو؟",
     "options": ["مراجع", "مراسلات", "إدراج", "تخطيط الصفحة"],
     "answer": "مراسلات"
@@ -305,181 +311,11 @@ const level19Questions =[
     ],
     "answer": "حماية الحاسوب من البرمجيات الخبيثة"
   },
-
- {
-    "question": "The opposite of the word 'full' is ____",
-    "options": ["Big", "Filled", "Empty", "Complete"],
-    "answer": "Empty",
-    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
-  },
-  {
-    "question": "The opposite of the word 'happy' is ____",
-    "options": ["Sad", "Glad", "Joyful", "Kind"],
-    "answer": "Sad",
-    "explanation": "Happy معناها سعيد، وعكسها Sad اللي معناها حزين."
-  },
-  {
-    "question": "The opposite of the word 'big' is ____",
-    "options": ["Huge", "Tall", "Large", "Small"],
-    "answer": "Small",
-    "explanation": "Big معناها كبير، وعكسها Small يعني صغير."
-  },
-  {
-    "question": "The opposite of the word 'light' is ____",
-    "options": ["Lamp", "Darkness", "Brightness", "Clear"],
-    "answer": "Darkness",
-    "explanation": "Light معناها ضوء، وعكسها Darkness يعني الظلام."
-  },
-  {
-    "question": "What is the opposite of 'up'?",
-    "options": ["Top", "Rise", "Down", "Open"],
-    "answer": "Down",
-    "explanation": "Up معناها أعلى، وعكسها Down يعني أسفل."
-  },
-  
-
-{
-    "question": "The plural of 'man' is ____",
-    "options": ["Mans", "Men", "Males", "Mens"],
-    "answer": "Men",
-    "explanation": "Man معناها رجل، وجمعها الصحيح هو Men."
-  },
-  {
-    "question": "The plural of 'fox' is ____",
-    "options": ["Foes", "Foxs", "Foxes", "Fox"],
-    "answer": "Foxes",
-    "explanation": "Fox معناها ثعلب، وجمعها الصحيح Foxes بإضافة es."
-  },
-  {
-    "question": "The plural of 'foot' is ____",
-    "options": ["Feet", "Foots", "Feets", "Foot"],
-    "answer": "Feet",
-    "explanation": "Foot معناها قدم، وجمعها الصحيح هو Feet."
-  },
-  {
-    "question": "What is the plural of the word 'baby'?",
-    "options": ["Baby", "Babyes", "Babys", "Babies"],
-    "answer": "Babies",
-    "explanation": "Baby بتنتهي بـ y وقبلها حرف ساكن، فبنشيل y ونضيف ies عشان نجيب الجمع الصحيح: Babies."
-  },
-  {
-    "question": "What is the plural of the word 'foot'?",
-    "options": ["Foots", "Feet", "Feets", "Foot"],
-    "answer": "Feet",
-    "explanation": "Foot معناها قدم، والجمع غير منتظم بيكون Feet."
-  },
- 
-
- {
-    "question": "The opposite of 'on' is____",
-    "options": [
-      "Start",
-      "In",
-      "Off",
-      "Top"
-    ],
-    "answer": "Off"
-  },
-  {
-    "question": "The opposite of 'old' is____",
-    "options": [
-      "New",
-      "Used",
-      "Classic",
-      "Ancient"
-    ],
-    "answer": "New"
-  },
-  {
-    "question": "The opposite of 'dry' is____",
-    "options": [
-      "Cool",
-      "Thick",
-      "Clean",
-      "Wet"
-    ],
-    "answer": "Wet"
-  },
-  {
-    "question": "The rabbit is fast, but the turtle is ____",
-    "options": [
-      "Quick",
-      "Slow",
-      "Happy",
-      "Smart"
-    ],
-    "answer": "Slow"
-  },
-  {
-    "question": "The opposite of 'strong' is____",
-    "options": [
-      "Heavy",
-      "Bright",
-      "Weak",
-      "Tall"
-    ],
-    "answer": "Weak"
-  },
-
-  {
-    "question": "The opposite of 'strong' is ____",
-    "options": ["Heavy", "Weak", "Bright", "Tall"],
-    "answer": "Weak",
-    "explanation": "كلمة strong معناها قوي، وعكسها هو weak اللي معناها ضعيف."
-  },
-  {
-    "question": "The antonym for 'push' is ____",
-    "options": ["Tap", "Stop", "Pull", "Throw"],
-    "answer": "Pull",
-    "explanation": "Push معناها يدفع، أما Pull فمعناها يسحب، وده هو العكس تمامًا."
-  },
-  {
-    "question": "The opposite of 'ugly' is ____",
-    "options": ["Beautiful", "Weird", "Boring", "Dark"],
-    "answer": "Beautiful",
-    "explanation": "Ugly معناها قبيح، وعكسها Beautiful اللي معناها جميل."
-  },
-  {
-    "question": "What is a synonym for 'short'?",
-    "options": ["Open", "Fast", "Tall", "Brief"],
-    "answer": "Brief",
-    "explanation": "Short معناها قصير، وBrief معناها مختصر، وهي مرادف ليها."
-  },
-  {
-    "question": "The opposite of 'careful' is ____",
-    "options": ["Kind", "Careless", "Neat", "Calm"],
-    "answer": "Careless",
-    "explanation": "Careful معناها حذر أو منتبه، وعكسها Careless يعني مهمل."
-  },
- 
-
-{
-    "question": "A red round fruit with black seeds inside is ____",
-    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
-    "answer": "Watermelon"
-  },
-  {
-    "question": "Where can we put books?",
-    "options": ["Floor", "Bag", "Shelf", "Window"],
-    "answer": "Shelf"
-  },
-  {
-    "question": "A black and white animal is ____",
-    "options": ["Zebra", "Panda", "Cow", "Penguin"],
-    "answer": "Zebra"
-  },
-  {
-    "question": "When we leave we say ____",
-    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
-    "answer": "Goodbye"
-  },
-  {
-    "question": "When we meet a person for the first time we say ____",
-    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
-    "answer": "Nice to meet you"
-  },
+];
 
 
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "لم ينجح إلا ............. طالبًا.",
   "options": [
@@ -714,10 +550,204 @@ const level19Questions =[
   },
 
 
+];
 
 
-]
 
-export { level19Questions };
-console.log('✅ questions-level1.js ready -', level19Questions.length, 'questions (pure JS objects/JSON)');
 
+
+// 4. انجليزي (English)
+const english = [
+ {
+    "question": "The opposite of the word 'full' is ____",
+    "options": ["Big", "Filled", "Empty", "Complete"],
+    "answer": "Empty",
+    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
+  },
+  {
+    "question": "The opposite of the word 'happy' is ____",
+    "options": ["Sad", "Glad", "Joyful", "Kind"],
+    "answer": "Sad",
+    "explanation": "Happy معناها سعيد، وعكسها Sad اللي معناها حزين."
+  },
+  {
+    "question": "The opposite of the word 'big' is ____",
+    "options": ["Huge", "Tall", "Large", "Small"],
+    "answer": "Small",
+    "explanation": "Big معناها كبير، وعكسها Small يعني صغير."
+  },
+  {
+    "question": "The opposite of the word 'light' is ____",
+    "options": ["Lamp", "Darkness", "Brightness", "Clear"],
+    "answer": "Darkness",
+    "explanation": "Light معناها ضوء، وعكسها Darkness يعني الظلام."
+  },
+  {
+    "question": "What is the opposite of 'up'?",
+    "options": ["Top", "Rise", "Down", "Open"],
+    "answer": "Down",
+    "explanation": "Up معناها أعلى، وعكسها Down يعني أسفل."
+  },
+  
+
+{
+    "question": "The plural of 'man' is ____",
+    "options": ["Mans", "Men", "Males", "Mens"],
+    "answer": "Men",
+    "explanation": "Man معناها رجل، وجمعها الصحيح هو Men."
+  },
+  {
+    "question": "The plural of 'fox' is ____",
+    "options": ["Foes", "Foxs", "Foxes", "Fox"],
+    "answer": "Foxes",
+    "explanation": "Fox معناها ثعلب، وجمعها الصحيح Foxes بإضافة es."
+  },
+  {
+    "question": "The plural of 'foot' is ____",
+    "options": ["Feet", "Foots", "Feets", "Foot"],
+    "answer": "Feet",
+    "explanation": "Foot معناها قدم، وجمعها الصحيح هو Feet."
+  },
+  {
+    "question": "What is the plural of the word 'baby'?",
+    "options": ["Baby", "Babyes", "Babys", "Babies"],
+    "answer": "Babies",
+    "explanation": "Baby بتنتهي بـ y وقبلها حرف ساكن، فبنشيل y ونضيف ies عشان نجيب الجمع الصحيح: Babies."
+  },
+  {
+    "question": "What is the plural of the word 'foot'?",
+    "options": ["Foots", "Feet", "Feets", "Foot"],
+    "answer": "Feet",
+    "explanation": "Foot معناها قدم، والجمع غير منتظم بيكون Feet."
+  },
+ 
+
+ {
+    "question": "The opposite of 'on' is____",
+    "options": [
+      "Start",
+      "In",
+      "Off",
+      "Top"
+    ],
+    "answer": "Off"
+  },
+  {
+    "question": "The opposite of 'old' is____",
+    "options": [
+      "New",
+      "Used",
+      "Classic",
+      "Ancient"
+    ],
+    "answer": "New"
+  },
+  {
+    "question": "The opposite of 'dry' is____",
+    "options": [
+      "Cool",
+      "Thick",
+      "Clean",
+      "Wet"
+    ],
+    "answer": "Wet"
+  },
+  {
+    "question": "The rabbit is fast, but the turtle is ____",
+    "options": [
+      "Quick",
+      "Slow",
+      "Happy",
+      "Smart"
+    ],
+    "answer": "Slow"
+  },
+  {
+    "question": "The opposite of 'strong' is____",
+    "options": [
+      "Heavy",
+      "Bright",
+      "Weak",
+      "Tall"
+    ],
+    "answer": "Weak"
+  },
+
+  {
+    "question": "The opposite of 'strong' is ____",
+    "options": ["Heavy", "Weak", "Bright", "Tall"],
+    "answer": "Weak",
+    "explanation": "كلمة strong معناها قوي، وعكسها هو weak اللي معناها ضعيف."
+  },
+  {
+    "question": "The antonym for 'push' is ____",
+    "options": ["Tap", "Stop", "Pull", "Throw"],
+    "answer": "Pull",
+    "explanation": "Push معناها يدفع، أما Pull فمعناها يسحب، وده هو العكس تمامًا."
+  },
+  {
+    "question": "The opposite of 'ugly' is ____",
+    "options": ["Beautiful", "Weird", "Boring", "Dark"],
+    "answer": "Beautiful",
+    "explanation": "Ugly معناها قبيح، وعكسها Beautiful اللي معناها جميل."
+  },
+  {
+    "question": "What is a synonym for 'short'?",
+    "options": ["Open", "Fast", "Tall", "Brief"],
+    "answer": "Brief",
+    "explanation": "Short معناها قصير، وBrief معناها مختصر، وهي مرادف ليها."
+  },
+  {
+    "question": "The opposite of 'careful' is ____",
+    "options": ["Kind", "Careless", "Neat", "Calm"],
+    "answer": "Careless",
+    "explanation": "Careful معناها حذر أو منتبه، وعكسها Careless يعني مهمل."
+  },
+ 
+
+{
+    "question": "A red round fruit with black seeds inside is ____",
+    "options": ["Tomato", "Watermelon", "Apple", "Strawberry"],
+    "answer": "Watermelon"
+  },
+  {
+    "question": "Where can we put books?",
+    "options": ["Floor", "Bag", "Shelf", "Window"],
+    "answer": "Shelf"
+  },
+  {
+    "question": "A black and white animal is ____",
+    "options": ["Zebra", "Panda", "Cow", "Penguin"],
+    "answer": "Zebra"
+  },
+  {
+    "question": "When we leave we say ____",
+    "options": ["Hello", "Sorry", "Yes", "Goodbye"],
+    "answer": "Goodbye"
+  },
+  {
+    "question": "When we meet a person for the first time we say ____",
+    "options": ["Welcome back", "Nice to meet you", "See you", "Thanks"],
+    "answer": "Nice to meet you"
+  },
+
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level19Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level19Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

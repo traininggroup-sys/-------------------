@@ -1,8 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level13Questions = [
-
+// 1. معلومات عامة (General)
+const general = [
 {
     "question": "تم إنشاء المجلس القومي للمرأة بموجب القرار الجمهوري رقم 90 لعام ---",
     "options": ["2003", "2001", "2009", "2000", "2007"],
@@ -139,8 +142,11 @@ const level13Questions = [
     "answer": "أسوان",
     "explanation": "تقع محطة بنبان للطاقة الشمسية ومحطاتها التحويلية في محافظة أسوان وتُعد من أكبر مشروعات الطاقة الشمسية في العالم."
   },
+];
 
-{
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "في برنامج Word، 'اتجاه الصفحة' يشير إلى؟",
     "options": ["ترتيب الصفحات", "حجم الصفحة", "شكل الصفحة (عمودي/أفقي)", "نوع الخط"],
     "answer": "شكل الصفحة (عمودي/أفقي)"
@@ -296,163 +302,11 @@ const level13Questions = [
     ],
     "answer": "Shutdown"
   },
-
- {
-    "question": "What is the proper behavior when talking with your mouth full?",
-    "options": ["Funny", "Polite", "Impolite", "Respectful"],
-    "answer": "Impolite"
-  },
-  {
-    "question": "What should we buy for the new house?",
-    "options": ["Furniture", "Groceries", "Clothes", "Books"],
-    "answer": "Furniture"
-  },
-  {
-    "question": "An item made of glass or plastic",
-    "options": ["Plate", "Spoon", "Towel", "Cup"],
-    "answer": "Cup"
-  },
-  {
-    "question": "An item we use for vision",
-    "options": ["Shoes", "Glasses", "Hat", "Watch"],
-    "answer": "Glasses"
-  },
-  {
-    "question": "An item we use to cover the head",
-    "options": ["Gloves", "T-shirt", "Hat", "Scarf"],
-    "answer": "Hat"
-  },
-
- {
-    "question": "Where do you go when you treat your teeth?",
-    "options": [
-      "Doctor",
-      "Dentist",
-      "Pharmacy",
-      "Hospital"
-    ],
-    "answer": "Dentist"
-  },
-  {
-    "question": "What is the large, round fruit with a green rind and sweet, red flesh inside?",
-    "options": [
-      "Orange",
-      "Apple",
-      "Watermelon",
-      "Peach"
-    ],
-    "answer": "Watermelon"
-  },
-  {
-    "question": "Which animal has long, narrow wings?",
-    "options": [
-      "Gull",
-      "Owl",
-      "Reptile",
-      "Mammal"
-    ],
-    "answer": "Gull"
-  },
-  {
-    "question": "We listen to the audio with headphones.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "answer": "True"
-  },
-  {
-    "question": "What is worn on the hand?",
-    "options": [
-      "Shoes",
-      "Gloves",
-      "Shirt",
-      "Socks"
-    ],
-    "answer": "Gloves"
-  },
+];
 
 
- {
-    "question": "Is a purported disc-shaped UFO.",
-    "options": ["A satellite", "A drone", "A flying saucer", "A spaceship"],
-    "answer": "A flying saucer"
-  },
-  {
-    "question": "What has reduced the use of paper?",
-    "options": ["Computer", "Printer", "Book", "Notebook"],
-    "answer": "Computer"
-  },
-  {
-    "question": "What has two wheels and a motor?",
-    "options": ["Truck", "Car", "Bus", "Motorcycle"],
-    "answer": "Motorcycle"
-  },
-  {
-    "question": "Which fruit has a rough texture on the outside, is round, small, used to make juice, and has a red interior?",
-    "options": ["Apple", "Grapefruit", "Banana", "Watermelon"],
-    "answer": "Grapefruit"
-  },
-  {
-    "question": "What covers the window?",
-    "options": ["Pillow", "Carpet", "Curtain", "Tablecloth"],
-    "answer": "Curtain"
-  },
-
-
-  {
-    "question": "Cakes ____ are flour, eggs and butter.",
-    "options": ["Colors", "Ingredients", "Styles", "Sizes"],
-    "answer": "Ingredients"
-  },
-  {
-    "question": "What do we do after washing our hands?",
-    "options": ["We wear gloves", "We shake hands", "We dry them with a towel", "We wash our face"],
-    "answer": "We dry them with a towel"
-  },
-  {
-    "question": "If you went to the desert, you would live in",
-    "options": ["Tent", "House", "Cave", "Hotel"],
-    "answer": "Tent"
-  },
-  {
-    "question": "Muslims go to ___ to pray.",
-    "options": ["Church", "Temple", "School", "Mosque"],
-    "answer": "Mosque"
-  },
-  {
-    "question": "The metallic object you use to write words is long and thin and usually made of wood.",
-    "options": ["Eraser", "Pencil", "Ruler", "Marker"],
-    "answer": "Pencil"
-  },
- 
-
- {
-      "question": "The person who helps the doctor?",
-      "options": ["Chef", "Teacher", "Nurse", "Driver"],
-      "answer": "Nurse"
-    },
-    {
-      "question": "A rubbery thing that is used in sports?",
-      "options": ["Ball", "Cap", "Net", "Bat"],
-      "answer": "Ball"
-    },
-    {
-      "question": "What is a piece of clothing worn above the trousers?",
-      "options": ["Shorts", "Pants", "Socks", "Shirt"],
-      "answer": "Shirt"
-    },
-    {
-      "question": "What does the athlete wear on his feet?",
-      "options": ["Boots", "Sneakers", "Sandals", "Slippers"],
-      "answer": "Sneakers"
-    },
-    {
-      "question": "What is the name of the toy described as a circular object that moves up and down on a long piece of string?",
-      "options": ["Doll", "Car", "Yo-yo", "Kite"],
-      "answer": "Yo-yo"
-    },
- 
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "اختر الجملة الصحيحة:",
   "options": [
@@ -692,11 +546,186 @@ const level13Questions = [
     "answer": "اسم زمان"
   },
 
+];
 
+
+
+
+
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "What is the proper behavior when talking with your mouth full?",
+    "options": ["Funny", "Polite", "Impolite", "Respectful"],
+    "answer": "Impolite"
+  },
+  {
+    "question": "What should we buy for the new house?",
+    "options": ["Furniture", "Groceries", "Clothes", "Books"],
+    "answer": "Furniture"
+  },
+  {
+    "question": "An item made of glass or plastic",
+    "options": ["Plate", "Spoon", "Towel", "Cup"],
+    "answer": "Cup"
+  },
+  {
+    "question": "An item we use for vision",
+    "options": ["Shoes", "Glasses", "Hat", "Watch"],
+    "answer": "Glasses"
+  },
+  {
+    "question": "An item we use to cover the head",
+    "options": ["Gloves", "T-shirt", "Hat", "Scarf"],
+    "answer": "Hat"
+  },
+
+ {
+    "question": "Where do you go when you treat your teeth?",
+    "options": [
+      "Doctor",
+      "Dentist",
+      "Pharmacy",
+      "Hospital"
+    ],
+    "answer": "Dentist"
+  },
+  {
+    "question": "What is the large, round fruit with a green rind and sweet, red flesh inside?",
+    "options": [
+      "Orange",
+      "Apple",
+      "Watermelon",
+      "Peach"
+    ],
+    "answer": "Watermelon"
+  },
+  {
+    "question": "Which animal has long, narrow wings?",
+    "options": [
+      "Gull",
+      "Owl",
+      "Reptile",
+      "Mammal"
+    ],
+    "answer": "Gull"
+  },
+  {
+    "question": "We listen to the audio with headphones.",
+    "options": [
+      "False",
+      "True"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "What is worn on the hand?",
+    "options": [
+      "Shoes",
+      "Gloves",
+      "Shirt",
+      "Socks"
+    ],
+    "answer": "Gloves"
+  },
+
+
+ {
+    "question": "Is a purported disc-shaped UFO.",
+    "options": ["A satellite", "A drone", "A flying saucer", "A spaceship"],
+    "answer": "A flying saucer"
+  },
+  {
+    "question": "What has reduced the use of paper?",
+    "options": ["Computer", "Printer", "Book", "Notebook"],
+    "answer": "Computer"
+  },
+  {
+    "question": "What has two wheels and a motor?",
+    "options": ["Truck", "Car", "Bus", "Motorcycle"],
+    "answer": "Motorcycle"
+  },
+  {
+    "question": "Which fruit has a rough texture on the outside, is round, small, used to make juice, and has a red interior?",
+    "options": ["Apple", "Grapefruit", "Banana", "Watermelon"],
+    "answer": "Grapefruit"
+  },
+  {
+    "question": "What covers the window?",
+    "options": ["Pillow", "Carpet", "Curtain", "Tablecloth"],
+    "answer": "Curtain"
+  },
+
+
+  {
+    "question": "Cakes ____ are flour, eggs and butter.",
+    "options": ["Colors", "Ingredients", "Styles", "Sizes"],
+    "answer": "Ingredients"
+  },
+  {
+    "question": "What do we do after washing our hands?",
+    "options": ["We wear gloves", "We shake hands", "We dry them with a towel", "We wash our face"],
+    "answer": "We dry them with a towel"
+  },
+  {
+    "question": "If you went to the desert, you would live in",
+    "options": ["Tent", "House", "Cave", "Hotel"],
+    "answer": "Tent"
+  },
+  {
+    "question": "Muslims go to ___ to pray.",
+    "options": ["Church", "Temple", "School", "Mosque"],
+    "answer": "Mosque"
+  },
+  {
+    "question": "The metallic object you use to write words is long and thin and usually made of wood.",
+    "options": ["Eraser", "Pencil", "Ruler", "Marker"],
+    "answer": "Pencil"
+  },
  
 
-]
+ {
+      "question": "The person who helps the doctor?",
+      "options": ["Chef", "Teacher", "Nurse", "Driver"],
+      "answer": "Nurse"
+    },
+    {
+      "question": "A rubbery thing that is used in sports?",
+      "options": ["Ball", "Cap", "Net", "Bat"],
+      "answer": "Ball"
+    },
+    {
+      "question": "What is a piece of clothing worn above the trousers?",
+      "options": ["Shorts", "Pants", "Socks", "Shirt"],
+      "answer": "Shirt"
+    },
+    {
+      "question": "What does the athlete wear on his feet?",
+      "options": ["Boots", "Sneakers", "Sandals", "Slippers"],
+      "answer": "Sneakers"
+    },
+    {
+      "question": "What is the name of the toy described as a circular object that moves up and down on a long piece of string?",
+      "options": ["Doll", "Car", "Yo-yo", "Kite"],
+      "answer": "Yo-yo"
+    },
+];
 
-export { level13Questions };
-console.log('✅ questions-level1.js ready -', level13Questions.length, 'questions (pure JS objects/JSON)');
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
 
+export const level13Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level13Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

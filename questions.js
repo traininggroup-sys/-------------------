@@ -8,6 +8,26 @@ import { level4Groups } from './questions-level4Groups.js';
 import { level5Groups } from './questions-level5Groups.js';
 import { level6Groups } from './questions-level6Groups.js';
 import { level7Groups } from './questions-level7Groups.js';
+import { level8Groups } from './questions-level8Groups.js';
+import { level9Groups } from './questions-level8Groups.js';
+import { level10Groups } from './questions-level0Groups.js';
+import { level11Groups } from './questions-level11Groups.js';
+import { level12Groups } from './questions-level12Groups.js';
+import { level13Groups } from './questions-level13Groups.js';
+import { level14Groups } from './questions-level14Groups.js';
+import { level15Groups } from './questions-level15Groups.js';
+import { level16Groups } from './questions-level16Groups.js';
+import { level17Groups } from './questions-level17Groups.js';
+import { level18Groups } from './questions-level18Groups.js';
+import { level19Groups } from './questions-level19Groups.js';
+import { level20Groups } from './questions-level20Groups.js';
+import { level21Groups } from './questions-level21Groups.js';
+import { level22Groups } from './questions-level22Groups.js';
+import { level23Groups } from './questions-level23Groups.js';
+import { level24Groups } from './questions-level24Groups.js';
+import { level25Groups } from './questions-leve25Groups.js';
+
+
 
 
 // جديد: تحميل مجموعة من مستوى معين
@@ -22,7 +42,26 @@ export async function loadGroupQuestions(level, groupName) {
   window.allLevelsGroups[4] = level4Groups;
   window.allLevelsGroups[5] = level5Groups;
   window.allLevelsGroups[6] = level6Groups;
-    window.allLevelsGroups[7] = level7Groups;
+  window.allLevelsGroups[7] = level7Groups;
+  window.allLevelsGroups[8] = level8Groups;
+  window.allLevelsGroups[9] = level9Groups;
+window.allLevelsGroups[10] = level10Groups;
+window.allLevelsGroups[11] = level11Groups;
+window.allLevelsGroups[12] = level12Groups;
+window.allLevelsGroups[13] = level13Groups;
+window.allLevelsGroups[14] = level14Groups;
+window.allLevelsGroups[15] = level15Groups;
+window.allLevelsGroups[16] = level16Groups;
+window.allLevelsGroups[17] = level17Groups;
+window.allLevelsGroups[18] = level18Groups;
+window.allLevelsGroups[19] = level19Groups;
+window.allLevelsGroups[20] = level20Groups;
+window.allLevelsGroups[21] = level21Groups;
+window.allLevelsGroups[22] = level22Groups;
+window.allLevelsGroups[23] = level23Groups;
+window.allLevelsGroups[24] = level24Groups;
+window.allLevelsGroups[25] = level25Groups;
+
 
   
   if (!window.allLevelsGroups?.[level]?.[groupName]) {

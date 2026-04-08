@@ -1,14 +1,16 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level14Questions = [
-
-  
-  {
-    "question": "أوعى تجرب تابعة لوزارة العدل.",
-    "options": ["صح", "خطأ"],
-    "answer": "خطأ"
-  },
+// 1. معلومات عامة (General)
+const general = [
+ {
+  "question": "أوعى تجرب \"تابعة لوزارة العدل\".",
+  "options": ["صح", "خطأ"],
+  "answer": "خطأ"
+},
   {
     "question": "دار الأوبرا المصرية، أو المركز الثقافي القومي افتتحت في عام 1988 وتقع في ---",
     "options": ["أسوان", "الإسكندرية", "العريش", "القاهرة", "الأقصر"],
@@ -142,7 +144,11 @@ const level14Questions = [
     "explanation": "يُحتفل باليوم العالمي للاتصالات ومجتمع المعلومات في 17 مايو من كل عام إحياءً لذكرى تأسيس الاتحاد الدولي للاتصالات."
   },
 
- {
+];
+
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "السبب الأكثر ملاءمة لاستخدام الماكرو هو:",
     "options": ["أتمتة المهام المتكررة", "تسجيل الصوت", "تسجيل حركة الفأرة", "تسجيل ضربات المفاتيح"],
     "answer": "أتمتة المهام المتكررة"
@@ -289,214 +295,11 @@ const level14Questions = [
     ],
     "answer": "البحث عن ملف"
   },
-
-  {
-    "question": "Choose the correct comparative form of the adjective: 'cold'",
-    "options": [
-      "more cold",
-      "coldier",
-      "colder",
-      "coldest"
-    ],
-    "answer": "colder"
-  },
-  {
-    "question": "She _____ get up early, but now she wakes up early.",
-    "options": [
-      "didn't use to",
-      "didn't use",
-      "wasn't use to",
-      "used to"
-    ],
-    "answer": "didn't use to"
-  },
-  {
-    "question": "He is interested ___ learning English.",
-    "options": [
-      "of",
-      "at",
-      "for",
-      "in"
-    ],
-    "answer": "in"
-  },
-  {
-    "question": "What is the correct past continuous form of the verb 'hear'?",
-    "options": [
-      "was hear",
-      "was hearing",
-      "were hear",
-      "hearing"
-    ],
-    "answer": "was hearing"
-  },
-  {
-    "question": "Choose the opposite of the word: 'kind'",
-    "options": [
-      "nice",
-      "polite",
-      "rude",
-      "helpful"
-    ],
-    "answer": "rude"
-  },
-  
-
-{
-    "question": "He ___ for two hours before the power went out.",
-    "options": [
-      "has been studying",
-      "had been studying",
-      "was studying",
-      "studied"
-    ],
-    "answer": "had been studying"
-  },
-  {
-    "question": "Choose the correct phrasal verb meaning: 'to resemble a family member'",
-    "options": [
-      "take over",
-      "take up",
-      "take after",
-      "take in"
-    ],
-    "answer": "take after"
-  },
-  {
-    "question": "The mother will __ her baby",
-    "options": [
-      "look after",
-      "look for",
-      "take off",
-      "take after"
-    ],
-    "answer": "look after"
-  },
-  {
-    "question": "The pen ______ on the desk.",
-    "options": [
-      "be",
-      "am",
-      "are",
-      "is"
-    ],
-    "answer": "is"
-  },
-  {
-    "question": "What is the synonym of 'grateful'?",
-    "options": [
-      "angry",
-      "thankful",
-      "lazy",
-      "careful"
-    ],
-    "answer": "thankful"
-  },
+];
 
 
- {
-    "question": "What is the proper behavior when talking with your mouth full?",
-    "options": ["Funny", "Polite", "Impolite", "Respectful"],
-    "answer": "Impolite"
-  },
-  {
-    "question": "What should we buy for the new house?",
-    "options": ["Furniture", "Groceries", "Clothes", "Books"],
-    "answer": "Furniture"
-  },
-  {
-    "question": "An item made of glass or plastic",
-    "options": ["Plate", "Spoon", "Towel", "Cup"],
-    "answer": "Cup"
-  },
-  {
-    "question": "An item we use for vision",
-    "options": ["Shoes", "Glasses", "Hat", "Watch"],
-    "answer": "Glasses"
-  },
-  {
-    "question": "An item we use to cover the head",
-    "options": ["Gloves", "T-shirt", "Hat", "Scarf"],
-    "answer": "Hat"
-  },
-
- {
-    "question": "Where do you go when you treat your teeth?",
-    "options": [
-      "Doctor",
-      "Dentist",
-      "Pharmacy",
-      "Hospital"
-    ],
-    "answer": "Dentist"
-  },
-  {
-    "question": "What is the large, round fruit with a green rind and sweet, red flesh inside?",
-    "options": [
-      "Orange",
-      "Apple",
-      "Watermelon",
-      "Peach"
-    ],
-    "answer": "Watermelon"
-  },
-  {
-    "question": "Which animal has long, narrow wings?",
-    "options": [
-      "Gull",
-      "Owl",
-      "Reptile",
-      "Mammal"
-    ],
-    "answer": "Gull"
-  },
-  {
-    "question": "We listen to the audio with headphones.",
-    "options": [
-      "False",
-      "True"
-    ],
-    "answer": "True"
-  },
-  {
-    "question": "What is worn on the hand?",
-    "options": [
-      "Shoes",
-      "Gloves",
-      "Shirt",
-      "Socks"
-    ],
-    "answer": "Gloves"
-  },
-
-
-  {
-      "question": "A big animal with a trunk and gray color",
-      "options": ["Camel", "Elephant", "Bear", "Zebra"],
-      "answer": "Elephant"
-    },
-    {
-      "question": "A pet animal that barks is",
-      "options": ["Rabbit", "Cat", "Dog", "Horse"],
-      "answer": "Dog"
-    },
-    {
-      "question": "Which animal lives in African forests and has a long neck?",
-      "options": ["Giraffe", "Lion", "Zebra", "Elephant"],
-      "answer": "Giraffe"
-    },
-    {
-      "question": "The person who works in petroleum engineering",
-      "options": ["Mechanical engineer", "Electrician", "Driver", "Petroleum engineer"],
-      "answer": "Petroleum engineer"
-    },
-    {
-      "question": "What do we wear on our hands or wrists?",
-      "options": ["Shoes", "Bracelet / Watch", "Hat", "Gloves"],
-      "answer": "Bracelet / Watch"
-    },
- 
-
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "لماذا كُتبت الهمزة في كلمة (يسأل) على ألف؟",
   "options": [
@@ -724,10 +527,237 @@ const level14Questions = [
   },
 
 
+];
 
 
-]
 
-export { level14Questions };
-console.log('✅ questions-level1.js ready -', level14Questions.length, 'questions (pure JS objects/JSON)');
 
+
+// 4. انجليزي (English)
+const english = [
+  {
+    "question": "Choose the correct comparative form of the adjective: 'cold'",
+    "options": [
+      "more cold",
+      "coldier",
+      "colder",
+      "coldest"
+    ],
+    "answer": "colder"
+  },
+  {
+    "question": "She _____ get up early, but now she wakes up early.",
+    "options": [
+      "didn't use to",
+      "didn't use",
+      "wasn't use to",
+      "used to"
+    ],
+    "answer": "didn't use to"
+  },
+  {
+    "question": "He is interested ___ learning English.",
+    "options": [
+      "of",
+      "at",
+      "for",
+      "in"
+    ],
+    "answer": "in"
+  },
+  {
+    "question": "What is the correct past continuous form of the verb 'hear'?",
+    "options": [
+      "was hear",
+      "was hearing",
+      "were hear",
+      "hearing"
+    ],
+    "answer": "was hearing"
+  },
+  {
+    "question": "Choose the opposite of the word: 'kind'",
+    "options": [
+      "nice",
+      "polite",
+      "rude",
+      "helpful"
+    ],
+    "answer": "rude"
+  },
+  
+
+{
+    "question": "He ___ for two hours before the power went out.",
+    "options": [
+      "has been studying",
+      "had been studying",
+      "was studying",
+      "studied"
+    ],
+    "answer": "had been studying"
+  },
+  {
+    "question": "Choose the correct phrasal verb meaning: 'to resemble a family member'",
+    "options": [
+      "take over",
+      "take up",
+      "take after",
+      "take in"
+    ],
+    "answer": "take after"
+  },
+  {
+    "question": "The mother will __ her baby",
+    "options": [
+      "look after",
+      "look for",
+      "take off",
+      "take after"
+    ],
+    "answer": "look after"
+  },
+  {
+    "question": "The pen ______ on the desk.",
+    "options": [
+      "be",
+      "am",
+      "are",
+      "is"
+    ],
+    "answer": "is"
+  },
+  {
+    "question": "What is the synonym of 'grateful'?",
+    "options": [
+      "angry",
+      "thankful",
+      "lazy",
+      "careful"
+    ],
+    "answer": "thankful"
+  },
+
+
+ {
+    "question": "What is the proper behavior when talking with your mouth full?",
+    "options": ["Funny", "Polite", "Impolite", "Respectful"],
+    "answer": "Impolite"
+  },
+  {
+    "question": "What should we buy for the new house?",
+    "options": ["Furniture", "Groceries", "Clothes", "Books"],
+    "answer": "Furniture"
+  },
+  {
+    "question": "An item made of glass or plastic",
+    "options": ["Plate", "Spoon", "Towel", "Cup"],
+    "answer": "Cup"
+  },
+  {
+    "question": "An item we use for vision",
+    "options": ["Shoes", "Glasses", "Hat", "Watch"],
+    "answer": "Glasses"
+  },
+  {
+    "question": "An item we use to cover the head",
+    "options": ["Gloves", "T-shirt", "Hat", "Scarf"],
+    "answer": "Hat"
+  },
+
+ {
+    "question": "Where do you go when you treat your teeth?",
+    "options": [
+      "Doctor",
+      "Dentist",
+      "Pharmacy",
+      "Hospital"
+    ],
+    "answer": "Dentist"
+  },
+  {
+    "question": "What is the large, round fruit with a green rind and sweet, red flesh inside?",
+    "options": [
+      "Orange",
+      "Apple",
+      "Watermelon",
+      "Peach"
+    ],
+    "answer": "Watermelon"
+  },
+  {
+    "question": "Which animal has long, narrow wings?",
+    "options": [
+      "Gull",
+      "Owl",
+      "Reptile",
+      "Mammal"
+    ],
+    "answer": "Gull"
+  },
+  {
+    "question": "We listen to the audio with headphones.",
+    "options": [
+      "False",
+      "True"
+    ],
+    "answer": "True"
+  },
+  {
+    "question": "What is worn on the hand?",
+    "options": [
+      "Shoes",
+      "Gloves",
+      "Shirt",
+      "Socks"
+    ],
+    "answer": "Gloves"
+  },
+
+
+  {
+      "question": "A big animal with a trunk and gray color",
+      "options": ["Camel", "Elephant", "Bear", "Zebra"],
+      "answer": "Elephant"
+    },
+    {
+      "question": "A pet animal that barks is",
+      "options": ["Rabbit", "Cat", "Dog", "Horse"],
+      "answer": "Dog"
+    },
+    {
+      "question": "Which animal lives in African forests and has a long neck?",
+      "options": ["Giraffe", "Lion", "Zebra", "Elephant"],
+      "answer": "Giraffe"
+    },
+    {
+      "question": "The person who works in petroleum engineering",
+      "options": ["Mechanical engineer", "Electrician", "Driver", "Petroleum engineer"],
+      "answer": "Petroleum engineer"
+    },
+    {
+      "question": "What do we wear on our hands or wrists?",
+      "options": ["Shoes", "Bracelet / Watch", "Hat", "Gloves"],
+      "answer": "Bracelet / Watch"
+    },
+ 
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level14Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level14Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});

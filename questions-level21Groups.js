@@ -1,8 +1,11 @@
-// بطل سرقة يا حرامي هتروح النار
+// بطل سرقة يا حرامي هتروح النار 😈
+
+// Level 1 questions SPLITTED into 5 GROUPS
+// User: EDIT arrays to add your questions. Format: {question, options[], answer, explanation}
 
 
-const level21Questions = [
-
+// 1. معلومات عامة (General)
+const general = [
 {
         "question": "الساق المدادة هل تنمو رأسيًا؟",
         "options": ["صح", "خطأ"],
@@ -168,8 +171,11 @@ const level21Questions = [
     "answer": "ويليام هارفي",
     "explanation": "اكتشف العالم ويليام هارفي الدورة الدموية الكبرى في القرن السابع عشر."
   },
+];
 
- {
+// 2. حاسب (Computer)
+const computer = [
+  {
     "question": "الخلية AF17 في EXCEL عبارة عن؟",
     "options": ["ورقة AF", "صف AF مع عمود 17", "عمود AF مع صف 17"],
     "answer": "عمود AF مع صف 17"
@@ -313,166 +319,11 @@ const level21Questions = [
   },
   
 
-{
-    "question": "The opposite of 'in' is ____.",
-    "options": ["Up", "Over", "Out", "Inside"],
-    "answer": "Out",
-    "explanation": "In معناها داخل، وعكسها Out (خارج)."
-  },
-  {
-    "question": "I can open the door with a ____.",
-    "options": ["Key", "Door", "Lock", "Handle"],
-    "answer": "Key",
-    "explanation": "نستخدم المفتاح (Key) لفتح الباب."
-  },
-  {
-    "question": "Which fruit is round and smooth that contains a pit?",
-    "options": ["Carrot", "Peach", "Banana", "Orange"],
-    "answer": "Peach",
-    "explanation": "Peach (خوخ) فاكهة مستديرة وملساء وبداخلها نواة."
-  },
-  {
-    "question": "What is the past perfect of (go)?",
-    "options": ["Goes", "Went", "Had gone", "Going"],
-    "answer": "Had gone",
-    "explanation": "الماضي التام من go هو had gone."
-  },
-  {
-    "question": "What is the opposite of (dark)?",
-    "options": ["Cold", "Light", "Grey", "Black"],
-    "answer": "Light",
-    "explanation": "Dark معناها مظلم، وعكسها Light (مضيء)."
-  },
- 
-
- {
-    "question": "Which season comes between summer and winter?",
-    "options": ["Winter", "Spring", "Autumn", "Summer"],
-    "answer": "Autumn",
-    "explanation": "الخريف (Autumn) يأتي بين الصيف والشتاء."
-  },
-  {
-    "question": "What is the opposite of (short)?",
-    "options": ["Long", "Cold", "Light", "Tight"],
-    "answer": "Long",
-    "explanation": "Short معناها قصير، وعكسها Long (طويل)."
-  },
-  {
-    "question": "What is the opposite of (weak)?",
-    "options": ["Poor", "Soft", "Rough", "Strong"],
-    "answer": "Strong",
-    "explanation": "Weak معناها ضعيف، وعكسها Strong (قوي)."
-  },
-  {
-    "question": "Which sentence uses the correct article?",
-    "options": [
-      "She bought a apple.",
-      "He is an honest man.",
-      "I saw an dog in the park.",
-      "This is unique idea."
-    ],
-    "answer": "He is an honest man.",
-    "explanation": "an تستخدم قبل كلمات تبدأ بصوت حرف متحرك مثل honest."
-  },
-  {
-    "question": "Where is…?",
-    "options": ["At Tanta", "From Tanta", "In Tanta", "To Tanta"],
-    "answer": "In Tanta",
-    "explanation": "نستخدم in مع أسماء المدن مثل In Tanta."
-  },
- 
-
- {
-    "question": "What is the plural of the word 'child'?",
-    "options": ["Childes", "Childs", "Children", "Childer"],
-    "answer": "Children",
-    "explanation": "Child معناها طفل، وجمعها غير منتظم بيكون Children."
-  },
-  {
-    "question": "What is the plural of 'mouse'?",
-    "options": ["Mice", "Mouses", "Mices", "Mouse"],
-    "answer": "Mice",
-    "explanation": "Mouse معناها فأر، وجمعها غير منتظم بيكون Mice."
-  },
-  {
-    "question": "What is the plural of 'book'?",
-    "options": ["Book", "Boks", "Bookes", "Books"],
-    "answer": "Books",
-    "explanation": "Book معناها كتاب، والجمع الصحيح بإضافة s: Books."
-  },
-  {
-    "question": "Select the most appropriate synonym of 'Beautiful'",
-    "options": ["Obnoxious", "Pretty", "Despicable", "Detestable"],
-    "answer": "Pretty",
-    "explanation": "Pretty معناها جميل، وهي أقرب مرادف لكلمة Beautiful."
-  },
-  {
-    "question": "What is the antonym of 'full'?",
-    "options": ["Long", "Clean", "Empty", "Old"],
-    "answer": "Empty",
-    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
-  },
-
-  {
-    "question": "What is the antonym of (full)?",
-    "options": ["Clean", "Empty", "Long", "Old"],
-    "answer": "Empty",
-    "explanation": "كلمة full معناها ممتلئ، وعكسها هو empty (فارغ)."
-  },
-  {
-    "question": "What is the opposite of (spend)?",
-    "options": ["Buy", "Lose", "Save", "Waste"],
-    "answer": "Save",
-    "explanation": "Spend معناها ينفق، وعكسها Save (يدخر)."
-  },
-  {
-    "question": "What is the opposite of (happy)?",
-    "options": ["Sad", "Angry", "Crazy", "Tired"],
-    "answer": "Sad",
-    "explanation": "Happy معناها سعيد، وعكسها Sad (حزين)."
-  },
-  {
-    "question": "The opposite of 'soft' is ____.",
-    "options": ["Smooth", "Firm", "Rough", "Hard"],
-    "answer": "Hard",
-    "explanation": "Soft معناها ناعم أو لين، وعكسها Hard (صلب)."
-  },
-  {
-    "question": "Which question word is used to ask about people?",
-    "options": ["What", "Who", "Where", "Why"],
-    "answer": "Who",
-    "explanation": "نستخدم Who للسؤال عن الأشخاص."
-  },
-  
-
- {
-    "question": "The day between Tuesday and Thursday is ____",
-    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
-    "answer": "Wednesday"
-  },
-  {
-    "question": "How many days do we have in a week?",
-    "options": ["5", "6", "7", "4"],
-    "answer": "7"
-  },
-  {
-    "question": "Which month comes between September and November?",
-    "options": ["October", "August", "November", "September"],
-    "answer": "October"
-  },
-  {
-    "question": "Which month comes before April?",
-    "options": ["February", "May", "June", "March"],
-    "answer": "March"
-  },
-  {
-    "question": "Which month comes after January?",
-    "options": ["March", "February", "May", "June"],
-    "answer": "February"
-  },
+];
 
 
-   
+// 3. عربي (Arabic/Grammar)
+const arabic = [
 {
   "question": "اختر الجملة الصحيحة",
   "options": [
@@ -713,10 +564,188 @@ const level21Questions = [
 },
 
 
+];
 
 
-]
 
-export { level21Questions };
-console.log('✅ questions-level1.js ready -', level21Questions.length, 'questions (pure JS objects/JSON)');
 
+
+// 4. انجليزي (English)
+const english = [
+ {
+    "question": "The opposite of 'in' is ____.",
+    "options": ["Up", "Over", "Out", "Inside"],
+    "answer": "Out",
+    "explanation": "In معناها داخل، وعكسها Out (خارج)."
+  },
+  {
+    "question": "I can open the door with a ____.",
+    "options": ["Key", "Door", "Lock", "Handle"],
+    "answer": "Key",
+    "explanation": "نستخدم المفتاح (Key) لفتح الباب."
+  },
+  {
+    "question": "Which fruit is round and smooth that contains a pit?",
+    "options": ["Carrot", "Peach", "Banana", "Orange"],
+    "answer": "Peach",
+    "explanation": "Peach (خوخ) فاكهة مستديرة وملساء وبداخلها نواة."
+  },
+  {
+    "question": "What is the past perfect of (go)?",
+    "options": ["Goes", "Went", "Had gone", "Going"],
+    "answer": "Had gone",
+    "explanation": "الماضي التام من go هو had gone."
+  },
+  {
+    "question": "What is the opposite of (dark)?",
+    "options": ["Cold", "Light", "Grey", "Black"],
+    "answer": "Light",
+    "explanation": "Dark معناها مظلم، وعكسها Light (مضيء)."
+  },
+ 
+
+ {
+    "question": "Which season comes between summer and winter?",
+    "options": ["Winter", "Spring", "Autumn", "Summer"],
+    "answer": "Autumn",
+    "explanation": "الخريف (Autumn) يأتي بين الصيف والشتاء."
+  },
+  {
+    "question": "What is the opposite of (short)?",
+    "options": ["Long", "Cold", "Light", "Tight"],
+    "answer": "Long",
+    "explanation": "Short معناها قصير، وعكسها Long (طويل)."
+  },
+  {
+    "question": "What is the opposite of (weak)?",
+    "options": ["Poor", "Soft", "Rough", "Strong"],
+    "answer": "Strong",
+    "explanation": "Weak معناها ضعيف، وعكسها Strong (قوي)."
+  },
+  {
+    "question": "Which sentence uses the correct article?",
+    "options": [
+      "She bought a apple.",
+      "He is an honest man.",
+      "I saw an dog in the park.",
+      "This is unique idea."
+    ],
+    "answer": "He is an honest man.",
+    "explanation": "an تستخدم قبل كلمات تبدأ بصوت حرف متحرك مثل honest."
+  },
+  {
+    "question": "Where is…?",
+    "options": ["At Tanta", "From Tanta", "In Tanta", "To Tanta"],
+    "answer": "In Tanta",
+    "explanation": "نستخدم in مع أسماء المدن مثل In Tanta."
+  },
+ 
+
+ {
+    "question": "What is the plural of the word 'child'?",
+    "options": ["Childes", "Childs", "Children", "Childer"],
+    "answer": "Children",
+    "explanation": "Child معناها طفل، وجمعها غير منتظم بيكون Children."
+  },
+  {
+    "question": "What is the plural of 'mouse'?",
+    "options": ["Mice", "Mouses", "Mices", "Mouse"],
+    "answer": "Mice",
+    "explanation": "Mouse معناها فأر، وجمعها غير منتظم بيكون Mice."
+  },
+  {
+    "question": "What is the plural of 'book'?",
+    "options": ["Book", "Boks", "Bookes", "Books"],
+    "answer": "Books",
+    "explanation": "Book معناها كتاب، والجمع الصحيح بإضافة s: Books."
+  },
+  {
+    "question": "Select the most appropriate synonym of 'Beautiful'",
+    "options": ["Obnoxious", "Pretty", "Despicable", "Detestable"],
+    "answer": "Pretty",
+    "explanation": "Pretty معناها جميل، وهي أقرب مرادف لكلمة Beautiful."
+  },
+  {
+    "question": "What is the antonym of 'full'?",
+    "options": ["Long", "Clean", "Empty", "Old"],
+    "answer": "Empty",
+    "explanation": "Full معناها ممتلئ، وعكسها Empty يعني فارغ."
+  },
+
+  {
+    "question": "What is the antonym of (full)?",
+    "options": ["Clean", "Empty", "Long", "Old"],
+    "answer": "Empty",
+    "explanation": "كلمة full معناها ممتلئ، وعكسها هو empty (فارغ)."
+  },
+  {
+    "question": "What is the opposite of (spend)?",
+    "options": ["Buy", "Lose", "Save", "Waste"],
+    "answer": "Save",
+    "explanation": "Spend معناها ينفق، وعكسها Save (يدخر)."
+  },
+  {
+    "question": "What is the opposite of (happy)?",
+    "options": ["Sad", "Angry", "Crazy", "Tired"],
+    "answer": "Sad",
+    "explanation": "Happy معناها سعيد، وعكسها Sad (حزين)."
+  },
+  {
+    "question": "The opposite of 'soft' is ____.",
+    "options": ["Smooth", "Firm", "Rough", "Hard"],
+    "answer": "Hard",
+    "explanation": "Soft معناها ناعم أو لين، وعكسها Hard (صلب)."
+  },
+  {
+    "question": "Which question word is used to ask about people?",
+    "options": ["What", "Who", "Where", "Why"],
+    "answer": "Who",
+    "explanation": "نستخدم Who للسؤال عن الأشخاص."
+  },
+  
+
+ {
+    "question": "The day between Tuesday and Thursday is ____",
+    "options": ["Saturday", "Wednesday", "Friday", "Monday"],
+    "answer": "Wednesday"
+  },
+  {
+    "question": "How many days do we have in a week?",
+    "options": ["5", "6", "7", "4"],
+    "answer": "7"
+  },
+  {
+    "question": "Which month comes between September and November?",
+    "options": ["October", "August", "November", "September"],
+    "answer": "October"
+  },
+  {
+    "question": "Which month comes before April?",
+    "options": ["February", "May", "June", "March"],
+    "answer": "March"
+  },
+  {
+    "question": "Which month comes after January?",
+    "options": ["March", "February", "May", "June"],
+    "answer": "February"
+  },
+];
+
+// 5. تربوي (Educational)
+const educational = [
+  {"question": "إعطاء المرأة حق الترشح لأول مرة بالانتخابات عام ---", "options": ["1956","1959","1951","1957"], "answer": "1956"},
+  {"question": "إعلان الرئيس عبد الفتاح السيسي عام -- عامًا للمرأة المصرية،", "options": ["2023","2021","2019","2017"], "answer": "2017"},
+  {"question": "التزام الدولة المصرية بالمادة -- من الدستور المصري...", "options": ["31","41","51","61"], "answer": "41"},
+  {"question": "يعد مشروع إعادة تأهيل وتبطين ترع الري أحدث المشروعات...", "options": ["صح","خطأ"], "answer": "صح"},
+  // Add more educational...
+];
+
+export const level21Groups = {arabic, general, computer, english, educational};
+
+console.log('✅ questions-level21Groups.js: ', {
+  arabic: arabic.length, 
+  general: general.length, 
+  computer: computer.length, 
+  english: english.length, 
+  educational: educational.length
+});
