@@ -724,10 +724,16 @@ function renderGroupCards(levelProgress) {
   const container = document.getElementById('groups-container');
   container.innerHTML = '';
   
-  GROUP_NAMES.forEach((groupName, index) => {
+  // ✅ FIX: استخدم config المستوى بدل GROUP_NAMES الثابت
+  const levelConfig = window.levelsGroupsConfig[currentLevel];
+  const groupNames = levelConfig?.groups ? Object.keys(levelConfig.groups) : GROUP_NAMES;
+  
+  console.log(`🎯 Level ${currentLevel} groups:`, groupNames);
+  
+  groupNames.forEach((groupName, index) => {
     const completed = levelProgress.groups[groupName] || false;
-    const groupTitle = GROUP_TITLES[groupName];
-    const isOpen = index === 0 || (index > 0 && GROUP_NAMES.slice(0, index).every(g => levelProgress.groups[g]));
+    const groupTitle = GROUP_TITLES[groupName] || groupName;
+    const isOpen = index === 0 || (index > 0 && groupNames.slice(0, index).every(g => levelProgress.groups[g]));
     
     const card = document.createElement('div');
     card.className = `group-card ${completed ? 'passed' : isOpen ? 'open' : 'locked'}`;
@@ -743,6 +749,8 @@ function renderGroupCards(levelProgress) {
     
     container.appendChild(card);
   });
+  
+  console.log(`✅ Rendered ${groupNames.length} cards for level ${currentLevel}`);
 }
 
 // NEW: Show group info modal

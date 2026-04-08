@@ -83,13 +83,23 @@ export const GROUP_TITLES = {
   general: 'معلومات عامة',
   computer: 'حاسب',
   english: 'إنجليزي',
-  educational: 'تربوي'
+  educational: 'تربوي',
+  behavioral: 'الجدارات السلوكية والنفسية'  // ✅ للمستوى 15
 };
 
 // Config التحكم في المجموعات (افتراضي كلها إجبارية)
-// Config لكل المستويات 1-25 ✅
+// Config لكل المستويات 1-25 ✅ SPECIAL LEVEL 15
 export const levelsGroupsConfig = {};
 for(let i=1; i<=25; i++) {
+  if (i === 15) {
+    // ✅ مستوى 15: behavioral فقط
+    levelsGroupsConfig[15] = {
+      groups: {
+        behavioral: {mandatory: true, title: 'الجدارات السلوكية والنفسية'}
+      }
+    };
+    continue;
+  }
   levelsGroupsConfig[i] = {
     groups: {
       arabic: {mandatory: true},
