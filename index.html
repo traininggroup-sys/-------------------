@@ -1297,19 +1297,22 @@ async function showLevels() {
 const GROUP_ENABLED_LEVELS = Array.from({length: 25}, (_, i) => i+1);  // كل المستويات 1-25 بنظام Groups كامل
 
 async function getTotalQuestionsForLevel(level) {
+  const levelConfig = window.levelsGroupsConfig?.[level] || {};
+  const groupNames = levelConfig.groups ? Object.keys(levelConfig.groups) : GROUP_NAMES;
+  
   if (GROUP_ENABLED_LEVELS.includes(level)) {
     let total = 0;
-    console.log(`📊 Calculating total for level ${level} groups...`);
-    for (const groupName of GROUP_NAMES) {
+    console.log(`📊 Calculating total for level ${level} (${groupNames.length} groups):`, groupNames);
+    for (const groupName of groupNames) {
       try {
         const questions = await loadGroupQuestions(level, groupName);
         total += questions.length;
-        console.log(`  ${GROUP_TITLES[groupName]}: ${questions.length}`);
+        console.log(`  ${GROUP_TITLES[groupName] || groupName}: ${questions.length}`);
       } catch (e) {
         console.warn(`⚠️ No questions for ${groupName}:`, e.message);
       }
     }
-    console.log(`✅ Level ${level} TOTAL: ${total} questions (all groups)`);
+    console.log(`✅ Level ${level} TOTAL: ${total} questions (${groupNames.join(', ')})`);
     return total;
   }
   // Fallback: use arabic group for non-group levels
