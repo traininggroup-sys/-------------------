@@ -874,15 +874,28 @@ async function endGroupQuiz() {
   
   // Call existing results review
   const answersReview = document.getElementById('answers-review');
-  answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px;">مراجعة الإجابات:</h3>';
+        answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px;">مراجعة الإجابات:</h3>';
   currentQuestions.forEach((q, i) => {
+    // ✅ FIXED: نفس normalize logic من renderQuestion()
+    const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
+    const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
+    const correctIdx = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
+    
     const uAns = userAnswers.find(a => a.questionIndex === i) || {correct: false};
     const isCorrect = uAns.correct;
-    const safeOptions = Array.isArray(q.options) ? q.options : [];
-    const correctIdx = typeof q.answer === 'number' ? q.answer : 0;
-    const userIdx = uAns.userChoice || -1;
+    const userIdx = uAns.userChoice ?? -1;
+    
+    // 🔍 DEBUG
+    console.group(`سؤال ${i+1} DEBUG`);
+    console.log('q:', q.question?.substring(0,50)+'...');
+    console.log('safeOptions:', safeOptions);
+    console.log('correctIdx:', correctIdx, safeOptions[correctIdx]);
+    console.log('userIdx:', userIdx, userIdx >= 0 ? safeOptions[userIdx] : 'NO_ANSWER');
+    console.log('uAns:', uAns);
+    console.groupEnd();
+    
     const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
-    const safeUserText = safeOptions[userIdx] || 'لم تجب';
+    const safeUserText = (userIdx >= 0 && userIdx < safeOptions.length) ? safeOptions[userIdx] : 'لم تجب';
     
     const itemDiv = document.createElement('div');
     itemDiv.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
@@ -1483,14 +1496,23 @@ async function startLevel(level) {
             return;
           }
           
-          const uAns = userAnswers.find(a => a.questionIndex === i);
-          const isCorrect = uAns?.correct ?? false;
-          
-          // Full flexible matching
-          const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2'];
+          // ✅ FIXED: نفس normalize + DEBUG
+          const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
           const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
           const correctIdx = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
-          const userIdx = uAns?.userChoice ?? -1;
+          
+          const uAns = userAnswers.find(a => a.questionIndex === i) || {userChoice: -1, correct: false};
+          const isCorrect = uAns.correct;
+          const userIdx = uAns.userChoice ?? -1;
+          
+          // 🔍 DEBUG
+          console.group(`سؤال ${i+1} DEBUG`);
+          console.log('q:', q.question?.substring(0,50)+'...');
+          console.log('safeOptions:', safeOptions);
+          console.log('correctIdx:', correctIdx, safeOptions[correctIdx] || 'INVALID');
+          console.log('userIdx:', userIdx, userIdx>=0 ? safeOptions[userIdx] : 'NO_ANSWER');
+          console.log('uAns:', uAns);
+          console.groupEnd();
           
           const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
           const safeUserText = (userIdx >= 0 && userIdx < safeOptions.length) ? safeOptions[userIdx] : 'لم تجب';

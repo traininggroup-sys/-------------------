@@ -1,17 +1,11 @@
-# ✅ FIXED: Level 15 - Simple Questions Only
+# إصلاح مشكلة "لم تجب" في مراجعة النتائج ✅
 
-## Changes Applied:
-1. **index.html**: Fixed `getTotalQuestionsForLevel` → dynamic groups (shows correct total).
-2. **Created** `questions-level15-simple.js`: 3 simple questions only (`level15Groups = {simple: [...]}`).
-3. **questions.js**: 
-   - Import: `questions-level15-simple.js`
-   - GROUP_TITLES: `simple: 'أسئلة بسيطة'`
-   - Config: L15 uses `{simple: {mandatory: true}}`
+## الخطوات:
+- [x] 1. فهم المشكلة (options mismatch بين render و review)
+- [ ] 2. edit index.html - normalize safeOptions في endLevel() و endGroupQuiz()
+- [ ] 3. إضافة console.log للـ debug
+- [ ] 4. test level1Groups.js (اختبر مجموعة general)
+- [ ] 5. إزالة debug logs بعد التأكيد
+- [ ] 6. attempt_completion
 
-**Result:** 
-- Level 15 modal: "3 سؤال"
-- Groups screen: Single "أسئلة بسيطة" card
-- No behavioral/jدرات content → Clean & simple as requested.
-
-**Test:** Open `index.html` → Login → Level 15 → Single simple group with 3 questions! 🎉
-
+**الحالة:** جاهز للـ edit
