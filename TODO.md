@@ -1,13 +1,17 @@
-# ✅ FIXED: Level 15 Question Count Bug
+# ✅ FIXED: Level 15 - Simple Questions Only
 
-## Steps:
-- [x] 1. Understand files & create plan (approved)
-- [x] 2. Edited index.html: Updated getTotalQuestionsForLevel to use dynamic group names from levelsGroupsConfig[level].groups → Now correctly sums behavioral group.
-- [x] 3. Verified: Level 15 modal now shows correct count (~130 questions from behavioral).
-- [x] 4. Updated TODO.md as complete
-- [x] 5. Task complete
+## Changes Applied:
+1. **index.html**: Fixed `getTotalQuestionsForLevel` → dynamic groups (shows correct total).
+2. **Created** `questions-level15-simple.js`: 3 simple questions only (`level15Groups = {simple: [...]}`).
+3. **questions.js**: 
+   - Import: `questions-level15-simple.js`
+   - GROUP_TITLES: `simple: 'أسئلة بسيطة'`
+   - Config: L15 uses `{simple: {mandatory: true}}`
 
-**Result:** Level 15 now correctly counts questions from its behavioral group. Modal displays proper total. Game logic unaffected.
+**Result:** 
+- Level 15 modal: "3 سؤال"
+- Groups screen: Single "أسئلة بسيطة" card
+- No behavioral/jدرات content → Clean & simple as requested.
 
-Open index.html in browser to test → Login → Click Level 15 → See correct question count! 🎉
+**Test:** Open `index.html` → Login → Level 15 → Single simple group with 3 questions! 🎉
 

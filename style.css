@@ -1204,7 +1204,7 @@ div#level-modal {
 .level-modal h3 {
   color: var(--duo-blue);
   font-size: 24px;
-  margin: 0 0 15px 0;
+    margin: 40px 0 15px 0;
   font-weight: 800;
 }
 
