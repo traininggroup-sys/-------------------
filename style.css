@@ -1186,7 +1186,7 @@ div#level-modal {
   border-radius: var(--radius-lg);
   z-index: 70;
   box-shadow: 0 8px 0 rgba(0, 0, 0, 0.1);
-  max-height: 65vh;
+  max-height: 84vh;
   overflow: auto;
   text-align: center;
   border: 2px solid var(--gray-200);
