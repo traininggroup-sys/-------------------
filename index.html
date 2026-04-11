@@ -285,7 +285,7 @@
       </div>
       <div id="answers-review"></div>
       <button id="back-btn-result">
-  🏠 العودة لصفحة المستويات
+  🏠 العودة لصفحة المحموعات
 </button>
 
 
@@ -1163,7 +1163,7 @@ showLoader();
         }
       });
 document.getElementById("back-btn-result").addEventListener("click", () => {
-  backToLevelsFromResults();
+  backFromResults();
 });
       // --- كلمات تشجيعية لكل مستوى ---
      const encouragementMessages = {
@@ -1594,31 +1594,33 @@ async function startLevel(level) {
       }
 
       // العودة للمستويات من شاشة النتائج - النسخة المُحسَّنة مع error handling
-      window.backToLevelsFromResults = function () {
-        console.log('🔙 زرار العودة ضغط عليه - بداية التنفيذ');
-        try {
-          resultSection.style.display = "none";
-          resultSection.classList.add("hidden");
-          document.body.classList.remove('result-visible');
-          document.querySelector("header").style.display = "block";
-          
-          console.log('✅ تم إخفاء نتائج + إظهار header');
-          
-          if (typeof showLevels === 'function') {
-            showLevels();
-            console.log('✅ تم استدعاء showLevels() بنجاح');
-          } else {
-            console.error('❌ showLevels غير متوفرة');
-            // Fallback: إعادة تحميل الصفحة
-            setTimeout(() => location.reload(), 100);
-          }
-        } catch (error) {
-          console.error('❌ خطأ في backToLevelsFromResults():', error);
-          // Emergency reset
-          setTimeout(() => location.reload(), 500);
-        }
-        console.log('🔙 انتهى تنفيذ backToLevelsFromResults');
-      };
+window.backFromResults = function () {
+  console.log('🔙 زرار العودة ضغط عليه - رجوع للمجموعات أو المستويات');
+  try {
+    resultSection.style.display = "none";
+    resultSection.classList.add("hidden");
+    document.body.classList.remove('result-visible');
+    
+    if (currentGroupName) {
+      // 🔥 رجوع لشاشة المجموعات بتاعة المستوى الحالي
+      document.querySelector("header").style.display = "none";
+      document.getElementById('groups-section').style.display = 'block';
+      renderGroupCards(completedLevels[currentLevel] || { groups: {}, complete: false });
+      document.getElementById('groups-level-title').textContent = currentLevel;
+      console.log(`✅ رجع لمجموعات المستوى ${currentLevel} (${currentGroupName})`);
+    } else {
+      // فالباك: رجوع للمستويات الرئيسية
+      document.querySelector("header").style.display = "block";
+      if (typeof showLevels === 'function') {
+        showLevels();
+        console.log('✅ رجع للمستويات الرئيسية');
+      }
+    }
+  } catch (error) {
+    console.error('❌ خطأ في backFromResults():', error);
+    setTimeout(() => location.reload(), 500);
+  }
+};
 
 
       // العودة للمستويات من شاشة النتائج (وظيفة جديدة للزر)

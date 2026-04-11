@@ -1,11 +1,27 @@
-# إصلاح مشكلة "لم تجب" في مراجعة النتائج ✅
+# TODO: تعديل زر العودة ليرجع لشاشة المجموعات
+## الخطة المعتمدة ✅
 
-## الخطوات:
-- [x] 1. فهم المشكلة (options mismatch بين render و review)
-- [ ] 2. edit index.html - normalize safeOptions في endLevel() و endGroupQuiz()
-- [ ] 3. إضافة console.log للـ debug
-- [ ] 4. test level1Groups.js (اختبر مجموعة general)
-- [ ] 5. إزالة debug logs بعد التأكيد
-- [ ] 6. attempt_completion
+**الهدف:** زر `#back-btn-result` يرجع لشاشة المجموعات بتاعة `currentLevel` مش للمستويات الرئيسية
 
-**الحالة:** جاهز للـ edit
+### ✅ الخطوات:
+
+- ✅ **1️⃣** ✅ تم تعديل `backFromResults()` في `index.html`:
+   ```
+   if (currentGroupName) {
+     show groups للمستوى الحالي via renderGroupCards()
+   } else {
+     showLevels()
+   }
+   ```
+
+- [ ] **2️⃣** Test case:
+   ```
+   1. ابدأ مستوى (مثل 15)
+   2. اختار مجموعة (مثل behavioral) 
+   3. ابدأ الكويز → خلص الكويز → شاشة النتايج
+   4. اضغط زر "العودة" → لازم يرجع لشاشة مجموعات المستوى 15
+   ```
+
+- [ ] **3️⃣** `attempt_completion` لما يشتغل تمام
+
+**حالة الحال:** جاهز للتعديل
