@@ -1635,41 +1635,15 @@ async function startLevel(level) {
         });
       }
 
-// NEW: Return to current level groups from results
 window.showCurrentLevelGroups = function() {
   if (typeof showLevelGroups === 'function' && currentLevel) {
     resultSection.style.display = 'none';
     resultSection.classList.add('hidden');
+    document.body.classList.remove('result-visible');
     document.querySelector('header').style.display = 'block';
     showLevelGroups(currentLevel);
-  } else {
-    backToLevelsFromResults(); // Fallback
   }
-        console.log('🔙 زرار العودة ضغط عليه - بداية التنفيذ');
-        try {
-          resultSection.style.display = "none";
-          resultSection.classList.add("hidden");
-          document.body.classList.remove('result-visible');
-          document.querySelector("header").style.display = "block";
-
-          console.log('✅ تم إخفاء نتائج + إظهار header');
-
-          if (typeof showLevels === 'function') {
-            showLevels();
-            console.log('✅ تم استدعاء showLevels() بنجاح');
-          } else {
-            console.error('❌ showLevels غير متوفرة');
-            // Fallback: إعادة تحميل الصفحة
-            setTimeout(() => location.reload(), 100);
-          }
-        } catch (error) {
-          console.error('❌ خطأ في backToLevelsFromResults():', error);
-          // Emergency reset
-          setTimeout(() => location.reload(), 500);
-        }
-        console.log('🔙 انتهى تنفيذ backToLevelsFromResults');
-      };
-
+};
 
       // العودة للمستويات من شاشة النتائج (وظيفة جديدة للزر)
       window.logoutFromResult = function () {
