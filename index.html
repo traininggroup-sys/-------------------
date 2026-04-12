@@ -1,4 +1,3 @@
-
  <!doctype html>
 <html lang="ar" dir="rtl">
   <head>
@@ -10,7 +9,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css">
- 
+
   </head>
 
 <body>
@@ -71,7 +70,7 @@
 
       <section id="levels"></section>
       <button id="logout-from-levels" class="back-btn fixed-bottom-btn" style="display: none;">🚪 خروج</button>
-      
+
       <!-- جديد: شاشة المجموعات داخل المستوى -->
       <section id="groups-section" style="display: none;">
         <div class="groups-header">
@@ -101,7 +100,7 @@
 
 
 
-          
+
           <div id="answers"></div>
 
           <div class="next-btn-container">
@@ -109,7 +108,7 @@
           </div>
 
         </div>
-        
+
         <!-- CSS for loader -->
         <style>
         .question-loader {
@@ -182,7 +181,7 @@
 </div>
 <div id="coins-content" class="coins-content">
   <h3 class="content-title">🤩 إيه فايدة الفلوس اللي بكسبها من المستويات؟</h3>
-  
+
   <p class="content-para">
     كل مستوى بتعديه بيضيف مكافأة مالية في رصيدك داخل التطبيق 💰<br>
     الرصيد ده تقدر تجمعه، ولما يوصل لمبلغ كويس تقدر تستخدمه في خصم 
@@ -284,7 +283,7 @@
         <p id="result-feedback" style="font-size: 18px; color: #007bff"></p>
       </div>
       <div id="answers-review"></div>
-      <button id="back-btn-result">
+<button id="back-btn-result">
   🏠 العودة لصفحة المجموعات
 </button>
 
@@ -338,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     const protectedElements = document.querySelectorAll('#question-text, #answers, #question-info, .level-card, .review-item');
-    
+
     // CSS protection
     protectedElements.forEach(el => {
       el.style.userSelect = 'none';
@@ -346,7 +345,7 @@ document.addEventListener('DOMContentLoaded', function() {
       el.style.msUserSelect = 'none';
       el.style.mozUserSelect = 'none';
     });
-    
+
     // Event protections - FIXED closest()
     document.addEventListener('contextmenu', e => {
       const targetContainer = closestPolyfill(e.target, '#question-box, #result-section, #levels');
@@ -355,7 +354,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return false;
       }
     });
-    
+
     document.addEventListener('selectstart', e => {
       const targetContainer = e.target.closest('#question-box, #result-section, #levels');
       if (targetContainer && Array.from(protectedElements).some(el => el.contains(targetContainer))) {
@@ -363,7 +362,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return false;
       }
     });
-    
+
     document.addEventListener('dragstart', e => e.preventDefault());
     document.addEventListener('copy', e => {
       const activeEl = document.activeElement;
@@ -374,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return false;
       }
     });
-    
+
     document.addEventListener('keydown', e => {
       if (e.ctrlKey && (e.key === 'c' || e.key === 'a' || e.key === 'u' || e.key === 's')) {
         const activeEl = document.activeElement;
@@ -390,7 +389,7 @@ document.addEventListener('DOMContentLoaded', function() {
         showToast('🚫', 'DevTools غير مسموح', 'warn');
       }
     });
-    
+
     // Disable text selection visually - FIXED Node-safe
     document.addEventListener('selectionchange', () => {
       const selection = window.getSelection();
@@ -414,7 +413,7 @@ document.addEventListener('DOMContentLoaded', function() {
         update,
         onValue,
       } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-database.js";
-      
+
 import { GROUP_NAMES, GROUP_TITLES, levelsGroupsConfig, loadGroupQuestions } from './questions.js';
 
       // إعدادات Firebase
@@ -465,18 +464,18 @@ const adminBtn = document.getElementById("admin-btn");
           showLoading();
           await loadAdminConfig();
           hideLoading();
-          
+
           if (!adminPasswordHash) {
             showToast("⚠️", "خطأ في تحميل إعدادات الأدمن", "err");
             return;
           }
-          
+
           const password = prompt("أدخل كلمة المرور:");
           if (!password) return;
-          
+
           const inputHash = simpleHash(password);
           console.log('User input:', password, 'Hash:', inputHash, 'Expected:', adminPasswordHash);
-          
+
           // Secure check: base64 obfuscated password
           if (inputHash === adminPasswordHash) { 
             window.location.href = "admin.html";
@@ -544,31 +543,36 @@ let leaderboardUnsubscribe = null;
 
 
 const levelsData = {
+        1: {  passRate: 0.6, time: 1200},
+        2: {  passRate: 0.65, time: 1020 },
+        3: {  passRate: 0.7, time: 840 },
+        4: {  passRate: 0.75, time: 720 },
         1: {  passRate: 0.6, time: 600},
         2: {  passRate: 0.65, time: 600 },
         3: {  passRate: 0.7, time: 600 },
         4: {  passRate: 0.75, time: 600 },
         5: {  passRate: 0.8, time: 600 },
-        6: {  passRate: 0.85, time: 480 },
-        7: {  passRate: 0.9, time: 480 },
-        8: {  passRate: 0.9, time: 480 },
-        9: {  passRate: 0.9, time: 480 },
-        10: {  passRate: 0.9, time: 480 },
-        11: {  passRate: 0.9, time: 360, passwordHash: "0019d5c0" },
-        12: {  passRate: 0.9, time: 360 },    
-        13: {  passRate: 0.9, time: 360 },
-        14: {  passRate: 0.9, time: 360 },
+        6: {  passRate: 0.85, time: 600 },
+        7: {  passRate: 0.9, time: 600 },
+        8: {  passRate: 0.9, time: 600 },
+        9: {  passRate: 0.9, time: 600 },
+        10: {  passRate: 0.9, time: 600 },
+        11: {  passRate: 0.9, time: 2600, passwordHash: "0019d5c0" },
+        11: {  passRate: 0.9, time: 600, passwordHash: "0019d5c0" },
+        12: {  passRate: 0.9, time: 600 },    
+        13: {  passRate: 0.9, time: 600 },
+        14: {  passRate: 0.9, time: 600 },
         15: {  passRate: 0.9, time: 900, passwordHash: "001ac640" },
-    16: {  passRate: 0.9, time: 300},    
-    17: {  passRate: 0.9, time: 300},
-    18: {  passRate: 0.9, time: 300},
-    19: {  passRate: 0.9, time: 300},    
-    20: {  passRate: 0.9, time: 300, passwordHash: "0000ba4f"},
-        21: {  passRate: 0.9, time: 300},
-    22: {  passRate: 0.9, time: 300},
-    23: {  passRate: 0.9, time: 300},
-    24: {  passRate: 0.9, time: 300},
-    25: {  passRate: 0.9, time: 300, passwordHash: "0000ba4f"}
+    16: {  passRate: 0.9, time: 600},    
+    17: {  passRate: 0.9, time: 600},
+    18: {  passRate: 0.9, time: 600},
+    19: {  passRate: 0.9, time: 600},    
+    20: {  passRate: 0.9, time: 600, passwordHash: "0000ba4f"},
+        21: {  passRate: 0.9, time: 600},
+    22: {  passRate: 0.9, time: 600},
+    23: {  passRate: 0.9, time: 600},
+    24: {  passRate: 0.9, time: 600},
+    25: {  passRate: 0.9, time: 600, passwordHash: "0000ba4f"}
 
 
 
@@ -682,7 +686,7 @@ async function saveUserProgress() {
 }
 
 let levelStyles = {}; // New: default 'normal'
-      
+
 async function loadLevelStylesFromDB() {
   try {
     const stylesRef = ref(db, 'levelStyle');
@@ -703,18 +707,18 @@ async function loadLevelStylesFromDB() {
 async function showLevelGroups(level) {
   currentLevel = level;
   document.getElementById('groups-level-title').textContent = level;
-  
+
   // Hide levels, show groups
   levelsDiv.style.display = 'none';
   document.getElementById('groups-section').style.display = 'block';
   document.getElementById('logout-from-levels').style.display = 'none';
-  
+
   // Load progress if not loaded
   if (Object.keys(completedLevels).length === 0) {
     await loadUserProgress();
     migrateProgress();
   }
-  
+
   const levelProgress = completedLevels[level] || { groups: {}, complete: false };
   renderGroupCards(levelProgress);
 }
@@ -723,18 +727,18 @@ async function showLevelGroups(level) {
 function renderGroupCards(levelProgress) {
   const container = document.getElementById('groups-container');
   container.innerHTML = '';
-  
+
   // ✅ FIX: استخدم config المستوى بدل GROUP_NAMES الثابت
   const levelConfig = window.levelsGroupsConfig[currentLevel];
   const groupNames = levelConfig?.groups ? Object.keys(levelConfig.groups) : GROUP_NAMES;
-  
+
   console.log(`🎯 Level ${currentLevel} groups:`, groupNames);
-  
+
   groupNames.forEach((groupName, index) => {
     const completed = levelProgress.groups[groupName] || false;
     const groupTitle = GROUP_TITLES[groupName] || groupName;
     const isOpen = index === 0 || (index > 0 && groupNames.slice(0, index).every(g => levelProgress.groups[g]));
-    
+
     const card = document.createElement('div');
     card.className = `group-card ${completed ? 'passed' : isOpen ? 'open' : 'locked'}`;
     card.innerHTML = `
@@ -742,14 +746,14 @@ function renderGroupCards(levelProgress) {
         ${groupTitle} ${completed ? '✅' : isOpen ? '🔓' : '🔒'}
       </div>
     `;
-    
+
     if (isOpen) {
       card.onclick = () => showGroupModal(index, groupName, groupTitle);
     }
-    
+
     container.appendChild(card);
   });
-  
+
   console.log(`✅ Rendered ${groupNames.length} cards for level ${currentLevel}`);
 }
 
@@ -757,16 +761,16 @@ function renderGroupCards(levelProgress) {
 async function showGroupModal(groupIndex, groupName, groupTitle) {
   document.getElementById('group-modal-title').textContent = `المجموعة ${groupIndex + 1} - ${groupTitle}`;
   document.getElementById('group-modal-info').textContent = `ابدأ المجموعة ${groupTitle} من المستوى ${currentLevel}`;
-  
+
   // Load pass rate and questions count (same as level modal)
   const passRatePercent = (levelsData[currentLevel].passRate * 100).toFixed(0);
   document.getElementById('group-modal-pass-rate').innerHTML = 
     `<span class="pass-rate-label">النسبة المطلوبة للاجتياز:</span> <span class="pass-rate-value">${passRatePercent}%</span>`;
-  
+
   const questions = await loadGroupQuestions(currentLevel, groupName);
   document.getElementById('group-modal-questions-count').innerHTML = 
     `<span class="questions-label">عدد أسئلة المجموعة:</span> <span class="questions-value">${questions.length} سؤال</span>`;
-  
+
   // Check if optional → show skip button
   const config = window.levelsGroupsConfig?.[currentLevel]?.groups?.[groupName];
   const skipBtn = document.getElementById('group-skip-btn');
@@ -778,7 +782,7 @@ async function showGroupModal(groupIndex, groupName, groupTitle) {
       skipBtn.style.display = 'none';
     }
   }
-  
+
   document.getElementById('group-modal').style.display = 'block';
   currentGroupName = groupName;
 }
@@ -786,19 +790,19 @@ async function showGroupModal(groupIndex, groupName, groupTitle) {
 // 🔥 NEW: Check if level complete & award FULL prize (100%)
 async function checkLevelCompletion() {
   if (!completedLevels[currentLevel]) return false;
-  
+
   const config = window.levelsGroupsConfig[currentLevel] || {};
   const allMandatoryComplete = GROUP_NAMES.every(g => {
     const groupConfig = config.groups?.[g] || {mandatory: true};
     return groupConfig.mandatory ? !!completedLevels[currentLevel].groups[g] : true;
   });
-  
+
   if (allMandatoryComplete && !completedLevels[currentLevel].complete) {
     completedLevels[currentLevel].complete = true;
     const prize = levelPrizes[currentLevel] || 10;
     userCoins += prize; // ✅ FULL PRIZE 100%
     if (coinCountEl) coinCountEl.textContent = userCoins + " جنيه";
-    
+
     showToast('🎉', `مبروك! أكملت المستوى ${currentLevel} كاملاً وكسبت ${prize} جنيه كاملة! 💰`, 'success');
     await saveUserProgress();
     return true;
@@ -809,12 +813,12 @@ async function checkLevelCompletion() {
 // NEW: Skip optional group  
 async function skipGroup() {
   document.getElementById('group-modal').style.display = 'none';
-  
+
   if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
   completedLevels[currentLevel].groups[currentGroupName] = true;
-  
+
   checkLevelCompletion(); // ✅ Check & award full prize if complete
-  
+
   showToast('⚡', `تم تخطي ${GROUP_TITLES[currentGroupName]} بنجاح`, 'success');
   await saveUserProgress();
   renderGroupCards(completedLevels[currentLevel] || { groups: {}, complete: false });
@@ -823,19 +827,19 @@ async function skipGroup() {
 // NEW: Start group quiz (like startLevel)
 async function startGroupQuiz() {
   document.getElementById('group-modal').style.display = 'none';
-  
+
   currentQuestions = await loadGroupQuestions(currentLevel, currentGroupName);
   if (currentQuestions.length === 0) {
     showToast('⚠️', `لا أسئلة في ${GROUP_TITLES[currentGroupName]} - أضيفي level${currentLevel}Groups.js`, 'warn');
     return;
   }
-  
+
   currentQuestionIndex = 0;
   correctAnswers = 0;
   userAnswers = [];
   document.getElementById('groups-section').style.display = 'none';
   questionBox.style.display = 'block';
-  
+
   timeLeft = levelsData[currentLevel]?.time || 600; // Use level time
   levelTimer = setInterval(updateTimer, 1000);
   renderQuestion();
@@ -847,31 +851,31 @@ async function endGroupQuiz() {
   questionBox.style.display = 'none';
         resultSection.style.display = 'block';
         resultSection.classList.remove('hidden'); // ✅ Force show results
-        
+
         // تأكيد إخفاء الهيدر في النتائج (CSS يتعامل معاها)
         document.querySelector('header').style.display = 'none';
         document.body.classList.add('result-visible');
-  
+
   const total = currentQuestions.length;
   const passRate = correctAnswers / total;
   const groupPassRate = levelsData[currentLevel]?.passRate || 0.8;
   const passed = passRate >= groupPassRate;
-  
+
   if (passed) {
     if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
     completedLevels[currentLevel].groups[currentGroupName] = true;
-    
+
     checkLevelCompletion(); // ✅ Award full prize if level complete
-    
+
     await saveUserProgress();
     showToast('✅', `مبروك! أكملت مجموعة ${GROUP_TITLES[currentGroupName]}`, 'success');
   }
-  
+
   // Results review (reuse existing endLevel logic)
   document.getElementById("result-title").textContent = "نتيجة المجموعة";
   document.getElementById("result-stats").textContent = `النتيجة: ${correctAnswers} من ${total}`;
   document.getElementById("result-feedback").textContent = passed ? "✅ مبروك! نجحت في المجموعة" : "⚠️ حاول مرة أخرى";
-  
+
   // Call existing results review
   const answersReview = document.getElementById('answers-review');
         answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px;">مراجعة الإجابات:</h3>';
@@ -880,11 +884,11 @@ async function endGroupQuiz() {
     const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
     const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
     const correctIdx = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
-    
+
     const uAns = userAnswers.find(a => a.questionIndex === i) || {correct: false};
     const isCorrect = uAns.correct;
     const userIdx = uAns.userChoice ?? -1;
-    
+
     // 🔍 DEBUG
     console.group(`سؤال ${i+1} DEBUG`);
     console.log('q:', q.question?.substring(0,50)+'...');
@@ -893,10 +897,10 @@ async function endGroupQuiz() {
     console.log('userIdx:', userIdx, userIdx >= 0 ? safeOptions[userIdx] : 'NO_ANSWER');
     console.log('uAns:', uAns);
     console.groupEnd();
-    
+
     const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
     const safeUserText = (userIdx >= 0 && userIdx < safeOptions.length) ? safeOptions[userIdx] : 'لم تجب';
-    
+
     const itemDiv = document.createElement('div');
     itemDiv.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
     itemDiv.innerHTML = `
@@ -924,32 +928,32 @@ function renderQuestion() {
     return;
   }
   console.log('🔍 Raw question:', currentQuestions[currentQuestionIndex]);
-  
+
   let q = currentQuestions[currentQuestionIndex];
-  
+
   // Flexible FULL normalization - supports 2-6+ options
   const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
   const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
   const safeAnswerIndex = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
-  
+
   const normQ = {
     question: q.question || q.q || 'سؤال غير محدد',
     options: safeOptions,
     answer: safeAnswerIndex,
     explanation: q.explanation || q.tip || ''
   };
-  
+
   console.log(`✅ Level ${currentLevel}: ${normQ.options.length} options, answer index: ${safeAnswerIndex}`);
-  
+
   console.log('✅ Normalized:', normQ);
-  
+
   // Display
   const questionTextEl = document.getElementById("question-text");
   const questionInfoEl = document.getElementById("question-info");
-  
+
   questionTextEl.innerHTML = `<strong>${normQ.question}</strong>`;
   console.log(`✅ Rendering question ${currentQuestionIndex + 1}:`, normQ.question);
-  
+
   // Options
 
   const fragment = document.createDocumentFragment();
@@ -962,13 +966,13 @@ function renderQuestion() {
     `;
     fragment.appendChild(label);
   });
-  
+
   answersDiv.innerHTML = '';
   answersDiv.appendChild(fragment);
   updateTimerDisplay();
-  
+
   console.log(`✅ Question rendered fully. Total questions: ${currentQuestions.length}, current: ${currentQuestionIndex}`);
-  
+
   // Click handler
   answersDiv.onclick = (e) => {
 
@@ -999,7 +1003,7 @@ if (nextBtn) {
   nextBtn.addEventListener("click", (e) => {
     e.preventDefault();
     console.log('🔘 Next button clicked');
-    
+
   // ✅ الأول نتأكد إن فيه إجابة
 const checkedRadio = document.querySelector('input[name="quiz-opt"]:checked');
 
@@ -1021,14 +1025,14 @@ showLoader();
 
 
     console.log('✅ Processing started + Loader ON');
-    
+
     // MINIMUM 3s disable
     setTimeout(() => {
       if (isProcessing) {
         console.log('🔒 Min disable timeout');
       }
     }, 3000);
-    
+
     try {
       const checkedRadio = document.querySelector('input[name="quiz-opt"]:checked');
       if (!checkedRadio) {
@@ -1039,17 +1043,17 @@ showLoader();
   hideLoader();                     // ✅ إخفاء اللودر
   return;                           // ✅ بدل throw
 }
-      
+
       const selectedIndex = parseInt(checkedRadio.value);
       const rawQ = currentQuestions[currentQuestionIndex];
-      
+
       // Re-normalize for consistency
       const safeOptions = Array.isArray(rawQ.options) && rawQ.options.length >= 2 ? rawQ.options : ['خيار 1', 'خيار 2'];
       const answerIndex = typeof rawQ.answer === 'number' ? rawQ.answer : safeOptions.findIndex(opt => opt.trim() === String(rawQ.answer).trim());
       const safeAnswerIndex = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
-      
+
       const isCorrect = selectedIndex === safeAnswerIndex;
-      
+
       userAnswers.push({
         questionIndex: currentQuestionIndex,
         userChoice: selectedIndex,
@@ -1058,10 +1062,10 @@ showLoader();
       if (isCorrect) {
         correctAnswers++;
       }
-      
+
       currentQuestionIndex++;
       console.log(`✅ Answer processed. Next index: ${currentQuestionIndex}/${currentQuestions.length}`);
-      
+
       if (currentQuestionIndex < currentQuestions.length) {
         renderQuestion();
         console.log('✅ renderQuestion() called');
@@ -1077,7 +1081,7 @@ showLoader();
         }
       }
     }
-    
+
  catch (error) {
   console.error('❌ Next handler error:', error);
 
@@ -1087,7 +1091,7 @@ showLoader();
   nextBtn.textContent = 'السؤال التالي ⬅️';
   hideLoader();
 }
-    
+
     finally {
       // DELAYED RESET (after render settles)
       setTimeout(() => {
@@ -1115,7 +1119,7 @@ showLoader();
           return;
         }
 
-      
+
 
         showLoading();
         loginBtn.disabled = true;
@@ -1135,12 +1139,12 @@ showLoader();
               userCoins = data.coins || 0;
               coinCountEl.textContent = userCoins + " جنيه";
               isNewLogin = true;
-              
+
               // NEW: Load progress + migrate
               await loadUserProgress();
               migrateProgress();
               await saveUserProgress();
-              
+
               showLevels();
             } else {
               showToast("خطأ", "كلمة المرور غير صحيحة", "err");
@@ -1163,7 +1167,7 @@ showLoader();
         }
       });
 document.getElementById("back-btn-result").addEventListener("click", () => {
-  backFromResults();
+  showCurrentLevelGroups();
 });
       // --- كلمات تشجيعية لكل مستوى ---
      const encouragementMessages = {
@@ -1218,6 +1222,28 @@ document.getElementById("back-btn-result").addEventListener("click", () => {
         }
       });
 
+
+      function isLevelUnlocked(level) {
+  if (level === 1) return true;
+
+  const prevLevel = level - 1;
+  const prevData = completedLevels[prevLevel];
+
+  if (!prevData) return false;
+
+  const config = window.levelsGroupsConfig[prevLevel];
+  if (!config) return false;
+
+  const allMandatoryDone = Object.keys(config.groups).every(groupName => {
+    const groupConfig = config.groups[groupName];
+    if (!groupConfig.mandatory) return true;
+
+    return !!prevData.groups[groupName];
+  });
+
+  return allMandatoryDone;
+}
+
 async function showLevels() {
         if (!currentUser) return;
         loginSection.style.display = "none";
@@ -1228,7 +1254,7 @@ async function showLevels() {
         if (adminBtn) adminBtn.style.display = "none";
         resultSection.classList.add("hidden");
         levelsDiv.innerHTML = "";
-        
+
         // إظهار الهيدر في صفحة المستويات
         document.querySelector("header").style.display = "block";
 
@@ -1249,8 +1275,11 @@ async function showLevels() {
           isNewLogin = false;
         }
 
-        const passed = currentUser.passedLevels || [];
-        const highest = passed.length ? Math.max(...passed) : 0;
+const completed = Object.keys(completedLevels)
+  .filter(lvl => completedLevels[lvl]?.complete)
+  .map(Number);
+
+const highest = completed.length ? Math.max(...completed) : 0;
 
         // Calculate cumulative prizes up to highest
         let cumulative = 0;
@@ -1261,45 +1290,58 @@ async function showLevels() {
         Object.keys(levelsData).forEach((lvlStr) => {
           const lvl = +lvlStr;
           const card = document.createElement("div");
-          
-          let baseClass = passed.includes(lvl) ? "passed" : lvl === highest + 1 ? "open" : "locked";
-          let icon = passed.includes(lvl)
-            ? "✅"
-            : lvl === highest + 1
-              ? "🔓"
-              : "🔒";
+
+       const levelData = completedLevels[lvl];
+const isComplete = levelData?.complete;
+
+const unlocked = isLevelUnlocked(lvl);
+
+let baseClass = isComplete
+  ? "passed"
+  : unlocked
+  ? "open"
+  : "locked";
+
+let icon = isComplete
+  ? "✅"
+  : unlocked
+  ? "🔓"
+  : "🔒";
 
           const prize = levelPrizes[lvl] || 0;
           const styleClass = (levelStyles[lvl] === 'strike') ? 'strike' : '';
-          
+
           let revealedClass = '';
-          if (levelStyles[lvl] === 'strike' && (passed.includes(lvl) || lvl === highest + 1)) {
-            revealedClass = ' revealed';
-          }
-          
+        if (
+  levelStyles[lvl] === 'strike' &&
+  (completedLevels[lvl]?.complete || lvl === highest + 1)
+) {
+  revealedClass = ' revealed';
+}
+
           card.className = `level-card ${baseClass}${revealedClass}`;
           card.innerHTML = `<div class="level-title">المستوى ${lvl} ${icon}<span class="prize-badge ${styleClass}">${prize.toLocaleString()} جنيه</span></div>`;
 
           card.addEventListener("click", async () => {
 
-            if (lvl > highest + 1) {
-              showToast("🔒", "هذا المستوى مغلق", "warn");
-              return;
-            }
+          if (!isLevelUnlocked(lvl)) {
+  showToast("🔒", "هذا المستوى مغلق", "warn");
+  return;
+}
             currentLevel = lvl;
-            
+
             document.getElementById("modal-level-number").textContent = lvl;
-            
+
             // النسبة المطلوبة للاجتياز
             const totalQuestions = await getTotalQuestionsForLevel(lvl);
             document.getElementById("modal-questions-count").innerHTML = 
               `<span class="questions-label">عدد أسئلة المستوي:</span> <span class="questions-value">${totalQuestions} ${GROUP_ENABLED_LEVELS.includes(lvl) ? '(كل المجموعات)' : 'سؤال'}</span>`;
-            
+
             // الكلمة التشجيعية للمستوى
             const encouragement = encouragementMessages[lvl] || "معانا هتذاكر وتكسب كمان! 🔥✨";
             document.getElementById("modal-encouragement").innerHTML = 
               `<span class="encouragement-text">${encouragement.replace(/\n/g, '<br>')}</span>`;
-            
+
             levelModal.style.display = "block";
           });
           levelsDiv.appendChild(card);
@@ -1312,7 +1354,7 @@ const GROUP_ENABLED_LEVELS = Array.from({length: 25}, (_, i) => i+1);  // كل �
 async function getTotalQuestionsForLevel(level) {
   const levelConfig = window.levelsGroupsConfig?.[level] || {};
   const groupNames = levelConfig.groups ? Object.keys(levelConfig.groups) : GROUP_NAMES;
-  
+
   if (GROUP_ENABLED_LEVELS.includes(level)) {
     let total = 0;
     console.log(`📊 Calculating total for level ${level} (${groupNames.length} groups):`, groupNames);
@@ -1336,13 +1378,13 @@ async function getTotalQuestionsForLevel(level) {
 
       modalStartBtn.addEventListener("click", () => {
         levelModal.style.display = "none";
-        
+
         // ✅ NEW: Password check قبل المجموعات
         if (levelsData[currentLevel]?.passwordHash) {
           showPasswordModal();
           return;
         }
-        
+
         showLevelGroups(currentLevel);
       });
 
@@ -1351,9 +1393,9 @@ async function showPasswordModal() {
   const input = document.getElementById('password-input');
   const submitBtn = document.getElementById('password-submit-btn');
   const subscribeBtn = modal.querySelector('.subscribe-small-btn');
-  
+
   modal.style.display = 'flex';
-  
+
   // Dynamic level text
   const levelText = document.getElementById('modal-level-text');
   const currentLevelEl = document.getElementById('current-level');
@@ -1361,23 +1403,23 @@ async function showPasswordModal() {
     levelText.textContent = `إتمام المرحلة ${currentLevel}`;
     currentLevelEl.textContent = currentLevel;
   }
-  
+
   input.value = '';
   input.focus();
-  
+
   const closeModal = () => {
     modal.style.display = 'none';
     levelsDiv.style.display = 'flex'; // Return to levels
   };
-  
+
       const checkPassword = () => {
     const pass = input.value.trim();
     if (!pass) return showToast('⚠️', 'أدخل كلمة المرور أولاً', 'warn');
-    
+
     const inputHash = simpleHash(pass);
     if (inputHash === levelsData[currentLevel].passwordHash) {
       closeModal();
-      
+
       // ✅ NEW: Groups system بعد كلمة المرور
       showLevelGroups(currentLevel);
     } else {
@@ -1387,7 +1429,7 @@ async function showPasswordModal() {
       setTimeout(() => input.classList.remove('shake'), 500);
     }
   };
-  
+
   submitBtn.onclick = checkPassword;
   input.onkeypress = (e) => {
     if (e.key === 'Enter') checkPassword();
@@ -1403,7 +1445,7 @@ async function showPasswordModal() {
 async function startLevel(level) {
   totalSkips = 0;
   console.log('🚀 Starting level', level);
-  
+
  if ((level === 11 || level === 15 || level === 20 || level === 25) && levelsData[level]?.passwordHash) {
     showPasswordModal();
     return;
@@ -1440,11 +1482,11 @@ async function startLevel(level) {
         questionBox.style.display = "none";
         resultSection.style.display = "block";
         resultSection.classList.remove("hidden");
-        
+
         // إخفاء الهيدر في شاشة النتيجة (CSS يتعامل)
         document.querySelector("header").style.display = "none";
         document.body.classList.add('result-visible');
-        
+
         // إخفاء عملة الهيدر وزر المتصدرين في صفحة النتيجة
         if (headerCoins) headerCoins.style.display = "none";
         if (leaderboardBtn) leaderboardBtn.style.display = "none";
@@ -1458,21 +1500,21 @@ async function startLevel(level) {
           // Mark as first group complete (legacy assumes single quiz = first group)
           if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
           completedLevels[currentLevel].groups['arabic'] = true; // Default first group
-          
+
           if (checkLevelCompletion()) {
             // Already awarded full prize above
           } else {
             showToast('✅', `مبروك نجاح الكويز - ${GROUP_TITLES['arabic']} مكتمل`, 'success');
           }
-          
-          // Backward compatibility - mark legacy passedLevels
-          if (!currentUser.passedLevels.includes(currentLevel)) {
-            currentUser.passedLevels.push(currentLevel);
-            await update(ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)), {
-              passedLevels: currentUser.passedLevels
-            });
-          }
-          
+
+          // // Backward compatibility - mark legacy passedLevels
+          // if (!currentUser.passedLevels.includes(currentLevel)) {
+          //   currentUser.passedLevels.push(currentLevel);
+          //   await update(ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)), {
+          //     passedLevels: currentUser.passedLevels
+          //   });
+          // }
+
           await saveUserProgress();
         }
 
@@ -1489,22 +1531,22 @@ async function startLevel(level) {
         console.log('🔍 Building results review for', currentQuestions.length, 'questions');
         const answersReview = document.getElementById('answers-review');
         answersReview.innerHTML = '<h3 style="text-align: center; margin-bottom: 20px; color: var(--text);">مراجعة الإجابات:</h3>';
-        
+
         currentQuestions.forEach((q, i) => {
           if (!q?.options?.length) {
             console.warn(`Skipping invalid question ${i}`);
             return;
           }
-          
+
           // ✅ FIXED: نفس normalize + DEBUG
           const safeOptions = Array.isArray(q.options) && q.options.length >= 2 ? q.options : ['خيار 1', 'خيار 2', 'خيار 3', 'خيار 4'];
           const answerIndex = typeof q.answer === 'number' ? q.answer : safeOptions.findIndex(opt => opt.trim() === String(q.answer).trim());
           const correctIdx = (answerIndex >= 0 && answerIndex < safeOptions.length) ? answerIndex : 0;
-          
+
           const uAns = userAnswers.find(a => a.questionIndex === i) || {userChoice: -1, correct: false};
           const isCorrect = uAns.correct;
           const userIdx = uAns.userChoice ?? -1;
-          
+
           // 🔍 DEBUG
           console.group(`سؤال ${i+1} DEBUG`);
           console.log('q:', q.question?.substring(0,50)+'...');
@@ -1513,19 +1555,19 @@ async function startLevel(level) {
           console.log('userIdx:', userIdx, userIdx>=0 ? safeOptions[userIdx] : 'NO_ANSWER');
           console.log('uAns:', uAns);
           console.groupEnd();
-          
+
           const safeCorrectText = safeOptions[correctIdx] || 'غير محدد';
           const safeUserText = (userIdx >= 0 && userIdx < safeOptions.length) ? safeOptions[userIdx] : 'لم تجب';
           const safeQuestion = q.question || q.q || 'سؤال غير محدد';
-          
+
           // Explanation always available
           const explanation = q.explanation || q.tip || '';
-          
+
           console.group(`سؤال ${i+1}`);
           console.log('السؤال:', safeQuestion);
           console.log('إجابتك:', safeUserText, 'الصح:', safeCorrectText, 'صحيح?', isCorrect);
           console.groupEnd();
-          
+
           // Safe DOM creation
           const itemDiv = document.createElement('div');
           itemDiv.className = `review-item ${isCorrect ? 'correct' : 'incorrect'}`;
@@ -1538,7 +1580,7 @@ async function startLevel(level) {
             direction: rtl;
             font-family: 'Tajawal', Arial, sans-serif;
           `;
-          
+
           // Question line
           const qLine = document.createElement('div');
           qLine.style.cssText = 'font-weight: bold; margin-bottom: 8px; color: var(--text); font-size: 15px;';
@@ -1548,7 +1590,7 @@ async function startLevel(level) {
           qSpan.textContent = safeQuestion;
           qLine.appendChild(qSpan);
           itemDiv.appendChild(qLine);
-          
+
           // Your answer
           const userLine = document.createElement('div');
           userLine.style.cssText = `color: ${isCorrect ? '#28a745' : '#dc3545'}; font-weight: 700; padding: 8px 0; border-top: 1px solid #eee;`;
@@ -1558,11 +1600,11 @@ async function startLevel(level) {
           userSpan.textContent = safeUserText;
           userLine.appendChild(userSpan);
           itemDiv.appendChild(userLine);
-          
+
           // Correct answer + explanation (always)
           const corrContainer = document.createElement('div');
           corrContainer.style.cssText = 'margin-top: 8px;';
-          
+
           const corrAnswerDiv = document.createElement('div');
           corrAnswerDiv.style.cssText = 'color: #28a745; background: #e8f5e8; padding: 10px; border-radius: 8px; margin-bottom: 6px; font-weight: 600;';
           corrAnswerDiv.innerHTML = '✅ الإجابة الصحيحة: ';
@@ -1570,9 +1612,9 @@ async function startLevel(level) {
           corrSpan.className = 'auto-dir review-text';
           corrSpan.textContent = safeCorrectText;
           corrAnswerDiv.appendChild(corrSpan);
-          
+
           corrContainer.appendChild(corrAnswerDiv);
-          
+
           // Explanation if exists
           if (explanation.trim()) {
             const explDiv = document.createElement('div');
@@ -1584,43 +1626,49 @@ async function startLevel(level) {
             explDiv.appendChild(explSpan);
             corrContainer.appendChild(explDiv);
           }
-          
+
           if (!isCorrect && safeCorrectText !== 'غير متاح') {
             itemDiv.appendChild(corrContainer);
           }
-          
+
           answersReview.appendChild(itemDiv);
         });
       }
 
-      // العودة للمستويات من شاشة النتائج - النسخة المُحسَّنة مع error handling
-window.backFromResults = function () {
-  console.log('🔙 زرار العودة ضغط عليه - رجوع للمجموعات أو المستويات');
-  try {
-    resultSection.style.display = "none";
-    resultSection.classList.add("hidden");
-    document.body.classList.remove('result-visible');
-    
-    if (currentGroupName) {
-      // 🔥 رجوع لشاشة المجموعات بتاعة المستوى الحالي
-      document.querySelector("header").style.display = "none";
-      document.getElementById('groups-section').style.display = 'block';
-      renderGroupCards(completedLevels[currentLevel] || { groups: {}, complete: false });
-      document.getElementById('groups-level-title').textContent = currentLevel;
-      console.log(`✅ رجع لمجموعات المستوى ${currentLevel} (${currentGroupName})`);
-    } else {
-      // فالباك: رجوع للمستويات الرئيسية
-      document.querySelector("header").style.display = "block";
-      if (typeof showLevels === 'function') {
-        showLevels();
-        console.log('✅ رجع للمستويات الرئيسية');
-      }
-    }
-  } catch (error) {
-    console.error('❌ خطأ في backFromResults():', error);
-    setTimeout(() => location.reload(), 500);
+// NEW: Return to current level groups from results
+window.showCurrentLevelGroups = function() {
+  if (typeof showLevelGroups === 'function' && currentLevel) {
+    resultSection.style.display = 'none';
+    resultSection.classList.add('hidden');
+    document.querySelector('header').style.display = 'block';
+    showLevelGroups(currentLevel);
+  } else {
+    backToLevelsFromResults(); // Fallback
   }
-};
+        console.log('🔙 زرار العودة ضغط عليه - بداية التنفيذ');
+        try {
+          resultSection.style.display = "none";
+          resultSection.classList.add("hidden");
+          document.body.classList.remove('result-visible');
+          document.querySelector("header").style.display = "block";
+
+          console.log('✅ تم إخفاء نتائج + إظهار header');
+
+          if (typeof showLevels === 'function') {
+            showLevels();
+            console.log('✅ تم استدعاء showLevels() بنجاح');
+          } else {
+            console.error('❌ showLevels غير متوفرة');
+            // Fallback: إعادة تحميل الصفحة
+            setTimeout(() => location.reload(), 100);
+          }
+        } catch (error) {
+          console.error('❌ خطأ في backToLevelsFromResults():', error);
+          // Emergency reset
+          setTimeout(() => location.reload(), 500);
+        }
+        console.log('🔙 انتهى تنفيذ backToLevelsFromResults');
+      };
 
 
       // العودة للمستويات من شاشة النتائج (وظيفة جديدة للزر)
@@ -1674,21 +1722,21 @@ document.getElementById('back-to-levels')?.addEventListener('click', () => {
         levelsDiv.style.display = 'flex';
         document.getElementById('logout-from-levels').style.display = 'block';
       });
-      
+
       document.getElementById('close-group-modal')?.addEventListener('click', () => {
         document.getElementById('group-modal').style.display = 'none';
       });
-      
+
       document.getElementById('group-start-btn')?.addEventListener('click', () => {
         startGroupQuiz();
       });
-      
+
       document.getElementById('group-modal')?.addEventListener('click', (e) => {
         if (e.target === document.getElementById('group-modal')) {
           document.getElementById('group-modal').style.display = 'none';
         }
       });
-      
+
       document.addEventListener('DOMContentLoaded', async function() {
         document.querySelector("header").style.display = "block";
         await loadAdminConfig();
@@ -1725,7 +1773,7 @@ document.getElementById('back-to-levels')?.addEventListener('click', () => {
 leaderboardBtn.addEventListener("click", async () => {
           // حفظ موضع التمرير
           levelsScrollPos = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || levelsDiv.scrollTop || 0;
-          
+
           // إخفاء header و top-controls و logout btn
           document.querySelector("header").style.display = "none";
           if (headerCoins) headerCoins.style.display = "none";
@@ -1786,15 +1834,15 @@ closeLeaderboardBtn.addEventListener("click", () => {
           document.querySelector("header").style.display = "block";
           if (headerCoins) headerCoins.style.display = "flex";
           if (logoutBtn && currentUser) logoutBtn.classList.add("show");
-          
+
           // إظهار المستويات إذا لس مش في اختبار/نتيجة
           if (questionBox.style.display !== "block" && resultSection.style.display !== "block") {
             levelsDiv.style.display = "flex";
           }
-          
+
           document.body.classList.remove('leaderboard-open');
           leaderboardCard.style.display = "none";
-          
+
           // استعادة الموضع بعد الرجوع
           setTimeout(() => {
             window.scrollTo(0, levelsScrollPos);
@@ -1865,4 +1913,3 @@ document.addEventListener('keydown', (e) => {
       }
     </script>
   </body>
-</html>

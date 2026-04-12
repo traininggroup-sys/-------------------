@@ -1,27 +1,11 @@
-# TODO: تعديل زر العودة ليرجع لشاشة المجموعات
-## الخطة المعتمدة ✅
+# TODO Progress Tracker
 
-**الهدف:** زر `#back-btn-result` يرجع لشاشة المجموعات بتاعة `currentLevel` مش للمستويات الرئيسية
+## Plan Steps (Change end screen button to return to groups instead of levels)
+- [x] **Step 1**: Create TODO.md ✅
+- [x] **Step 2**: Edit index.html - Update button text to "العودة لصفحة المجموعات", add showCurrentLevelGroups() function, update event listener to call showCurrentLevelGroups() ✅
+- [ ] **Step 3**: Test the change by running a group quiz to end screen
+- [ ] **Step 4**: Mark complete and attempt_completion
 
-### ✅ الخطوات:
+**Current Status**: index.html updated successfully. Ready for testing.
 
-- ✅ **1️⃣** ✅ تم تعديل `backFromResults()` في `index.html`:
-   ```
-   if (currentGroupName) {
-     show groups للمستوى الحالي via renderGroupCards()
-   } else {
-     showLevels()
-   }
-   ```
-
-- [ ] **2️⃣** Test case:
-   ```
-   1. ابدأ مستوى (مثل 15)
-   2. اختار مجموعة (مثل behavioral) 
-   3. ابدأ الكويز → خلص الكويز → شاشة النتايج
-   4. اضغط زر "العودة" → لازم يرجع لشاشة مجموعات المستوى 15
-   ```
-
-- [ ] **3️⃣** `attempt_completion` لما يشتغل تمام
-
-**حالة الحال:** جاهز للتعديل
+**Current Status**: Ready to edit index.html

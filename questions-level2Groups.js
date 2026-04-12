@@ -2,7 +2,6 @@
 
 // Level 2 questions SPLITTED into 5 GROUPS (مثل level1)
 // الأسئلة مقسمة حسب المواضيع من questions-level2.js
-
 // 1. معلومات عامة (General)
 const general = [
 {
@@ -11,7 +10,9 @@ const general = [
     "answer": "1958",
     "explanation": "أُعلنت الوحدة بين مصر وسوريا عام 1958 تحت اسم الجمهورية العربية المتحدة برئاسة جمال عبد الناصر."
   },
-  
+ 
+ 
+
 ];
 
 // 2. حاسب (Computer)
@@ -26,7 +27,8 @@ const computer = [
           ],
           answer: "مكان لتجميع الملفات وتنظيمها",
         },
-      
+       
+
 ];
 
 
@@ -37,10 +39,8 @@ const arabic = [
     "options": ["مُقلات", "مقل", "كلاهما صحيح"],
     "answer": "كلاهما صحيح"
   },
- 
+  
 ];
-
-
 
 
 
