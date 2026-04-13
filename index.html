@@ -1171,11 +1171,12 @@ showLoader();
           loginBtn.textContent = "دخول / إنشاء حساب";
         }
       });
+
+
 const backBtnResult = document.getElementById("back-btn-result");
 if (backBtnResult) {
     backBtnResult.onclick = () => {
         resultSection.style.display = 'none';
-        // بدلاً من العودة للمجموعات فقط، سنعيد إظهار المستويات المحدثة
         showLevels(); 
     };
 }
