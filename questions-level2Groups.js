@@ -1,7 +1,4 @@
-// بطل سرقة يا حرامي هتروح النار 😈
 
-// Level 2 questions SPLITTED into 5 GROUPS (مثل level1)
-// الأسئلة مقسمة حسب المواضيع من questions-level2.js
 // 1. معلومات عامة (General)
 const general = [
 {
@@ -43,165 +40,59 @@ const arabic = [
 ];
 
 
-
-// 4. انجليزي (English)
+// 4. English Grammar/Vocab - Level 2 (Build on L1)
 const english = [
- {
-    "question": "What is the opposite of (Happy)?",
-    "options": ["Fast", "Smart", "Sad", "Nice"],
-    "answer": "Sad",
-    "explanation": "'Sad' تعني حزين وهي عكس 'Happy' التي تعني سعيد."
-  },
   {
-    "question": "What is the opposite of (Old)?",
-    "options": ["New", "Fresh", "Young", "Used"],
-    "answer": "New",
-    "explanation": "'New' تعني جديد وهي عكس 'Old' التي تعني قديم."
-  },
-  {
-    "question": "What is the opposite of (fast)?",
-    "options": ["Slow", "Speedy", "Rapid", "Quick"],
-    "answer": "Slow",
-    "explanation": "'Slow' تعني بطيء وهي عكس 'Fast' التي تعني سريع."
-  },
-  {
-    "question": "What is the opposite of (quiet)?",
-    "options": ["Still", "Peaceful", "Loud", "Calm"],
-    "answer": "Loud",
-    "explanation": "'Loud' تعني صاخب وهي عكس 'Quiet' التي تعني هادئ."
-  },
-  {
-    "question": "What is the opposite of (Open)?",
-    "options": ["Down", "Far", "Closed", "Wide"],
-    "answer": "Closed",
-    "explanation": "'Closed' تعني مغلق وهي عكس 'Open' التي تعني مفتوح."
-  },
-
-{
-    "question": "What can you smell?",
-    "options": ["All of them", "Food 🍲", "Perfume 💐", "Flower 🌸"],
-    "answer": "All of them",
-    "explanation": "الطعام والعطر والزهور جميعها يمكن شمّها."
-  },
-  {
-    "question": "Which of these is fast and has wings?",
-    "options": ["Bird 🐦", "Cheetah 🐆", "Rabbit 🐰", "Horse 🐎"],
-    "answer": "Bird 🐦",
-    "explanation": "الطائر سريع وله أجنحة، أما الباقي فلا يطير."
-  },
-  {
-    "question": "A ____ is tall, long, and has many branches.",
-    "options": ["Grass 🌿", "Flower 🌸", "Plant 🪴", "Tree 🌳"],
-    "answer": "Tree 🌳",
-    "explanation": "الشجرة طويلة ولها فروع كثيرة على عكس العشب أو الزهور."
-  },
-  {
-    "question": "What is the smallest animal?",
-    "options": ["Bird 🐦", "Spider 🕷", "Ant 🐜", "Elephant 🐘"],
-    "answer": "Ant 🐜",
-    "explanation": "النملة هي الأصغر حجماً بين الخيارات المذكورة."
-  },
-  {
-    "question": "We travel with a ______.",
-    "options": ["Food", "Passport", "Bag", "License"],
-    "answer": "Passport",
-    "explanation": "جواز السفر مطلوب للسفر بين الدول."
-  },
-
- {
-    "question": "They ____ a new house next year.",
-    "options": ["bought", "will buy", "buying", "buys"],
-    "answer": "will buy",
-    "explanation": "نستخدم 'will + verb' للتعبير عن المستقبل البسيط، و'will buy' هو الشكل الصحيح."
-  },
-  {
-    "question": "Choose the correct future simple form of the verb (sleep).",
-    "options": ["Will sleep", "Sleeping", "Sleeps", "Sleep"],
-    "answer": "Will sleep",
-    "explanation": "الشكل الصحيح للمستقبل البسيط هو 'will + base verb' يعني 'will sleep'."
-  },
-  {
-    "question": "I always ____ my mom in the kitchen.",
-    "options": ["helped", "helps", "helping", "help"],
-    "answer": "help",
-    "explanation": "لأن الجملة بتتكلم عن عادة، فنستخدم المضارع البسيط مع I: 'help'."
-  },
-  {
-    "question": "What is the negative form of (I am going to the store)?",
-    "options": ["I not going to the store", "I do not going to the store", "I am not going to the store", "I am going not to the store"],
-    "answer": "I am not going to the store",
-    "explanation": "الشكل الصحيح للنفي هو إدخال 'not' بعد 'am': 'I am not going...'."
-  },
-  {
-    "question": "Choose the correct present continuous form of the verb (cook)",
-    "options": ["Has cooked", "Is/are cooking", "Cooks", "Cook"],
-    "answer": "Is/are cooking",
-    "explanation": "المضارع المستمر بيتكون من 'am/is/are + verb-ing'."
-  },
-
-{
-    "question": "What are the forms of the verb (to be) in the present simple?",
-    "options": ["Be/Been", "Has/Have", "Am/Is/Are", "Was/Were"],
-    "answer": "Am/Is/Are",
-    "explanation": "في المضارع البسيط، 'to be' بيتحول إلى 'am/is/are' حسب الفاعل."
-  },
-  {
-    "question": "What are the forms of the verb (to be) in the present perfect tense?",
-    "options": ["Will be", "Has been/Have been", "Was/Were", "Am/Is/Are"],
-    "answer": "Has been/Have been",
-    "explanation": "في المضارع التام بنستخدم 'has been' أو 'have been' مع الفاعل المناسب."
-  },
-  {
-    "question": "We____to the beach last month.",
-    "options": ["Had Gone", "Went", "Gone", "GO"],
+    "question": "Choose correct past tense: 'go'",
+    "options": ["Goed", "Goes", "Went", "Going"],
     "answer": "Went",
-    "explanation": "الجملة في الماضي البسيط، و'went' هو الماضي البسيط للفعل 'go'."
+    "explanation": "Irregular verb: go → went → gone."
   },
   {
-    "question": "Choose the correct present continuous form of (sleep)",
-    "options": ["Slept", "Is/are sleeping", "Sleeps", "Sleep"],
-    "answer": "Is/are sleeping",
-    "explanation": "الشكل الصحيح هو 'is/are sleeping' لأنه مضارع مستمر."
+    "question": "Plural of 'child'",
+    "options": ["Childs", "Children", "Childes", "Childs"],
+    "answer": "Children",
+    "explanation": "Irregular plural: child → children."
   },
   {
-    "question": "Choose the correct present continuous form of (read)",
-    "options": ["Road", "Read", "Is/are reading", "Reads"],
-    "answer": "Is/are reading",
-    "explanation": "لأن المطلوب مضارع مستمر، نستخدم 'is/are reading'."
-  },
-
-{
-    "question": "Choose the correct past perfect form of (play)",
-    "options": ["Playing", "Has played", "Had played", "Having Played"],
-    "answer": "Had played",
-    "explanation": "الماضي التام بيتكون من 'had + past participle'، و'play' التصريف الثالث ليه هو 'played'."
+    "question": "'She ___ to school every day.'",
+    "options": ["Go", "Goes", "Going", "Gone"],
+    "answer": "Goes",
+    "explanation": "Present simple: He/She/It + verb+s."
   },
   {
-    "question": "What is the past simple form of the verb (drink)?",
-    "options": ["Road", "Read", "Drank", "Drink"],
-    "answer": "Drank",
-    "explanation": "الشكل الماضي البسيط للفعل 'drink' هو 'drank'."
+    "question": "Opposite of 'hot'",
+    "options": ["Warm", "Cold", "Cool", "Boiling"],
+    "answer": "Cold",
+    "explanation": "Cold = very low temperature."
   },
   {
-    "question": "What is the past perfect form of the verb (take)?",
-    "options": ["Taking", "Had taken", "Takes", "Took"],
-    "answer": "Had taken",
-    "explanation": "الماضي التام للفعل 'take' هو 'had taken'."
+    "question": "We ___ football yesterday.",
+    "options": ["Play", "Plays", "Played", "Playing"],
+    "answer": "Played",
+    "explanation": "Past simple: base + ed (regular)."
   },
   {
-    "question": "What is the tense of a sentence that contains (last week)?",
-    "options": ["Future Simple", "Past Simple", "Present Perfect", "Present Simple"],
-    "answer": "Past Simple",
-    "explanation": "عبارة 'last week' بتدل على الماضي، فبيكون الزمن هو الماضي البسيط."
+    "question": "'The book ___ on the table.'",
+    "options": ["Is", "Are", "Am", "Be"],
+    "answer": "Is",
+    "explanation": "Singular subject = is (present simple)."
   },
   {
-    "question": "(Look!) is an example of which tense?",
-    "options": ["Future Simple", "Past Simple", "Present Continuous", "Present Simple"],
-    "answer": "Present Continuous",
-    "explanation": "استخدام 'Look!' مع الفعل يدل على إن الحدث بيحصل دلوقتي، وده بيكون مضارع مستمر."
+    "question": "Synonym of 'happy'",
+    "options": ["Sad", "Angry", "Joyful", "Tired"],
+    "answer": "Joyful",
+    "explanation": "Joyful = full of joy = happy."
   },
-
+  {
+    "question": "'I ___ TV now.' (watching)",
+    "options": ["Watch", "Watches", "Am watching", "Watched"],
+    "answer": "Am watching",
+    "explanation": "Present continuous: am/is/are + verb-ing."
+  }
 ];
+
+
 
 
 // 5. تربوي (Educational)

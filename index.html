@@ -861,15 +861,20 @@ async function endGroupQuiz() {
   const groupPassRate = levelsData[currentLevel]?.passRate || 0.8;
   const passed = passRate >= groupPassRate;
 
-  if (passed) {
+if (passed) {
     if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
     completedLevels[currentLevel].groups[currentGroupName] = true;
 
-    checkLevelCompletion(); // ✅ Award full prize if level complete
-
+    await checkLevelCompletion(); 
     await saveUserProgress();
+    
+    // تحديث الواجهة في الخلفية فوراً
+    if (typeof refreshLevelsUI === 'function') {
+        refreshLevelsUI(); 
+    }
+    
     showToast('✅', `مبروك! أكملت مجموعة ${GROUP_TITLES[currentGroupName]}`, 'success');
-  }
+}
 
   // Results review (reuse existing endLevel logic)
   document.getElementById("result-title").textContent = "نتيجة المجموعة";
@@ -1166,9 +1171,14 @@ showLoader();
           loginBtn.textContent = "دخول / إنشاء حساب";
         }
       });
-document.getElementById("back-btn-result").addEventListener("click", () => {
-  showCurrentLevelGroups();
-});
+const backBtnResult = document.getElementById("back-btn-result");
+if (backBtnResult) {
+    backBtnResult.onclick = () => {
+        resultSection.style.display = 'none';
+        // بدلاً من العودة للمجموعات فقط، سنعيد إظهار المستويات المحدثة
+        showLevels(); 
+    };
+}
       // --- كلمات تشجيعية لكل مستوى ---
      const encouragementMessages = {
   1: "🚀 أصعب خطوة هي البداية، وبمجرد أن تبدأ.. فقد قطعت نصف الطريق.",
@@ -1348,6 +1358,7 @@ let icon = isComplete
         });
       }
 
+
       // NEW: دالة حساب إجمالي أسئلة المستوي (كل المجموعات)
 const GROUP_ENABLED_LEVELS = Array.from({length: 25}, (_, i) => i+1);  // كل المستويات 1-25 بنظام Groups كامل
 
@@ -1496,28 +1507,20 @@ async function startLevel(level) {
         const isPassed = passRate >= levelsData[currentLevel].passRate;
 
         // 🔥 NEW: Legacy GROUP SYSTEM integration - Full prize!
-        if (passed) {
-          // Mark as first group complete (legacy assumes single quiz = first group)
-          if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
-          completedLevels[currentLevel].groups['arabic'] = true; // Default first group
+     if (passed) {
+    if (!completedLevels[currentLevel]) completedLevels[currentLevel] = { groups: {}, complete: false };
+    completedLevels[currentLevel].groups[currentGroupName] = true;
 
-          if (checkLevelCompletion()) {
-            // Already awarded full prize above
-          } else {
-            showToast('✅', `مبروك نجاح الكويز - ${GROUP_TITLES['arabic']} مكتمل`, 'success');
-          }
+    // التأكد من اكتمال المستوى ومنح الجائزة
+    await checkLevelCompletion(); 
 
-          // // Backward compatibility - mark legacy passedLevels
-          // if (!currentUser.passedLevels.includes(currentLevel)) {
-          //   currentUser.passedLevels.push(currentLevel);
-          //   await update(ref(db, "users/" + sanitizeFirebaseKey(currentUser.username)), {
-          //     passedLevels: currentUser.passedLevels
-          //   });
-          // }
+    // حفظ التقدم في قاعدة البيانات
+    await saveUserProgress();
+    
+    renderLevelsUI(); 
 
-          await saveUserProgress();
-          await showLevels();
-        }
+    showToast('✅', `مبروك! أكملت مجموعة ${GROUP_TITLES[currentGroupName]}`, 'success');
+}
 
         document.getElementById("result-stats").textContent =
           `النتيجة: ${correctAnswers} من ${total}`;
@@ -1689,9 +1692,6 @@ window.showCurrentLevelGroups = function() {
         });
       }
 
-      // --- وظائف إضافية ---
-      // إظهار الهيدر بشكل افتراضي على صفحة تسجيل الدخول
-      // NEW: Group UI Event Handlers
 document.getElementById('back-to-levels')?.addEventListener('click', () => {
         document.getElementById('groups-section').style.display = 'none';
         levelsDiv.style.display = 'flex';
@@ -1886,5 +1886,19 @@ document.addEventListener('keydown', (e) => {
           }
         });
       }
+
+function refreshLevelsUI() {
+    const levelsGrid = document.getElementById("levels-grid");
+    if (levelsGrid) {
+        levelsGrid.innerHTML = ""; // مسح القديم
+        
+        // التغيير هنا: استخدمنا levelData بدلاً من LEVELS
+        levelData.forEach((lvl, index) => {
+            const card = createLevelCard(lvl, index);
+            levelsGrid.appendChild(card);
+        });
+        console.log("تم تحديث الواجهة بنجاح ✅");
+    }
+}
     </script>
   </body>
