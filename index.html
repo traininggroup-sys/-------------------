@@ -1887,18 +1887,6 @@ document.addEventListener('keydown', (e) => {
         });
       }
 
-function refreshLevelsUI() {
-    const levelsGrid = document.getElementById("levels-grid");
-    if (levelsGrid) {
-        levelsGrid.innerHTML = ""; // مسح القديم
-        
-        // التغيير هنا: استخدمنا levelData بدلاً من LEVELS
-        levelData.forEach((lvl, index) => {
-            const card = createLevelCard(lvl, index);
-            levelsGrid.appendChild(card);
-        });
-        console.log("تم تحديث الواجهة بنجاح ✅");
-    }
-}
+
     </script>
   </body>
