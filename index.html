@@ -1176,8 +1176,7 @@ showLoader();
 const backBtnResult = document.getElementById("back-btn-result");
 if (backBtnResult) {
     backBtnResult.onclick = () => {
-        resultSection.style.display = 'none';
-        showLevels(); 
+        window.showCurrentLevelGroups();
     };
 }
       // --- كلمات تشجيعية لكل مستوى ---
@@ -1697,6 +1696,7 @@ document.getElementById('back-to-levels')?.addEventListener('click', () => {
         document.getElementById('groups-section').style.display = 'none';
         levelsDiv.style.display = 'flex';
         document.getElementById('logout-from-levels').style.display = 'block';
+        showLevels()
       });
 
       document.getElementById('close-group-modal')?.addEventListener('click', () => {
